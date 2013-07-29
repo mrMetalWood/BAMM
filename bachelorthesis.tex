@@ -12,6 +12,7 @@
 \usepackage{graphicx}
 \usepackage{natbib}
 \usepackage[hyphens]{url}
+\usepackage[printonlyused, withpage]{acronym}
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 \parindent0cm
@@ -56,7 +57,20 @@ Das übergeordnete Ziel der App ist es, eine rudimentäre Nachrichten Applikatio
 
 \subsection{Nativ vs. Web}
 \label{nativ_vs_web}
-Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher Technologie bzw. mit welcher Programmiersprache entwickelt werden soll. Die Rede ist hier von einer App die in der Modern UI Oberfläche von Windows 8 läuft. Das heißt es handelt sich nicht um eine klassische .NET oder WIN32 Anwendung für Windows. Um eine Modern UI App zu entwickeln, müssen zwei Dinge zwingend vorhanden sein. Zum einen Windows 8 selbst und zum anderen wird die neueste Version von Visual Studio, Visual Studio 11, benötigt. Visual Studio steht in der Express Version für Windows 8 kostenlos zur Verfügung.
+Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher Technologie bzw. mit welcher Programmiersprache entwickelt werden soll. Die Rede ist hier von einer App die in der Modern UI Oberfläche von Windows 8 läuft und für diese konzipiert ist. Das heißt es handelt sich nicht um eine klassische .NET oder WIN32 Anwendung für Windows. Um eine Modern UI App zu entwickeln, müssen zwei Dinge zwingend vorhanden sein. Zum einen Windows 8 selbst und zum anderen wird die neueste Version von Visual Studio, Visual Studio 11\footnote{visual Studio 2011 war die aktuellste Version beim Erstellen dieser Arbeit.}, benötigt. Visual Studio steht in der Express Version für Windows 8 kostenlos zur Verfügung. Des weiteren muss sich zwischen der nativen Umsetzung und der Implementierung mit Webtechnologien entschieden werden. Es soll zunächst erläutert werden was die beiden Begriffe bedeuten und in welcher Weise und welchem Zusammenhang sie bei der Entwicklung einer Windows 8 Modern UI App üblicherweise gebraucht werden.
+
+\subsubsection{Native App}
+\label{subsubsec:nativ}
+Der heutige Begriff \glqq native App\grqq\ unterscheidet sich in einigen Punkten von der früheren oder ursprünglichen Verwendung des Begriffs. Früher sprach man von einer nativen App wenn direkt auf die Ressourcen der  Maschine zugegriffen wurde, wie z.B. Maschinencode der direkt von der CPU ausgeführt wird. Heute wird eine App oftmals schon als nativ deklariert, wenn es sich nicht um eine Webapp handelt. Eine sinnige Definition liegt irgendwo zwischen diesen beiden Varianten. Eine App ist dann nativ, wenn sie Geräte- , Betriebssystem- oder Laufzeitumgebungsabhängig ist. Das heisst, sie ist für ein spezielles Gerät entwickelt und kann nur auf diesem ausgeführt werden. Sie kann dabei alle Geräte- oder Betriebssystemspezifischen Funktionen nutzen, es ist jedoch egal wie nah an der Hardware tatsächlich programmiert wurde \citep{OBrian2013}.\\
+In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen C++, C\# oder Visual Basic erstellt werden. Für das Design bzw. das Aussehen der App wird die Markupsprache - \ac{xaml} - verwendet. Es gibt zwei Möglichkeiten wie das \ac{xaml} erstellt werden kann. Es kann entweder von Hand geschrieben werden oder man lässt es sich automatisch generieren. Zum automatischen Generieren lassen sich per Drag \& Drop Elemente wie z.B. Buttons und andere Schaltflächen aus einer Werkzeugpalette direkt auf die \glqq App-Leinwand\grqq\ ziehen, sowie verschieben oder nach Belieben anordnen.
+%Listing XAML oder Screenshot 
+
+
+\subsubsection{Webapp}
+\label{webapp}
+ 
+\subsubsection{Windows 8 App mit Webtechnologien}
+\label{webwin8}
 
 \newpage
 \section{Evaluierung}  
@@ -65,8 +79,15 @@ Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher 
 \label{subsec:rel_bilder_artikel} 
 
 \newpage
+\section*{Abkürzungsverzeichnis}
+\label{sec:abkürzungen}
+\begin{acronym}[SEPSEP]
+	\acro{xaml}[XAML]{Extensible Application Markup Language}
+\end{acronym}
+
+\newpage
 \begin{singlespace}
-	%\bibliographystyle{natdin}
-	%\bibliography{ba_literatur}
+	\bibliographystyle{natdin}
+	\bibliography{ba_literatur}
 \end{singlespace}
 \end{document}
