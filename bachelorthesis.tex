@@ -1,8 +1,8 @@
 \documentclass[12pt,a4paper]{scrartcl}
 
 \usepackage[sc]{mathpazo}
-\usepackage[T1]{fontenc}
 \usepackage[onehalfspacing]{setspace}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{geometry}
@@ -24,6 +24,10 @@
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
 \lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
   keywordstyle=\color{blue}\bfseries,
@@ -39,19 +43,14 @@
   morestring=[b]"
 }
 
-\lstdefinelanguage{JavaScript2}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{green}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
+\lstdefinelanguage{XML}{
+	morestring=[b]",
+  	morestring=[s]{>}{<},
+  	morecomment=[s]{<?}{?>},
+  	stringstyle=\color{black},
+  	identifierstyle=\color{darkblue},
+  	keywordstyle=\color{cyan},
+  	morekeywords={xmlns,version,type}
 }
 
 \lstset{
@@ -66,14 +65,17 @@
    tabsize=4,
    breaklines=true,
    showtabs=false,
-   captionpos=b
+   captionpos=b,
+   escapechar=',
+   inputencoding=utf8,
+   literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}2{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1
 }
 
 
 \begin{document}
 
 \section{Einleitung}
-\label{einleitung}
+\label{sec:einleitung}
 \newpage
 \section{Windows 8}
 \label{sec:windows8}
@@ -108,7 +110,7 @@ Der User soll die Möglichkeit haben die standardmäßig vorhandenen Artikeltite
 Das übergeordnete Ziel der App ist es, eine rudimentäre Nachrichten Applikation für Windows 8 zu erstellen. Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, in wie weit es möglich ist allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsec:rel_bilder_artikel} auf Seite \pageref{subsec:rel_bilder_artikel}). Außerdem soll die App dazu dienen, zu erforschen, wie eine Nachrichten Applikation in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- als auch funktionstechnischen Vorgaben von Microsofts vorhanden sind. Sprich, wie eine App mit Nachrichteninhalten nach Microsofts Sichtweise auszusehen hat. 
 
 \subsection{Nativ vs. Web}
-\label{nativ_vs_web}
+\label{subsec:nativ_vs_web}
 Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher Technologie bzw. mit welcher Programmiersprache entwickelt werden soll. Die Rede ist hier von einer App die in der Modern UI Oberfläche von Windows 8 läuft und für diese konzipiert ist. Das heißt es handelt sich nicht um eine klassische .NET oder WIN32 Anwendung für Windows. Um eine Modern UI App zu entwickeln, müssen zwei Dinge zwingend vorhanden sein. Zum einen Windows 8 selbst und zum anderen wird die neueste Version von Visual Studio, Visual Studio 11\footnote{visual Studio 2011 war die aktuellste Version beim Erstellen dieser Arbeit.}, benötigt. Visual Studio steht in der Express Version für Windows 8 kostenlos zur Verfügung. Des weiteren muss sich zwischen der nativen Umsetzung und der Implementierung mit Webtechnologien entschieden werden. Es soll zunächst erläutert werden was die beiden Begriffe bedeuten und in welcher Weise und welchem Zusammenhang sie bei der Entwicklung einer Windows 8 Modern UI App üblicherweise gebraucht werden.
 
 \subsubsection{Native App}
@@ -119,13 +121,21 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 
 
 \subsubsection{Webapp}
-\label{webapp}
+\label{subsubsec:webapp} 
  
 \subsubsection{Windows 8 App mit Webtechnologien}
-\label{webwin8}
+\label{subsubsec:webwin8}
 
 \newpage
-\section{Evaluierung}  
+\section{App Entwicklung}
+\label{sec:appentwicklung}
+
+\subsection{Datenanbindung}
+\label{subsec:datenanbindung}
+Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} in einer zweistufigen Tranformation das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
+Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei Seitentypen benötigt. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts, sowie die Startseite mit den wichtigsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem jeweiligen Artikel geht.
+\newpage
+\section{Evaluierung} 
 \label{sec:evaluierung}
 \subsection{Relation Bilder - Artikelinhalt}
 \label{subsec:rel_bilder_artikel} 
@@ -135,6 +145,10 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 \label{sec:abkürzungen}
 \begin{acronym}[SEPSEP]
 	\acro{xaml}[XAML]{Extensible Application Markup Language}
+	\acro{cms} [CMS]{Content Management System}
+	\acro{xml} [XML]{Extensible Markup Language}
+	\acro{xslt}[XSLT]{Extensible Stylesheet Language Transformations}
+	\acro{html}[HTML]{Hypertext Markup Language}
 \end{acronym}
 
 \newpage
@@ -144,17 +158,7 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 \end{singlespace}
 
 \newpage
-\begin{lstlisting}[language= JavaScript2,caption=My Javascript Example]
-// Ein eindeutiges Element vom bereitgestellten Zeichenfolgenarray abrufen, in dem ein
-// Gruppenschluessel und ein Elementtitel enthalten sein sollten.
-function resolveItemReference(reference) {
-	for (var i = 0; i < groupedItems.length; i++) {
-		var item = groupedItems.getAt(i);
-		if (item.group.key === reference[0] && item.title === reference[1]) {
-			return item;
-		}
-	}
-}  
-   
-\end{lstlisting}
+\input{Listings/cp_button.xml.tex}
+\label{lst:testlisting}
+
 \end{document}
