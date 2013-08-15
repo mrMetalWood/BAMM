@@ -15,6 +15,7 @@
 \usepackage[printonlyused, withpage]{acronym}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{beramono}
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 \parindent0cm
@@ -57,6 +58,8 @@
    backgroundcolor=\color{lightgray},
    extendedchars=true,
    basicstyle=\footnotesize\ttfamily,
+   columns=flexible,
+   frame=single,
    showstringspaces=false,
    showspaces=false,
    numbers=left,
@@ -68,7 +71,7 @@
    captionpos=b,
    escapechar=',
    inputencoding=utf8,
-   literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}2{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1
+   literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}2{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1{©}{{\copyright}}1
 }
 
 
@@ -120,6 +123,7 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 %Listing XAML oder Screenshot 
 
 
+
 \subsubsection{Webapp}
 \label{subsubsec:webapp} 
  
@@ -132,8 +136,14 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 
 \subsection{Datenanbindung}
 \label{subsec:datenanbindung}
-Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} in einer zweistufigen Tranformation das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
-Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei Seitentypen benötigt. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts, sowie die Startseite mit den wichtigsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem jeweiligen Artikel geht.
+Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} in einer zweistufigen Transformation das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
+Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt um die gewünschten Informationen darzustellen. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politikressorts), sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem dahinter liegenden Artikel geht.\\
+%xml des buttons 
+\input{Listings/cp_button_digital.xml.tex}
+Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11).
+
+
+
 \newpage
 \section{Evaluierung} 
 \label{sec:evaluierung}
@@ -157,8 +167,5 @@ Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} 
 	\bibliography{ba_literatur}
 \end{singlespace}
 
-\newpage
-\input{Listings/cp_button.xml.tex}
-\label{lst:testlisting}
 
 \end{document}
