@@ -16,6 +16,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{beramono}
+\usepackage{wrapfig}
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 \parindent0cm
@@ -76,7 +77,9 @@
 
 
 \begin{document}
+\tableofcontents
 
+\newpage
 \section{Einleitung}
 \label{sec:einleitung}
 \newpage
@@ -114,7 +117,7 @@ Das übergeordnete Ziel der App ist es, eine rudimentäre Nachrichten Applikatio
 
 \subsection{Nativ vs. Web}
 \label{subsec:nativ_vs_web}
-Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher Technologie bzw. mit welcher Programmiersprache entwickelt werden soll. Die Rede ist hier von einer App die in der Modern UI Oberfläche von Windows 8 läuft und für diese konzipiert ist. Das heißt es handelt sich nicht um eine klassische .NET oder WIN32 Anwendung für Windows. Um eine Modern UI App zu entwickeln, müssen zwei Dinge zwingend vorhanden sein. Zum einen Windows 8 selbst und zum anderen wird die neueste Version von Visual Studio, Visual Studio 11\footnote{visual Studio 2011 war die aktuellste Version beim Erstellen dieser Arbeit.}, benötigt. Visual Studio steht in der Express Version für Windows 8 kostenlos zur Verfügung. Des weiteren muss sich zwischen der nativen Umsetzung und der Implementierung mit Webtechnologien entschieden werden. Es soll zunächst erläutert werden was die beiden Begriffe bedeuten und in welcher Weise und welchem Zusammenhang sie bei der Entwicklung einer Windows 8 Modern UI App üblicherweise gebraucht werden.
+Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher Technologie bzw. mit welcher Programmiersprache entwickelt werden soll. Die Rede ist hier von einer App die in der Modern UI Oberfläche von Windows 8 läuft und für diese konzipiert ist. Das heißt es handelt sich nicht um eine klassische .NET oder WIN32 Anwendung für Windows. Um eine Modern UI App zu entwickeln, müssen zwei Dinge zwingend vorhanden sein. Zum einen Windows 8 selbst und zum anderen wird die neueste Version von Visual Studio, Visual Studio 11\footnote{Visual Studio 2011 war die aktuellste Version beim Erstellen dieser Arbeit.}, benötigt. Visual Studio steht in der Express Version für Windows 8 kostenlos zur Verfügung. Des weiteren muss sich zwischen der nativen Umsetzung und der Implementierung mit Webtechnologien entschieden werden. Es soll zunächst erläutert werden was die beiden Begriffe bedeuten und in welcher Weise und welchem Zusammenhang sie bei der Entwicklung einer Windows 8 Modern UI App üblicherweise gebraucht werden.
 
 \subsubsection{Native App}
 \label{subsubsec:nativ}
@@ -130,9 +133,46 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 \subsubsection{Windows 8 App mit Webtechnologien}
 \label{subsubsec:webwin8}
 
+\subsection{Navigationskonzept}
+\label{subsec:navikonzept}
+Damit der User ein für ihn angenehmes und flüssiges Nutzungserlebnis hat, ist es notwendig sich über das Navigationskonzept Gedanken zu machen, gerade wenn es sich um eine App handelt, in der es viele verschiedene Inhaltsbereiche gibt. Der User soll sich möglichst intuitiv durch die Inhalte bewegen können. Außerdem muss dem User auf der Einstiegsebene der ein guter Überblick über die vorhandenen Inhalte gegeben werden, damit er von dort aus zielgerichtet weiter navigieren kann, ohne lange suchen zu müssen. Microsoft nennt in seinen Richtlinien für Windows Store Apps (Modern UI Apps) grundsätzlich zwei Möglichkeiten wie die Navigation umgesetzt werden kann.
+
+\subsubsection{Flaches System}
+\label{subsubsec:flachessystem}
+Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufig in Spielen, Browsern oder in Apps zum Erstellen von Dokumenten. Es zeichnet sich dadurch aus, dass sich die Inhalte auf der gleichen hierachischen Ebene befinden. Dieses System eignet sich wenn ein schneller Wechsel zwischen wenigen Seiten oder Registerkarten möglich sein soll \citep{MicrosoftNavidesign2013}.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_flach} 
+	\caption{Flaches Navigationssystem \protect\citep{MicrosoftNavidesign2013}}
+	\label{fig:naviflach}
+\end{figure}
+
+Abbildung \ref{fig:naviflach} zeigt wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine, nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand streift (siehe Sektion \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permananten Zurück-Button. Ein flaches Navigationssystem eignet sich nicht unbedingt für eine Nachrichten App wie die, die in dieser Arbeit konzipiert und umgesetzt ist, weil es zu viele Bereiche (Ressorts) gibt, welche sich zudem sehr ähneln. Hier ist es angebracht ein hierarchisches Navigationssystem zu verwenden.    
+
+
+
+\subsubsection{Hierarchisches System}
+\label{subsubsec:hierachischessystem}
+Die meisten Windows Store-App benutzen ein hierarchisches Navigationssystem. Microsoft nennt es Hubnavigationsmuster. Es eignet sich um große Inhaltssammlungen zu ordnen und sie für User benutzerfreundlich auf zu bereiten. Der Schlüssel dazu ist die Unterteilung des Inhalts in verschiedene Detailebenen \citep{MicrosoftNavidesign2013}.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_hierarchie} 
+	\caption{Hierarchisches Navigationssystem \protect\citep{MicrosoftNavidesign2013}}
+	\label{fig:navihierarchisch}
+\end{figure}
+
+Das Schema eines hierarchischen Systems ist in Abbildung \ref{fig:navihierarchisch} dargestellt. Der Einstiegspunkt in die App ist die sogenannte \glqq Hubseite\grqq\, hier ganz oben in der Abbildung zu sehen. Auf der Hubebene werden aus den vielen großen Bereichen der App jeweils ein kleiner Teil gesammelt und dargestellt, sodass sich der User vorstellen kann was ihn im jeweiligen Bereich erwartet. Die Anordnung, in welcher der Auszug der Inhalte dargestellt ist muss nicht für jeden Bereich gleich sein. Es kann das Nutzungserlebnis sogar verbessern und vielfältiger machen wenn unterschiedliche Darstellungen (z.B. in Höhe, Breite oder Anzahl der Objekte) für die Bereiche genutzt werden. Die Hubansicht wird horizontal gescrollt, d.h. weiterer Inhalt befindet sich hinter dem rechten Rand und kann entweder durch das Scrollrad der Maus oder auf einem Tablet, durch das swipen nach links in das Sichtfeld des Users gebracht werden.\\
+Die mittlere Darstellung in Abbildung \ref{fig:navihierarchisch} zeigt die zweite Detailstufe des hierarchischen Systems. Hier werden alle Elemente eines Bereichs dargestellt. In diesem Fall werden hier alle Artikel aus einem Ressort aufgelistet.\\
+Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehen. Es handelt sich hierbei um den eigentlichen Inhalt (z.B. einen Artikel). Es ist ebenfalls möglich von der Hubansicht direkt in die Detailansicht eines Elements zu wechseln.    
+
+\subsection{Menü und Features}
+\label{subsec:menuandproperties}
+
 \newpage
-\section{App Entwicklung}
-\label{sec:appentwicklung}
+\section{Umsetzung der App}
+\label{sec:umsetzungderapp}
 
 \subsection{Datenanbindung}
 \label{subsec:datenanbindung}
@@ -140,7 +180,21 @@ Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website da
 Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt um die gewünschten Informationen darzustellen. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politikressorts), sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem dahinter liegenden Artikel geht.\\
 %xml des buttons 
 \input{Listings/cp_button_digital.xml.tex}
-Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11).
+Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11). Das \ac{xml} für die Artikelansicht ist ähnlich aufgebaut, nur ist hier zusätzlich noch der Artikeltext (Inhalt) in Form von Paragraphen-Tags (<p>) enthalten. Dies ist ein konkreter Einblick wie die rohen Daten aussehen, welche für die App verwendet werden. Wie die Daten im Detail verarbeitet werden wird in Sektion \ref{subsec:wichtigercode} auf Seite \pageref{subsec:wichtigercode} näher erläutert.
+
+\subsection{Ressort Ansichten}
+\label{subsec:ressortansichten}
+Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm für alle Hauptressorts die ersten sechs Artikel angezeigt, in der Reihenfolge wie sie auch auf der Webseite zu finden sind. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_2gmit.png} 
+	\caption{Ressortübersicht in Startansicht}
+\end{figure}
+
+
+\subsection{Wichtiger Code}
+\label{subsec:wichtigercode}
 
 
 
@@ -149,6 +203,10 @@ Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestel
 \label{sec:evaluierung}
 \subsection{Relation Bilder - Artikelinhalt}
 \label{subsec:rel_bilder_artikel} 
+
+\newpage
+\section{Fazit}
+\label{sec:fazit}
 
 \newpage
 \section*{Abkürzungsverzeichnis}
@@ -166,6 +224,9 @@ Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestel
 	\bibliographystyle{natdin}
 	\bibliography{ba_literatur}
 \end{singlespace}
+
+\newpage
+\listoffigures
 
 
 \end{document}
