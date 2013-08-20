@@ -80,6 +80,7 @@
 
 
 \begin{document}
+\thispagestyle{plain}
 \tableofcontents
 \thispagestyle{plain}
 
@@ -121,7 +122,7 @@ In diesem Kapitel geht es darum, die Konzeption für eine Windows 8 Nachrichten 
 \label{subsec:zielderapp}
 Das Ziel der zu erstellenden App ist, den Inhalt der ZEIT ONLINE Website auf ansprechende Art und Weise in einer Windows 8 Applikation darzustellen. Das Layout und die Darstellung der Inhalte soll sich an das sogenannte \glqq Look and Feel\grqq\ von Windows 8 anpassen und sich daran orientieren. Der Fokus bei den Inhalten liegt auf den Artikeln selbst und den jeweiligen Aufmacher bzw. Teaser Bildern. Das heißt andere Inhalte wie z.B. Bildergalerien, Infografiken, Blogartikel oder Quizze werden von der App nicht erfasst und nicht dargestellt. Hintergrund ist, die App möglichst einfach zu halten da es in der Fragestellung um die Relation zwischen den Aufmacherbildern und dem dahinter liegenden Artikeltext geht. Die App erhebt in dieser Hinsicht keinen Anspruch darauf, die gesamten redaktionellen Inhalte von \mbox{ZEIT ONLINE} darzustellen, sondern versteht sich eher als explorative Applikation im Sinne der Fragestellung.\\
 Der User soll die Möglichkeit haben die standardmäßig vorhandenen Artikeltitel auszublenden um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen. Hierzu soll einen Schalter in der Menüleiste am unteren Bildrand geben. Wenn der User sich im Artikel befindet soll er die Möglichkeit haben die Schriftgröße in gewissen Maß selbst zu bestimmen, da die App eventuell auf Monitoren mit verschieden großen Auflösungen ausgeführt werden wird oder die Sehkraft des Users nicht mehr ausreicht um eine normal große Schrift zu erkennen und zu lesen. So wird in den Artikeln ein gewisses Maß an Barrierefreiheit gewährleistet.\\
-Das übergeordnete Ziel der App ist es, eine rudimentäre Nachrichten Applikation für Windows 8 zu erstellen. Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, in wie weit es möglich ist allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsec:rel_bilder_artikel} auf Seite \pageref{subsec:rel_bilder_artikel}). Außerdem soll die App dazu dienen, zu erforschen, wie eine Nachrichten Applikation in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- als auch funktionstechnischen Vorgaben von Microsofts vorhanden sind. Sprich, wie eine App mit Nachrichteninhalten nach Microsofts Sichtweise auszusehen hat. 
+Das übergeordnete Ziel der App ist es, eine rudimentäre Nachrichten Applikation für Windows 8 zu erstellen. Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, in wie weit es möglich ist allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Außerdem soll die App dazu dienen, zu erforschen, wie eine Nachrichten Applikation in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- als auch funktionstechnischen Vorgaben von Microsofts vorhanden sind. Sprich, wie eine App mit Nachrichteninhalten nach Microsofts Sichtweise auszusehen hat. 
 
 \subsection{Nativ vs. Web}
 \label{subsec:nativ_vs_web}
@@ -188,22 +189,73 @@ Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu 
 \subsection{Menü und Features}
 \label{subsec:menuandproperties}
 Da die App einen explorativen Charakter hat wird sich bei den Funktionen und Features auf das nötigste beschränkt. Es soll eine untere App-Leiste geben, in welcher, je nach dem in welcher Ansicht sich der User gerade befindet verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann, wenn man mit der Maus arbeitet durch einen Rechtsklick aufgerufen werden. Auf einem Tablet geschieht dies durch swipen vom oberen oder unteren Bildschirmrand.\\
-In der Startansicht, sowie in der Einzelbereichsübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern, sowie die Schriftgröße wieder auf ihren Startwert zu setzen. 
+In der Startansicht, sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern, sowie die Schriftgröße wieder auf ihren Startwert zu setzen. 
 
 \newpage
 \section{Umsetzung der App}
 \label{sec:umsetzungderapp}
 
+\subsection[Rastervorlage] {Rastervorlage\footnote{Die Namen der verwendeten Dateien in der Rastervorlage wurden mittlerweile von Microsoft geändert.}}
+\label{subsec:rastervorlage}
+Beim Erstellen einer Windows 8 Modern UI App mit \ac{html} und Javascript bietet Microsoft von Haus aus verschiedene Vorlagen für Visual Studio, welche schon einige Grundfunktionen besitzen und sich so als guter Startpunkt für eine weiterführende App eignen. Die Vorlage die für diese App verwendet wird ist die Raster-App (engl. Grid Application) Vorlage. Sie bietet die Grundarchitektur für ein hierarchisches Navigationssystem wie es in Sektion \ref{subsubsec:hierachischessystem} auf Seite \pageref{subsubsec:hierachischessystem} beschrieben ist.\\
+Es wird von Microsoft empfohlen, dass Windows-Store Apps, welche mit \ac{html} und Javascript erstellt werden das single-page Navigationmodell verwenden. Das bedeutet, die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Seite nachgeladen (ähnlich wie ein iframe). Auf diese Weise gibt keine Sichtbare Unterbrechung beim Navigieren (der Bildschirm wird nicht kurz weiß beim Navigieren). Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}.\\  
+
+\subsubsection{HTML Dateien}
+\label{subsubsec:htmldateien} 
+Folgende \ac{html} Dateien sind bereits in der Raster-App Vorlage enthalten:
+\begin{description}
+	\item[default.html], wird als erstes geladen und enthält das \ac{html} für den Inhalthost (dies ist die Seite in welche die anderen Inhalte im Zuge der single-page Navigation herein geladen werden).
+	\item[groupedItems.html], ist der Einstiegspunkt in die App (die Hubansicht).
+	\item[groupDetail.html], zeigt alle Elemente eines Bereichs.
+	\item[itemDetail.html], Einzelansicht eines Elements.
+\end{description}
+
+\subsubsection{Javascript Dateien}
+\label{subsubsec:javascriptdateien} 
+Folgende Javascript Dateien sind bereits in der Raster-App Vorlage enthalten:
+\begin{description}
+	\item[default.js], legt fest wie sich die App beim Start verhält.
+	\item[groupedItems.js | groupDetail.js | itemDetail.js], sind die Javascript Dateien, welche das Verhalten für die gleichnamigen \ac{html} Dateien festlegen.
+	\item[navigator.js], implementiert das hierarchische Navigationssystem, sowie das single-page Navigationmodell.
+	\item[data.js], stellt die benötigten Daten für den Rest der App bereit.
+\end{description}
+
+\subsubsection{CSS Dateien}
+\label{subsubsec:cssdateien} 
+\begin{description}
+	\item[default.css], enthält Styles für Inhaltshostseite, sowie für die gesamte App.
+	\item[groupedItems.css | groupDetail.css | itemDetail.css], 
+\end{description}
+Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzeptionierten Anforderungen erfüllt.
+
 \subsection{Datenanbindung}
 \label{subsec:datenanbindung}
+
+\subsubsection{ZEIT ONLINE Datenbestand}
+\label{subsubsec:zondatenbestand}
 Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} in einer zweistufigen Transformation das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
 Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt um die gewünschten Informationen darzustellen. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politikressorts), sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem dahinter liegenden Artikel geht.\\
 %xml des buttons 
 \input{Listings/cp_button_digital.xml.tex}
-Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11). Das \ac{xml} für die Artikelansicht ist ähnlich aufgebaut, nur ist hier zusätzlich noch der Artikeltext (Inhalt) in Form von Paragraphen-Tags (<p>) enthalten. Dies ist ein konkreter Einblick wie die rohen Daten aussehen, welche für die App verwendet werden. Wie die Daten im Detail verarbeitet werden wird in Sektion \ref{subsec:wichtigercode} auf Seite \pageref{subsec:wichtigercode} näher erläutert.
+Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11). Das \ac{xml} für die Artikelansicht ist ähnlich aufgebaut, nur ist hier zusätzlich noch der Artikeltext (Inhalt) in Form von Paragraphen-Tags (<p>) enthalten. Dies ist ein konkreter Einblick wie die rohen Daten aussehen, welche für die App verwendet werden. Wie die Daten im Detail verarbeitet werden wird in der nächsten Sektion erläutert.
 
-\subsection{Ressort Ansichten}
-\label{subsec:ressortansichten}
+\subsubsection{Datenverarbeitung}
+\label{subsubsec:datenverarbeitung}
+Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim starten der App und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Daten Einlesen und Verarbeiten geschieht in der \glqq data.js\grqq\ Datei. Es werden alle Teaser Elemente aller Ressorts letztendlich in einer \glqq WinJS.Binding.List()\grqq\ gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine Javascript Bibliothek für Windows-Store Apps, die mit Javascript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit.In Listing \ref{lst:bindinglst} ist die Initialisierung einer WinJS.Binding.List dargestellt.\\
+\input{Listings/binding_list.js.tex}
+Die Grundinformationen zu den einzelnen Ressorts, wie der Name und die URL, werden zunächst als normales Javascript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.\\
+
+\input{Listings/ressorts_array.js.tex}
+
+Anschließend wird eine weitere Funktion von \ac{winjs} verwendet, die WinJS.Promises. Mit Promises kann mit asynchronen Prozessen und Datenquellen umgegangen werden. Hier werden für alle Ressorts \ac{xhr}s gestartet, an die im Ressorts-Array angegebene URLs. Alle \ac{xhr}s werden ebenfalls in einem Array gespeichert und erst wenn alle Promises vorhanden sind (alle URL waren erreichbar), wird die Datenverarbeitung fortgesetzt. \\
+Mit den vorhandenen und validen \ac{xhr} Responses können anschließend alle Teaserelemente in einer Schleife durchlaufen, das \ac{xml} geparst und so die nötigen Informationen für die App verfügbar gemacht werden. Listing \ref{lst:xmlparsing} zeigt wie der Titel (Zeile 10), der Teasertext (Zeile 13) und der Bildpfad (Zeilen 15-22) aus dem \ac{xml} gewonnen werden. Am Ende der Funktion werden die Daten in die in Listing \ref{lst:bindinglst} erstellte WinJS.Binding.List geschrieben (Zeilen 24-28). Die dargestellte Funktion ist nicht vollständig und wurde aus Übersichts- und Relevanzgesichtspunkten verkürzt dargestellt.\\ 
+
+\input{Listings/xml_parsing.js.tex}  
+
+Sobald die Daten in der WinJS.Binding.List gespeichert sind können sie vom Rest der App weiterverwendet und grafisch aufbereitet werden. Es wurden bisher noch keine Artikelinhalte geladen, dies geschieht erst wenn der User auf einen Artikel klickt.
+
+\subsection{Darstellung der Daten}
+\label{subsec:darstellungderdaten}
 Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm für alle Hauptressorts die ersten sechs Artikel angezeigt, in der Reihenfolge wie sie auch auf der Webseite zu finden sind. 
 
 \begin{figure}[h]
@@ -221,8 +273,21 @@ Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm
 \newpage
 \section{Evaluierung} 
 \label{sec:evaluierung}
-\subsection{Relation Bilder - Artikelinhalt}
-\label{subsec:rel_bilder_artikel} 
+
+\subsection{Fokusgruppe}
+\label{subsec:fokusgruppe}
+
+\subsection{Interview}
+\label{subsec:interview}
+
+\subsubsection{Intuitivität der App} 
+\label{subsubsec:intuitivitätderapp}
+
+\subsubsection{Der nur Bilder Modus}
+\label{subsubsec:nurbildermodus}
+
+\subsection{Ergebnis}
+\label{subsec:ergebnis}
 
 \newpage
 \section{Fazit}
@@ -237,6 +302,8 @@ Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm
 	\acro{xml} [XML]{Extensible Markup Language}
 	\acro{xslt}[XSLT]{Extensible Stylesheet Language Transformations}
 	\acro{html}[HTML]{Hypertext Markup Language}
+	\acro{xhr}[XHR]{XMLHttpRequest}
+	\acro{winjs}[WinJS] {Windows Library for JavaScript}
 \end{acronym}
 
 \newpage

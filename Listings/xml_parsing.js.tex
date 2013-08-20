@@ -1,0 +1,33 @@
+\begin{lstlisting}[language= Javascript,caption=Parsen und speichern der Daten., label={lst:xmlparsing}]
+function getItemsFromXml(ressortXML, teaserElements, ressort) {
+    var teasers = ressortXML.querySelectorAll("region[area='lead'] container > block:first-child");
+    // Process each ressort teaser.
+    for (var teaserIndex = 0; teaserIndex < teasers.length; teaserIndex++) {
+        var teaser = teasers[teaserIndex];
+
+       //only articles with an image are alllowed
+        if (teaser.getAttribute("contenttype") == "article" && teaser.querySelector("image") !== null) {
+            // Get the title
+            var teaserTitle = teaser.querySelector("title").textContent;
+        
+            // Process the content so that it displays nicely.
+            var staticContent = toStaticHTML(teaser.querySelector("description").textContent);
+
+            //Get and build the image path
+            var teaserImageEl = teaser.querySelector("image");
+            var imageBasePath = teaserImageEl.getAttribute("base-id");
+            var splitImagePath = imageBasePath.split('/');
+            var imageNameSmall = splitImagePath[splitImagePath.length - 2] + "-220x124.jpg";
+            var imageNameBig = splitImagePath[splitImagePath.length - 2] + "-540x304.jpg";
+            var imagePathSmall = imageBasePath + imageNameSmall;
+            var imagePathBig = imageBasePath + imageNameBig;
+            
+            // Store the teaser element info we care about in the array.
+            teaserElements.push({
+                group: ressort, key: ressort.title, title: teaserTitle,
+                backgroundImage: imagePathBig, teaserText: staticContent
+            });
+        }
+    }
+}
+\end{lstlisting} 
