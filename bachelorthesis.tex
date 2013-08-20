@@ -20,6 +20,9 @@
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 \parindent0cm
+
+\pagestyle{headings}
+
 \author{Malte Modrow}
 
 \definecolor{lightgray}{rgb}{.9,.9,.9}
@@ -78,6 +81,7 @@
 
 \begin{document}
 \tableofcontents
+\thispagestyle{plain}
 
 \newpage
 \section{Einleitung}
@@ -104,6 +108,10 @@ Windows 8 kann sowohl auf herkömmlichen Desktop Computern als auch auf Tablet-C
 \label{subsubsec:xbox}
 \subsubsection{Windows Phone}
 \label{subsubsec:windowsphone}
+
+\newpage
+\section{Bildsprache}
+
 \newpage
 \section{Konzeption der App}
 \label{sec:konzeption}
@@ -144,7 +152,7 @@ Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufi
 \begin{figure}[h]	
 	\centering
 	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_flach} 
-	\caption{Flaches Navigationssystem \protect\citep{MicrosoftNavidesign2013}}
+	\caption{Flaches Navigationssystem \protect\citep{MicrosoftNavidesign2013}.}
 	\label{fig:naviflach}
 \end{figure}
 
@@ -159,16 +167,28 @@ Die meisten Windows Store-App benutzen ein hierarchisches Navigationssystem. Mic
 \begin{figure}[h]	
 	\centering
 	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_hierarchie} 
-	\caption{Hierarchisches Navigationssystem \protect\citep{MicrosoftNavidesign2013}}
+	\caption{Hierarchisches Navigationssystem \protect\citep{MicrosoftNavidesign2013}.}
 	\label{fig:navihierarchisch}
 \end{figure}
 
 Das Schema eines hierarchischen Systems ist in Abbildung \ref{fig:navihierarchisch} dargestellt. Der Einstiegspunkt in die App ist die sogenannte \glqq Hubseite\grqq\, hier ganz oben in der Abbildung zu sehen. Auf der Hubebene werden aus den vielen großen Bereichen der App jeweils ein kleiner Teil gesammelt und dargestellt, sodass sich der User vorstellen kann was ihn im jeweiligen Bereich erwartet. Die Anordnung, in welcher der Auszug der Inhalte dargestellt ist muss nicht für jeden Bereich gleich sein. Es kann das Nutzungserlebnis sogar verbessern und vielfältiger machen wenn unterschiedliche Darstellungen (z.B. in Höhe, Breite oder Anzahl der Objekte) für die Bereiche genutzt werden. Die Hubansicht wird horizontal gescrollt, d.h. weiterer Inhalt befindet sich hinter dem rechten Rand und kann entweder durch das Scrollrad der Maus oder auf einem Tablet, durch das swipen nach links in das Sichtfeld des Users gebracht werden.\\
 Die mittlere Darstellung in Abbildung \ref{fig:navihierarchisch} zeigt die zweite Detailstufe des hierarchischen Systems. Hier werden alle Elemente eines Bereichs dargestellt. In diesem Fall werden hier alle Artikel aus einem Ressort aufgelistet.\\
-Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehen. Es handelt sich hierbei um den eigentlichen Inhalt (z.B. einen Artikel). Es ist ebenfalls möglich von der Hubansicht direkt in die Detailansicht eines Elements zu wechseln.    
+Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehen. Es handelt sich hierbei um den eigentlichen Inhalt (z.B. einen Artikel). Es ist ebenfalls möglich von der Hubansicht direkt in die Detailansicht eines Elements zu wechseln.  
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_hierarchie_semantic_zoom} 
+	\caption{Schema des \glqq Semantic Zoom\grqq\ \protect\citep{MicrosoftNavidesign2013}.}
+	\label{fig:semanticzoom}
+\end{figure}
+
+Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu viele Bereiche und es dauert zu lange bis zum Ende zu scrollen, kann man noch eine weitere Ebene \glqq davor\grqq\ legen. Das Konzept nennt Microsoft \glqq Semantic Zoom\grqq\ und ist in Abbildung \ref{fig:semanticzoom} schematisch dargestellt. Oben in der Abbildung ist die Hubansicht dargestellt, unten die zusätzliche semantic Zoom Ebene. In der Praxis kann der User auf diese Weise die Inhalte noch weiter vereinfachen und zusammenfassen lassen. Im Fall dieser App soll es einen semantischen Zoom geben, um ein flüssigeres und schnelleres Navigieren z.B. ganz zum Ende der Hubansicht zu ermöglichen, da es über zehn verschiedene Ressorts geben wird. Diese Ansicht soll nur die Namen der verschiedenen Ressorts, sowie ein zufälliges Bild aus dem jeweiligen Ressort zeigen. Um am Desktop-PC (mit Maus) diese Ansicht aufzurufen, muss der User auf ein kleines Minuszeichen am unteren rechten Rand klicken. Am Tablet wird der semantische Zoom mit der \glqq Pinch to Zoom (out)\footnote{Pinch to Zoom erklären}\grqq\  Geste aufgerufen. Klickt der User auf ein Element in dieser zusätzlichen Navigationsebene, wird er direkt zum jeweiligen Ausschnitt in die Hubansicht navigiert. Die semantic Zoom Ansicht kann von überall aus der Hubansicht aufgerufen werden.    
+
 
 \subsection{Menü und Features}
 \label{subsec:menuandproperties}
+Da die App einen explorativen Charakter hat wird sich bei den Funktionen und Features auf das nötigste beschränkt. Es soll eine untere App-Leiste geben, in welcher, je nach dem in welcher Ansicht sich der User gerade befindet verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann, wenn man mit der Maus arbeitet durch einen Rechtsklick aufgerufen werden. Auf einem Tablet geschieht dies durch swipen vom oberen oder unteren Bildschirmrand.\\
+In der Startansicht, sowie in der Einzelbereichsübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern, sowie die Schriftgröße wieder auf ihren Startwert zu setzen. 
 
 \newpage
 \section{Umsetzung der App}
@@ -189,7 +209,7 @@ Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_2gmit.png} 
-	\caption{Ressortübersicht in Startansicht}
+	\caption{Ressortübersicht in Startansicht.}
 \end{figure}
 
 
