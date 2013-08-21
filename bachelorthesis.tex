@@ -75,6 +75,8 @@
    captionpos=b,
    escapechar=',
    inputencoding=utf8,
+   belowskip=2em,
+   aboveskip=3em,
    literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}2{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1{©}{{\copyright}}1
 }
 
@@ -105,8 +107,6 @@ Windows 8 kann sowohl auf herkömmlichen Desktop Computern als auch auf Tablet-C
 \label{subsec:ökosystem}
 \subsubsection{Microsoft Store}
 \label{subsubsec:store}
-\subsubsection{xBox}
-\label{subsubsec:xbox}
 \subsubsection{Windows Phone}
 \label{subsubsec:windowsphone}
 
@@ -134,11 +134,6 @@ Der heutige Begriff \glqq native App\grqq\ unterscheidet sich in einigen Punkten
 In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen C++, C\# oder Visual Basic erstellt werden. Für das Design bzw. das Aussehen der App wird die Markupsprache - \ac{xaml} - verwendet. Es gibt zwei Möglichkeiten wie das \ac{xaml} erstellt werden kann. Es kann entweder von Hand geschrieben werden oder man lässt es sich automatisch generieren. Zum automatischen Generieren lassen sich per Drag \& Drop Elemente wie z.B. Buttons und andere Schaltflächen aus einer Werkzeugpalette direkt auf die \glqq App-Leinwand\grqq\ ziehen, sowie verschieben oder nach Belieben anordnen.
 %Listing XAML oder Screenshot 
 
-
-
-\subsubsection{Webapp}
-\label{subsubsec:webapp} 
- 
 \subsubsection{Windows 8 App mit Webtechnologien}
 \label{subsubsec:webwin8}
 
@@ -152,7 +147,7 @@ Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufi
 
 \begin{figure}[h]	
 	\centering
-	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_flach} 
+	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_flach.png} 
 	\caption{Flaches Navigationssystem \protect\citep{MicrosoftNavidesign2013}.}
 	\label{fig:naviflach}
 \end{figure}
@@ -235,38 +230,99 @@ Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzepti
 \label{subsubsec:zondatenbestand}
 Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} in einer zweistufigen Transformation das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
 Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt um die gewünschten Informationen darzustellen. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politikressorts), sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem dahinter liegenden Artikel geht.\\
-%xml des buttons 
+
+\begin{minipage}{\linewidth}
 \input{Listings/cp_button_digital.xml.tex}
+\end{minipage}
+
 Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11). Das \ac{xml} für die Artikelansicht ist ähnlich aufgebaut, nur ist hier zusätzlich noch der Artikeltext (Inhalt) in Form von Paragraphen-Tags (<p>) enthalten. Dies ist ein konkreter Einblick wie die rohen Daten aussehen, welche für die App verwendet werden. Wie die Daten im Detail verarbeitet werden wird in der nächsten Sektion erläutert.
 
-\subsubsection{Datenverarbeitung}
-\label{subsubsec:datenverarbeitung}
-Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim starten der App und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Daten Einlesen und Verarbeiten geschieht in der \glqq data.js\grqq\ Datei. Es werden alle Teaser Elemente aller Ressorts letztendlich in einer \glqq WinJS.Binding.List()\grqq\ gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine Javascript Bibliothek für Windows-Store Apps, die mit Javascript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit.In Listing \ref{lst:bindinglst} ist die Initialisierung einer WinJS.Binding.List dargestellt.\\
-\input{Listings/binding_list.js.tex}
-Die Grundinformationen zu den einzelnen Ressorts, wie der Name und die URL, werden zunächst als normales Javascript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.\\
+\subsubsection{Daten verfügbar machen}
+\label{subsubsec:datenverfügbarmachen}
+Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim starten der App und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Daten Einlesen und Verarbeiten geschieht in der \glqq data.js\grqq\ Datei. Es werden alle Teaser Elemente aller Ressorts letztendlich in einer \glqq WinJS.Binding.List()\grqq\ gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine Javascript Bibliothek für Windows-Store Apps, die mit Javascript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit.In Listing \ref{lst:bindinglst} ist die Initialisierung einer WinJS.Binding.List dargestellt.
 
+\begin{minipage}{\linewidth}
+\input{Listings/binding_list.js.tex}
+\end{minipage}
+
+Die Grundinformationen zu den einzelnen Ressorts, wie der Name und die URL, werden zunächst als normales Javascript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.
+
+\begin{minipage}{\linewidth}
 \input{Listings/ressorts_array.js.tex}
+\end{minipage}
 
 Anschließend wird eine weitere Funktion von \ac{winjs} verwendet, die WinJS.Promises. Mit Promises kann mit asynchronen Prozessen und Datenquellen umgegangen werden. Hier werden für alle Ressorts \ac{xhr}s gestartet, an die im Ressorts-Array angegebene URLs. Alle \ac{xhr}s werden ebenfalls in einem Array gespeichert und erst wenn alle Promises vorhanden sind (alle URL waren erreichbar), wird die Datenverarbeitung fortgesetzt. \\
-Mit den vorhandenen und validen \ac{xhr} Responses können anschließend alle Teaserelemente in einer Schleife durchlaufen, das \ac{xml} geparst und so die nötigen Informationen für die App verfügbar gemacht werden. Listing \ref{lst:xmlparsing} zeigt wie der Titel (Zeile 10), der Teasertext (Zeile 13) und der Bildpfad (Zeilen 15-22) aus dem \ac{xml} gewonnen werden. Am Ende der Funktion werden die Daten in die in Listing \ref{lst:bindinglst} erstellte WinJS.Binding.List geschrieben (Zeilen 24-28). Die dargestellte Funktion ist nicht vollständig und wurde aus Übersichts- und Relevanzgesichtspunkten verkürzt dargestellt.\\ 
+Mit den vorhandenen und validen \ac{xhr} Responses können anschließend alle Teaserelemente in einer Schleife durchlaufen, das \ac{xml} geparst und so die nötigen Informationen für die App verfügbar gemacht werden. Listing \ref{lst:xmlparsing} zeigt wie der Titel (Zeile 10), der Teasertext (Zeile 13) und der Bildpfad (Zeilen 15-22) aus dem \ac{xml} gewonnen werden. Am Ende der Funktion werden die Daten in die in Listing \ref{lst:bindinglst} erstellte WinJS.Binding.List geschrieben (Zeilen 24-28). Die dargestellte Funktion ist nicht vollständig und wurde aus Übersichts- und Relevanzgesichtspunkten verkürzt dargestellt.
 
+\begin{minipage}{\linewidth}
 \input{Listings/xml_parsing.js.tex}  
+\end{minipage}
 
 Sobald die Daten in der WinJS.Binding.List gespeichert sind können sie vom Rest der App weiterverwendet und grafisch aufbereitet werden. Es wurden bisher noch keine Artikelinhalte geladen, dies geschieht erst wenn der User auf einen Artikel klickt.
 
 \subsection{Darstellung der Daten}
 \label{subsec:darstellungderdaten}
-Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm für alle Hauptressorts die ersten sechs Artikel angezeigt, in der Reihenfolge wie sie auch auf der Webseite zu finden sind. 
+
+\subsubsection{Die Hubansicht}
+\label{subsubsec:hubansicht}
+Wenn die App startet befindet sich der User in der Hubansicht. Hier werden ihm für alle Hauptressorts die ersten sechs Artikel angezeigt, in der Reihenfolge wie sie auch auf der Webseite zu finden sind (siehe Abbildung \ref{fig:hubressortübersicht}).\\
+Zu der Hubansicht gehören eine \ac{html} Datei, in welcher das Markup festgelegt ist, eine CSS Datei, die das Layout der Seite bestimmt und eine Javascript Datei, in welcher das Verhalten (die Logik) der Hubseite programmiert wird. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_2gmit.png} 
-	\caption{Ressortübersicht in Startansicht.}
+	\caption{Die Hubansicht.}
+	\label{fig:hubressortübersicht}
 \end{figure}
 
+Um die Daten aus der \textit{WinJS.Binding.List} auf der Hubseite anzeigen zu können, sind einige Schritte notwendig. Zunächst soll der Aufbau der \ac{html} Datei erläutert werden. Listing \ref{lst:hubmarkup} zeigt einen Ausschnitt aus der \textit{groupedItems.html} Datei. Im oberen Teil befindet sich ein Template mit der Klasse \textit{itemtemplate}, welches auf jedes einzelne Element der Hubansicht angewandt wird. Das besondere an diesem Template ist, dass es ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.Binding.Template\grqq\ besitzt. Dies bedeutet, es akzeptiert Daten aus einer \textit{WinJS.Binding.List}, wie sie in der Rohdatenverarbeitung genutzt wurde. Im unteren Teil ab Zeile 10 ist der Container für den eigentlichen Inhalt. Dieses Objekt besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.ListView\grqq\ . Eine \textit{WinJS.LisView} stellt Elemente in anpassbaren Listen oder Rastern dar. 
 
-\subsection{Wichtiger Code}
-\label{subsec:wichtigercode}
+\begin{minipage}{\linewidth}
+\input{Listings/hubmarkup.html.tex}  
+\end{minipage}
+
+Der Rest passiert in der \textit{groupedItems.js} Datei. Die \textit{groupedItems.js} besitzt eine \textit{ready()} Methode. Diese wird jedesmal aufgerufen, wenn der User zur Hubansicht wechselt oder die Hubansicht wiederhergestellt wird. Um die Daten in die \textit{WinJs.ListView} zu bekommen wird als erstes die \textit{WinJS.ListView} in einer Variable gespeichert und anschließend das gewünschte Template bei der ListView registriert (siehe Listing \ref{lst:getitemtemplate}). 
+
+\begin{minipage}{\linewidth}
+\input{Listings/setitemtemplate.js.tex}  
+\end{minipage}
+
+Anschließend wird die \textit{initializeLayout} Funktion aufgerufen. Hier wird am Anfang eine entscheidende Operation ausgeführt. In der \textit{WinJS.Binding.List} sind bisher alle Teaserelemente aus allen Ressorts enthalten, für die Hubansicht sind aber nur sechs Elemente pro Ressort gewünscht. Deswegen wird eine Funktion \textit{getClippedList()} in der \textit{data.js} Datei aufgerufen, welche die ersten sechs Elemente jedes Ressorts zurück liefert. Damit die Elemente wie gewünscht angezeigt werden können, muss noch die \textit{dataSource} der \textit{WinJS.ListView} gesetzt werden, ebenso wie das Raster-Layout (siehe Listing \ref{lst:setdatasource}). Nach diesem Schritt werden die ersten sechs Elemente jedes Ressorts wie in Abbildung \ref{fig:hubressortübersicht} angezeigt.
+
+\begin{minipage}{\linewidth}
+\input{Listings/setdatasource.js.tex}  
+\end{minipage}
+
+\subsubsection{Die Ressortansicht}
+\label{subsubsec:ressortansicht}
+Die Ressortansicht, die zweite Detailstufe zeigt alle Elemente eines Ressorts (siehe Abbildung \ref{fig:einzelressortübersicht}). Der User gelangt hierhin wenn er in der Hubansicht auf den Ressortnamen im Headerbereich klickt. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_3gdmit.png} 
+	\caption{Die Einzelressortübersicht (hier das Reisen Ressort).}
+	\label{fig:einzelressortübersicht}
+\end{figure}
+
+Die Programmlogik funktioniert analog zur Hubansicht. Es werden die gleichen Mechanismen zur Darstellung des Raster-Musters benutzt. Auch die zu dieser Ansicht gehörende \ac{html} und Javascript Dateien ähneln denen von der Hubansicht sehr. Ein wesentlicher Unterschied ist, dass im Gegensatz zu Hubansicht nicht die Funktion \textit{getClippedList()}, sondern stattdessen die Funktion \textit{getItemsFromGroup()} aufgerufen wird. Sie gibt alle Elemente der übergebenen Gruppe zurück. Diese können nun mit einem \textit{itemTemplate} und einer \textit{WinJS.ListView} dargestellt werden. 
+
+\subsubsection{Die Artikelansicht}
+\label{subsubsec:artikelansicht}
+
+\subsection{Features}
+\label{subsec:features}
+
+\subsubsection{Titel ausblenden}
+\label{subsubsec:titelausblenden}
+
+\subsubsection{Schriftgröße verändern}
+\label{subsubsec:schriftgroesseveraendern}
+
+\subsubsection{Semantic Zoom}
+\label{subsubsec:semanticzoom}
+
+\subsection{Entwicklungschronologie}
+\label{subsec:entwicklungschronologie}
 
 
 
@@ -314,6 +370,9 @@ Wenn die App startet befindet sich der User in der Startansicht. Hier werden ihm
 
 \newpage
 \listoffigures
+
+\newpage
+\lstlistoflistings
 
 
 \end{document}
