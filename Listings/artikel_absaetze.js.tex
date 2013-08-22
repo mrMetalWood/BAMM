@@ -1,0 +1,19 @@
+\begin{lstlisting}[language= Javascript,caption=Vermeidung von Infoboxen \, Twitternachrichten und Hyperlinks in den Artikeln., label={lst:artikelabsätze}]
+for (var n = 0; n < paragraphs.length; n++) {
+    //exclude info box and tweets paragraphs
+    if (paragraphs[n].parentNode.parentNode.parentNode.parentNode.nodeName != "infobox" && paragraphs[n].parentNode.getAttribute("class") != "twitter-tweet"){
+        var xmlText = new XMLSerializer().serializeToString(paragraphs[n]);
+        if (paragraphs[n].querySelector("a") != null) {
+            var numberOfLinks = paragraphs[n].querySelectorAll("a").length;
+            //remove hyperlinks
+            for (var i = 0; i < numberOfLinks; i++) {
+                var rx = new RegExp("<a[^<>]+>", "i");
+                xmlText = xmlText.replace(rx, "");
+                rx = new RegExp("</a>", "i");
+                xmlText = xmlText.replace(rx, "");
+            }
+        }
+        textContent = textContent + xmlText;
+    }
+}
+\end{lstlisting} 

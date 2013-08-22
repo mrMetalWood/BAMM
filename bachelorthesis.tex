@@ -308,22 +308,67 @@ Die Programmlogik funktioniert analog zur Hubansicht. Es werden die gleichen Mec
 
 \subsubsection{Die Artikelansicht}
 \label{subsubsec:artikelansicht}
+Die Artikelansicht ist die letzte Detailstufe. Sie zeigt den eigentlichen Artikelinhalt (siehe Abbildung \ref{fig:artikelansicht}). Dargestellt wird das Ressort, der Titel, der Teasertext, das Aufmacherbild in groß, die Bildunterschrift, das Copyright für das Bild, der Artikeltext, die Quelle des Artikels (z.B. ZEIT ONLINE oder dpa), der Autor sowie das Erstellungsdatum. Die Artikeldarstellung funktioniert etwas anders als die Hub- und der Ressortdarstellung. Es wird kein Template verwendet, stattdessen wird das \ac{html} mit Hilfe von Javascript befüllt. In der \textit{ready()} Funktion der \textit{itemDetail.js} Datei werden zunächst die bereits vorhandenen Information in das \ac{html} eingefügt.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_4d.png} 
+	\caption{Die Artikelansicht.}
+	\label{fig:artikelansicht}
+\end{figure}
+
+Listing \ref{lst:artikelinfos} zeigt das Einfügen von Titel, Teasertext und  dem Bild. Anschließend fehlt noch der Artikeltext, die Quelle und der Autor. Um diese Daten zu bekommen und zu speichern ist ein weiterer \ac{xhr} nötig. Der \ac{xhr} wird mit der Artikel-URL aufgerufen, welche in jedem Teaserelement gespeichert ist. Auf diese Weise bekommt man das \ac{xml} der Artikel, wie es auch von der Webseite verwendet wird. Beim Parsen des Artikel-\ac{xml}s müssen drei Dinge besonders beachtet werden.
+
+\begin{minipage}{\linewidth}
+\input{Listings/artikelinfos.js.tex}  
+\end{minipage}
+
+Die Absätze des Artikels liegen in Paragraphen-Tags (<p></p>) vor. Es kann vorkommen, das außer dem reinen Text, zusätzlich noch Infoboxen im Artikel vorhanden sind. Ebenso ist es möglich, dass Nachrichten vom Mikroblogging Dienst Twitter eingebunden werden. Diese Abschnitte arbeiten ebenfalls mit Paragraphen-Tags. Da Infoboxen und Twitternachrichten sich inhaltlich nicht direkt in den Artikeltext eingliedern, müssen diese Abschnitte vorher herausgefiltert werden. Des weiteren sind in den meisten Artikeln auf der ZEIT ONLINE Webseite Hyperlinks, entweder auf andere Artikel oder auch andere Webseiten, vorhanden. Diese sind genau wie Infoboxen und Twitternachrichten unerwünscht, da sie, wenn sie vom User aufgerufen werden, in einer andere App (Internet Explorer) geöffnet werden würden. Dies unterbricht und stört das App-Erlebnis. Es muss dementsprechend darauf geachtet werden, dass nur der reine Artikeltext als Artikel gespeichert wird. Listing \ref{lst:artikelabsätze} verdeutlicht wie dies passiert. In Zeile 3 werden die Infoboxen und die Twitternachrichten herausgefiltert und in den Zeilen 8-13 werden die \textit{<a></a>} Tags mit Hilfe regulärer Ausdrücke gelöscht. Sobald der Artikel komplett geladen ist, wird er analog zu Listing \ref{lst:artikelinfos} in das \ac{html} Markup eingefügt.
+
+\begin{minipage}{\linewidth}
+\input{Listings/artikel_absaetze.js.tex}  
+\end{minipage}
 
 \subsection{Features}
 \label{subsec:features}
 
-\subsubsection{Titel ausblenden}
-\label{subsubsec:titelausblenden}
+\subsubsection{Artikeltitel ausblenden}
+\label{subsubsec:artikeltitelausblenden}
+Ein Hauptfeature der App ist es, dass in der Hubansicht und in der Ressortansicht die Artikeltitel ausgeblendet werden können und der User so nur noch eine Bilderwand vor sich hat. So kann er die Nachrichtenlage rein visuell erleben und erst wenn er auf einen Artikel klickt bekommt er im Artikel den Titel und Artikelinhalt zu sehen. Diese Funktion wird über eine Menüleiste am unteren Bildrand implementiert (siehe Abbildung \ref{fig:menubartitletoggle}). Um eine solche Menüleiste zu erzeugen genügt ein \textit{<div>} Container in der \textit{default.html} Datei mit einem \textit{data-win-control} Attribut, das den Wert \glqq WinJS.UI.AppBar\grqq\ bekommt. In diesem Element können anschließend \textit{<button>} Elemente angelegt werden. Diese sind später die sichtbaren Schaltflächen wenn die Menüleiste aufgerufen wird.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/title_toggle_menu_bar.png} 
+	\caption{Untere Menüleiste mit der Funktion zum Artikeltitel ausschalten.}
+	\label{fig:menubartitletoggle}
+\end{figure}
+
+In der Initialisierungsphase der App wird in der \textit{default.js} Datei der Click-Handler für den Button registriert. D.h. hier wird die Funktion angegeben, welche aufgerufen werden soll wenn der Button geklickt wird. In diesem Fall wird die Funktion \textit{titleToggle()} in der \textit{globals.js} Datei aufgerufen. In der \textit{globals.js} Datei befinden sich Variablen und Funktionen, die von mehreren Ansichten benutzt werden und deswegen global verfügbar sein sollen. Die \textit{titleToggle()} Funktion ist schließlich verantwortlich für das ausblenden der Artikeltitel.\\
+Die Funktion sammelt dazu alle Elemente mit der Klasse \textit{item-overlay} in einem Array und setzt anschließend für alle gefundenen Elemente die CSS Eigenschft \textit{display} auf \glqq none\grqq\ . Das Resultat ist in Abbildung \ref{fig:ressortohnetitel} zu sehen.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_3gdohne.png} 
+	\caption{Das Reisen Ressort ohne Artikeltitel.}
+	\label{fig:ressortohnetitel}
+\end{figure}
 
 \subsubsection{Schriftgröße verändern}
 \label{subsubsec:schriftgroesseveraendern}
+In der Artikelansicht hat der User die Möglichkeit, die Schriftgröße anzupassen. Es sind jeweils zwei Stufen größer, als auch zwei Stufen kleiner als die normale Größe möglich. Der  Ansatz ist grundsätzlich genau so wie bei der \glqq Titel-ausblenden\grqq\ Funktionalität. Zunächst wird ein Button in der unteren Menüleiste angelegt. Es wäre auch möglich zwei Buttons zu erstellen, einen für größer und einen für kleiner. Um die Entwicklungsmöglichkeiten jedoch weiter aus zu reizen gibt es in der App nur einen Button in der Menüleiste. Wird dieser geklickt erscheint noch ein weiteres Menü, ein sogenanntes \textit{Flyout-Menü}. In diesem sind schließlich die Schaltflächen für \glqq Schrift größer\grqq\ , \glqq Schrift kleiner\grqq\ und für \glqq Schriftgröße zurücksetzen\grqq\ . Ist die Schriftgröße z.B. auf der größten Stufe eingestellt, wird im Menü, der größer Button nicht mehr dargestellt. Abbildung \ref{fig:fontsizemenü} zeigt die verschiedenen Stati, die das Schriftgrößenmenü haben kann.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/font_size_menu_kompakt.png} 
+	\caption{links: Schriftgröße Button im unteren Menü | mitte: Das Flyout-Menü mit allen Schaltflächen. | rechts: Das Flyout-Menü beim Aufruf wenn schon die größte Größe eingestellt ist.}
+	\label{fig:fontsizemenü}
+\end{figure} 
 
 \subsubsection{Semantic Zoom}
 \label{subsubsec:semanticzoom}
 
 \subsection{Entwicklungschronologie}
 \label{subsec:entwicklungschronologie}
-
 
 
 \newpage
