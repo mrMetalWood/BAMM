@@ -92,10 +92,19 @@
 \newpage
 \section{Windows 8}
 \label{sec:windows8}
-Seit dem 26. Oktober 2012 ist Microsofts aktuellstes Betriebssystem \glqq Windows 8\grqq\ für die breite Öffentlichkeit verfügbar. Dieses unterscheidet sich grundlegend von seinem Vorgänger \glqq Windows 7\grqq. Microsoft verfolgt mit Windows 8 den Ansatz, das gleiche Betriebssystem sowohl für Desktop- als auch für Tablet-Computer\footnote{Tablet-Computer: kleiner, flacher, tragbarer Computer mit einem Touchscreen. Es wird von nun an, der Einfachheit halber die englische Version \glqq Tablet\grqq\ benutzt.} zu verwenden. Es besitzt nach wie vor den bekannten Desktop von Windows 7. Äußerlich sind hier nur kleine Änderungen vorgenommen worden. So besitzt z.B. der Windows Explorer eine neues, kontextsensitives Ribbon-Menü\footnote{Auch bekannt als Menüband oder Multifunktionsleiste.}. Neu ist hingegen das "Modern User Interface" (Modern UI, früher Metro), eine für Touch-Gesten optimierte Oberfläche. Obwohl die neue Oberfläche für Touch-Gesten optimiert ist, kann sie trotzdem auch mit Maus und Tastatur bedient werden. Es können, im Gegensatz zum Desktop, keine herkömmlichen Programme im Modern UI ausgeführt werden. In der Modern UI Oberfläche laufen nur Programme (Apps), die speziell für Windows 8 entwickelt wurden und über den Microsoft Store (siehe Sektion \ref{subsubsec:store} auf Seite \pageref{subsubsec:store}) erhältlich sind. Es soll nun ein etwas detaillierterer Blick auf die neue Oberfläche und dessen Eigenheiten geworfen werden.
+Seit dem 26. Oktober 2012 ist Microsofts aktuellstes Betriebssystem \glqq Windows 8\grqq\ für die breite Öffentlichkeit verfügbar. Dieses unterscheidet sich grundlegend von seinem Vorgänger \glqq Windows 7\grqq. Microsoft verfolgt mit Windows 8 den Ansatz, das gleiche Betriebssystem sowohl für Desktop- als auch für Tablet-Computer\footnote{Tablet-Computer: kleiner, flacher, tragbarer Computer mit einem Touchscreen. Es wird von nun an, der Einfachheit halber die englische Version \glqq Tablet\grqq\ benutzt.} zu verwenden. Es besitzt nach wie vor den bekannten Desktop von Windows 7. Äußerlich sind hier nur kleine Änderungen vorgenommen worden. So besitzt z.B. der Windows Explorer eine neues, kontextsensitives Ribbon-Menü\footnote{Auch bekannt als Menüband oder Multifunktionsleiste.}. Neu ist hingegen das "Modern User Interface" (Modern UI, früher Metro), eine für Touch-Gesten optimierte Oberfläche. Obwohl die neue Oberfläche für Touch-Gesten optimiert ist, kann sie ebenso mit Maus und Tastatur bedient werden. Es können, im Gegensatz zum Desktop, keine herkömmlichen Programme im Modern UI ausgeführt werden. In der Modern UI Oberfläche laufen nur Programme (Apps), die speziell für Windows 8 entwickelt wurden und über den Microsoft Store (siehe Sektion \ref{subsubsec:store} auf Seite \pageref{subsubsec:store}) erhältlich sind. Es soll nun ein etwas detaillierterer Blick auf die neue Oberfläche und dessen Eigenheiten geworfen werden.
 \subsection{Neues Bedienkonzept}
 \label{subsec:bedienkonzept}
 %gesten charms usw
+Beim Hochfahren von Windows 8, erwartet den User ein Interface, das er so vom Vorgänger Windows 7 nicht kennt. Viele bunte, viereckige Kacheln, in verschiedenen Größen. So sieht die neue Startoberfläche von Windows 8 aus (siehe Abbildung \ref{fig:win8startscreen}). Der Startbildschirm sind die verschiedenen Programme angeordnet. Dies können \glqq normale\grqq\ Programme, die auf dem Desktop laufen oder es können Modern UI Apps (Windows-Store) sein, welche nur über den Microsoft Store zu installieren sind.   
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/windows8/win8_startscreen.png} 
+	\caption{Der Startbildschirm von Windows 8.}
+	\label{fig:win8startscreen}
+\end{figure}
+
 
 \subsection{Windows 8 als hybrides System}
 \label{subsec:hybrides system}
@@ -193,7 +202,14 @@ In der Startansicht, sowie in der Ressortübersicht soll es am unteren Bildrand 
 \subsection[Rastervorlage] {Rastervorlage\footnote{Die Namen der verwendeten Dateien in der Rastervorlage wurden mittlerweile von Microsoft geändert.}}
 \label{subsec:rastervorlage}
 Beim Erstellen einer Windows 8 Modern UI App mit \ac{html} und Javascript bietet Microsoft von Haus aus verschiedene Vorlagen für Visual Studio, welche schon einige Grundfunktionen besitzen und sich so als guter Startpunkt für eine weiterführende App eignen. Die Vorlage die für diese App verwendet wird ist die Raster-App (engl. Grid Application) Vorlage. Sie bietet die Grundarchitektur für ein hierarchisches Navigationssystem wie es in Sektion \ref{subsubsec:hierachischessystem} auf Seite \pageref{subsubsec:hierachischessystem} beschrieben ist.\\
-Es wird von Microsoft empfohlen, dass Windows-Store Apps, welche mit \ac{html} und Javascript erstellt werden das single-page Navigationmodell verwenden. Das bedeutet, die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Seite nachgeladen (ähnlich wie ein iframe). Auf diese Weise gibt keine Sichtbare Unterbrechung beim Navigieren (der Bildschirm wird nicht kurz weiß beim Navigieren). Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}.\\  
+Es wird von Microsoft empfohlen, dass Windows-Store Apps, welche mit \ac{html} und Javascript erstellt werden das single-page Navigationmodell verwenden. Das bedeutet, die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Seite nachgeladen (ähnlich wie ein iframe). Auf diese Weise gibt keine Sichtbare Unterbrechung beim Navigieren (der Bildschirm wird nicht kurz weiß beim Navigieren). Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}. Abbildung \ref{fig:projektmappe} zeigt die Dateistruktur des Projektes. Anschließend wird kurz erläutert wofür die einzelnen Dateien da sind.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/projektmappe.png} 
+	\caption{Die Projektstruktur in Visual Studio.}
+	\label{fig:projektmappe}
+\end{figure}
 
 \subsubsection{HTML Dateien}
 \label{subsubsec:htmldateien} 
@@ -366,6 +382,20 @@ In der Artikelansicht hat der User die Möglichkeit, die Schriftgröße anzupass
 
 \subsubsection{Semantic Zoom}
 \label{subsubsec:semanticzoom}
+Das semantic Zoom Feature wird eingesetzt, wenn es in der Hubansicht sehr viele Bereiche gibt. Es soll dem User ermöglichen, ohne langes scrollen, zu den verschiedenen Bereichen in der Hubansicht zu springen. Beim Aufruf des semantic Zooms wird eine weitere Ebene über die Hubansicht gelegt. Typischer Weise werden in dieser Ebene nur die Verschiedenen Bereiche, ohne inhaltliche Elemente angezeigt. Bei ZEIGHT werden hier alle Ressorts mit dem jeweiligen Ressortnamen und einem zufälligen Bild aus dem Ressort angezeigt (siehe Abbildung \ref{fig:semanticzoom}). Diese Ansicht ist ebenfalls horizontal scrollbar, im direkten Vergleich zur Hubansicht jedoch viel kompakter und übersichtlicher. Klickt der User z.B. auf das Reisen Ressort, wird wieder zurück zur Hubansicht \glqq gezoomt\grqq. Der User hätte dann die Ansicht wie sie Abbildung \ref{fig:hubressortübersicht} auf Seite \pageref{fig:hubressortübersicht} zeigt. Das bedeutet es findet in beide Richtungen ein kontextsensitives Zoomen statt. Je nach dem wo sich der User in der Hubansciht befindet bzw. auf welches Ressort der User in der semantic Zoom Ebene klickt, wird an die entsprechende Stelle raus- bzw. reingezoomt.  
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_1zoom.png} 
+	\caption{Die semantic Zoom Ansicht.}
+	\label{fig:semanticzoom}
+\end{figure}  
+
+Da der semantic Zoom von der Hubansicht aus aufgerufen wird und mit ihr interagiert, ist er dementsprechend in der \textit{groupedItems.html} und in der\textit{groupedItems.js} implementiert. Genau wie für die Hubansicht gibt es auch für den semantic Zoom ein Template für die einzelnen Elemente. Damit eine Interaktion zwischen der Hubansicht und dem semantic Zoom stattfinden kann, wird ein Wrapper \textit{div} Element um die \textit{WinJS.ListView} der Hubansicht und die \textit{WinJS.ListView} der semantic Zoom Ebene gezogen. Listing \ref{lst:semanticzoomwrapper} zeigt wie der Wrapper eingebunden ist. Das \textit{div} Element besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.UI.SemanticZoom\grqq. Des weiteren kann der \textit{zoomFactor} und der initiale Zoomstatus festgelegt werden. Bei der ZEIGHT App ist dieser Zoomstatus initial auf false, da der User die Hubansicht als Einstiegspunkt in die App haben soll (nicht die semantic Zoom Ansicht).
+
+\begin{minipage}{\linewidth}
+\input{Listings/semantic_zoom_wrapper.html.tex}  
+\end{minipage}
 
 \subsection{Entwicklungschronologie}
 \label{subsec:entwicklungschronologie}

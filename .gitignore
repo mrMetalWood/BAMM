@@ -23,3 +23,5 @@
 *.synctex.gz
 *.tex.bak
 *.bib.bak
+*.ba
+~$*
