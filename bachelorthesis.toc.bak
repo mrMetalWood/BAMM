@@ -1,0 +1,43 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{3}
+\contentsline {section}{\numberline {2}Windows 8}{4}
+\contentsline {subsection}{\numberline {2.1}Neues Bedienkonzept}{4}
+\contentsline {subsection}{\numberline {2.2}Windows 8 als hybrides System}{4}
+\contentsline {subsection}{\numberline {2.3}Windows RT}{4}
+\contentsline {subsection}{\numberline {2.4}Das \IeC {\"O}kosystem}{4}
+\contentsline {subsubsection}{\numberline {2.4.1}Microsoft Store}{4}
+\contentsline {subsubsection}{\numberline {2.4.2}Windows Phone}{4}
+\contentsline {section}{\numberline {3}Bildsprache}{5}
+\contentsline {section}{\numberline {4}Konzeption der App}{6}
+\contentsline {subsection}{\numberline {4.1}Ziel der App}{6}
+\contentsline {subsection}{\numberline {4.2}Nativ vs. Web}{7}
+\contentsline {subsubsection}{\numberline {4.2.1}Native App}{7}
+\contentsline {subsubsection}{\numberline {4.2.2}Windows 8 App mit Webtechnologien}{8}
+\contentsline {subsection}{\numberline {4.3}Navigationskonzept}{8}
+\contentsline {subsubsection}{\numberline {4.3.1}Flaches System}{8}
+\contentsline {subsubsection}{\numberline {4.3.2}Hierarchisches System}{9}
+\contentsline {subsection}{\numberline {4.4}Men\IeC {\"u} und Features}{11}
+\contentsline {section}{\numberline {5}Umsetzung der App}{12}
+\contentsline {subsection}{\numberline {5.1}Rastervorlage}{12}
+\contentsline {subsubsection}{\numberline {5.1.1}HTML Dateien}{12}
+\contentsline {subsubsection}{\numberline {5.1.2}Javascript Dateien}{12}
+\contentsline {subsubsection}{\numberline {5.1.3}CSS Dateien}{13}
+\contentsline {subsection}{\numberline {5.2}Datenanbindung}{13}
+\contentsline {subsubsection}{\numberline {5.2.1}ZEIT ONLINE Datenbestand}{13}
+\contentsline {subsubsection}{\numberline {5.2.2}Daten verf\IeC {\"u}gbar machen}{14}
+\contentsline {subsection}{\numberline {5.3}Darstellung der Daten}{17}
+\contentsline {subsubsection}{\numberline {5.3.1}Die Hubansicht}{17}
+\contentsline {subsubsection}{\numberline {5.3.2}Die Ressortansicht}{19}
+\contentsline {subsubsection}{\numberline {5.3.3}Die Artikelansicht}{19}
+\contentsline {subsection}{\numberline {5.4}Features}{21}
+\contentsline {subsubsection}{\numberline {5.4.1}Artikeltitel ausblenden}{21}
+\contentsline {subsubsection}{\numberline {5.4.2}Schriftgr\IeC {\"o}\IeC {\ss }e ver\IeC {\"a}ndern}{23}
+\contentsline {subsubsection}{\numberline {5.4.3}Semantic Zoom}{23}
+\contentsline {subsection}{\numberline {5.5}Entwicklungschronologie}{23}
+\contentsline {section}{\numberline {6}Evaluierung}{24}
+\contentsline {subsection}{\numberline {6.1}Fokusgruppe}{24}
+\contentsline {subsection}{\numberline {6.2}Interview}{24}
+\contentsline {subsubsection}{\numberline {6.2.1}Intuitivit\IeC {\"a}t der App}{24}
+\contentsline {subsubsection}{\numberline {6.2.2}Der nur Bilder Modus}{24}
+\contentsline {subsection}{\numberline {6.3}Ergebnis}{24}
+\contentsline {section}{\numberline {7}Fazit}{25}
