@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{scrartcl}
+\documentclass[12pt,a4paper,bibtotoc]{scrartcl}
 
 \usepackage[sc]{mathpazo}
 \usepackage[onehalfspacing]{setspace}
@@ -17,6 +17,8 @@
 \usepackage{color}
 \usepackage{beramono}
 \usepackage{wrapfig}
+\usepackage{pdfpages}
+%\usepackage{hyperref}
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 \parindent0cm
@@ -82,9 +84,30 @@
 
 
 \begin{document}
+%\clearpage\pdfbookmark{\contentsname}{toc}\tableofcontents
 \thispagestyle{plain}
 \tableofcontents
 \thispagestyle{plain}
+
+\newpage
+\listoffigures
+\vspace{2cm}
+\listoftables
+
+\newpage
+\lstlistoflistings
+\vspace{2cm}
+\section*{Abkürzungsverzeichnis}
+\label{sec:abkürzungen}
+\begin{acronym}[SEPSEP]
+	\acro{xaml}[XAML]{Extensible Application Markup Language}
+	\acro{cms} [CMS]{Content Management System}
+	\acro{xml} [XML]{Extensible Markup Language}
+	\acro{xslt}[XSLT]{Extensible Stylesheet Language Transformations}
+	\acro{html}[HTML]{Hypertext Markup Language}
+	\acro{xhr}[XHR]{XMLHttpRequest}
+	\acro{winjs}[WinJS] {Windows Library for JavaScript}
+\end{acronym}
 
 \newpage
 \section{Einleitung}
@@ -137,7 +160,7 @@ Die letzte grundlegende Geste, wird benutzt um z.B. Optionen, Einstellungen oder
 \subsection{Windows 8 als hybrides System}
 \label{subsec:hybrides system}
 % touch, vorteile, nachteile
-Windows 8 kann sowohl auf herkömmlichen Desktop Computern als auch auf Tablet-Computern eingesetzt werden. 
+Windows 8 kann sowohl auf herkömmlichen Desktop Computern, Notebooks und auf Tablet-Computern eingesetzt werden. 
 \subsection{Windows RT}
 \label{subsec:winRT}
 \subsection{Das Ökosystem}
@@ -215,10 +238,10 @@ Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehe
 	\centering
 	\includegraphics[scale=1]{Bilder/Abbildungen/ms_navigation_hierarchie_semantic_zoom} 
 	\caption{Schema des \glqq Semantic Zoom\grqq\ \protect\citep{MicrosoftNavidesign2013}.}
-	\label{fig:semanticzoom}
+	\label{fig:semanticzoomkonzept}
 \end{figure}
 
-Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu viele Bereiche und es dauert zu lange bis zum Ende zu scrollen, kann man noch eine weitere Ebene \glqq davor\grqq\ legen. Das Konzept nennt Microsoft \glqq Semantic Zoom\grqq\ und ist in Abbildung \ref{fig:semanticzoom} schematisch dargestellt. Oben in der Abbildung ist die Hubansicht dargestellt, unten die zusätzliche semantic Zoom Ebene. In der Praxis kann der User auf diese Weise die Inhalte noch weiter vereinfachen und zusammenfassen lassen. Im Fall dieser App soll es einen semantischen Zoom geben, um ein flüssigeres und schnelleres Navigieren z.B. ganz zum Ende der Hubansicht zu ermöglichen, da es über zehn verschiedene Ressorts geben wird. Diese Ansicht soll nur die Namen der verschiedenen Ressorts, sowie ein zufälliges Bild aus dem jeweiligen Ressort zeigen. Um am Desktop-PC (mit Maus) diese Ansicht aufzurufen, muss der User auf ein kleines Minuszeichen am unteren rechten Rand klicken. Am Tablet wird der semantische Zoom mit der \glqq Pinch to Zoom (out)\footnote{Pinch to Zoom erklären}\grqq\  Geste aufgerufen. Klickt der User auf ein Element in dieser zusätzlichen Navigationsebene, wird er direkt zum jeweiligen Ausschnitt in die Hubansicht navigiert. Die semantic Zoom Ansicht kann von überall aus der Hubansicht aufgerufen werden.  
+Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu viele Bereiche und es dauert zu lange bis zum Ende zu scrollen, kann man noch eine weitere Ebene \glqq davor\grqq\ legen. Das Konzept nennt Microsoft \glqq Semantic Zoom\grqq\ und ist in Abbildung \ref{fig:semanticzoomkonzept} schematisch dargestellt. Oben in der Abbildung ist die Hubansicht dargestellt, unten die zusätzliche semantic Zoom Ebene. In der Praxis kann der User auf diese Weise die Inhalte noch weiter vereinfachen und zusammenfassen lassen. Im Fall dieser App soll es einen semantischen Zoom geben, um ein flüssigeres und schnelleres Navigieren z.B. ganz zum Ende der Hubansicht zu ermöglichen, da es über zehn verschiedene Ressorts geben wird. Diese Ansicht soll nur die Namen der verschiedenen Ressorts, sowie ein zufälliges Bild aus dem jeweiligen Ressort zeigen. Um am Desktop-PC (mit Maus) diese Ansicht aufzurufen, muss der User auf ein kleines Minuszeichen am unteren rechten Rand klicken. Am Tablet wird der semantische Zoom mit der \glqq Pinch to Zoom (out)\footnote{Pinch to Zoom erklären}\grqq\  Geste aufgerufen. Klickt der User auf ein Element in dieser zusätzlichen Navigationsebene, wird er direkt zum jeweiligen Ausschnitt in die Hubansicht navigiert. Die semantic Zoom Ansicht kann von überall aus der Hubansicht aufgerufen werden.  
 
 
 \subsection{Nativ vs. Web}
@@ -451,50 +474,100 @@ Da der semantic Zoom von der Hubansicht aus aufgerufen wird und mit ihr interagi
 \newpage
 \section{Evaluierung} 
 \label{sec:evaluierung}
+Bei der Evaluierung soll herausgefunden werden, inwieweit die App intuitiv benutzbar ist und ob ein alternativer Ansatz zum Konsumieren von Nachrichten Sinn macht und wie er ggf. funktionieren könnte. Es wird hierzu eine Art der Fokusgruppenevaluierung angewandt. Das bedeutet, es wird am Ende keine belastbaren statistischen Aussagen geben, sondern eher einen Trend zeichnen und einzelne Meinungen der Teilnehmer darstellen.
 
 \subsection{Fokusgruppe}
 \label{subsec:fokusgruppe}
+Die Bezeichnung \glqq Fokusgruppe\grqq, die hier verwendet wird, steht in diesem Fall für eine kleine Gruppe von Testpersonen, im Gegensatz zu einer vollwertigen statistischen Auswertung. Es findet keine gemeinsame Diskussion statt, stattdessen muss jeder Teilnehmer einige Aufgaben ausführen und ein paar Fragen im Interview beantworten.
 
-\subsection{Interview}
-\label{subsec:interview}
 
-\subsubsection{Intuitivität der App} 
-\label{subsubsec:intuitivitätderapp}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{3.5ex} \textbf{Testperson (TP)} & \textbf{Beruf} & \textbf{Geschlecht} & \textbf{Alter} \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} 1 & Business Coach & W & 58 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} 2 & Leiter Finanz- und Rechnungswesen & M & 58 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} 3 & Student - Games Master & M & 27  \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} 4 & Wirtschaftspsychologin & W & • \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} 5 & Student - Games Master & M & 27 \\ 
+\hline 
+\end{tabular} 
+\caption{Übersicht der Testpersonen.}
+\label{tab:testpersonen}
+\end{table}
 
-\subsubsection{Der nur Bilder Modus}
-\label{subsubsec:nurbildermodus}
+Tabelle \ref{tab:testpersonen} zeigt die Übersicht der Testpersonen. Es wurde darauf geachtet, dass sich die Personen möglichst vom Beruf, Geschlecht und Alter her unterscheiden, um eine heterogene Gruppe zusammenzustellen und somit möglicherweise verschiedene Auffassungen und Herangehensweisen zu beobachten.
+
+
+\subsection{Ablauf}
+\label{subsec:ablauf}
+Der Ablauf der Evaluierung setzt sich grob aus drei Abschnitten zusammen. Im ersten Teil soll überprüft werden inwieweit die Testpersonen, allein vom Betrachten des Teaserbilds eines Artikels, auf den groben, oder ggf. auch auf den genauen Inhalt des Artikels schließen können. Hierzu werden den Testpersonen zwei Ressorts in der Hubansicht, bei ausgeschalteten Titeln gezeigt. Zum einen, ein Das Politik-Ressort mit vorwiegend tagesaktuellen Nachrichten und zum anderen das Wissen-Ressort, welches auch zeitlose Artikel beinhalten kann. Abbildung \ref{fig:testbilder} zeigt die Bilder, welche die Testpersonen beurteilen sollten.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Evaluierung/Testbilder/collage_politik_wissen_numbers.png} 
+	\caption{Die Testbilder aus dem Politik- und Wissen-Ressort.}
+	\label{fig:testbilder}
+\end{figure}  
+
+Die Bilder sind nicht speziell zu diesem Zweck ausgewählt worden. Es handelt sich um die ersten sechs Artikel des jeweiligen Ressorts, wie sie am Sonntag den 25. August 2013 auch auf der ZEIT ONLINE Webseite zu finden waren. Die Testpersonen sollen jedes Bild einzeln durchgehen und zunächst eine Einschätzung zum groben Themengebiet geben und anschließend wenn möglich, so genau wie möglich beschreiben, um was es in dem jeweiligen Artikel gehen könnte. Die Ergebnisse werden in einem Tabellenkalkulationsprogramm festgehalten.\\
+
+Im zweiten Teil der Evaluierung sollen die Testpersonen die App selber benutzen. Zum einen auf einem Notebook, auf welchem die App mit der Maus bedient wird und zum anderen auf dem \textit{Microsoft Surface}, ein Tablet, welches mit Touchgesten bedient wird. Es gibt vorher keine Instruktionen wie die App zu bedienen ist. Die Testpersonen sollen die App selbst entdecken und mögliche Features die programmiert wurden, finden und ausprobieren. Dies soll zeigen wie intuitiv das Navigationskonzept und die Menüführung der App sind.\\
+
+Die Evaluierung endet mit dem dritten Teil, einem Interview. Hier sollen im Gespräch einige Fragen, zu den verschiedenen Teilen der Evaluierung beantwortet werden. Nachfolgend sind die groben Fragen aufgelistet, welche im Einzelfall durch Nachfragen leicht abgeändert werden können.
+
+\begin{enumerate}
+	\item Kannst du kurz deine bisherigen Erfahrungen mit Windows 8 schildern?
+	\item In welcher Weise und wie oft konsumierst du Nachrichten im Allgemeinen? 
+	\item Zu Teil 1: Wie war dein Gedankengang um herauszufinden was sich hinter den Bildern verbergen könnte?
+	\item Zu Teil 2: Wie kamst du mit der App im Allgemeinen zurecht? War sie intuitiv? Welches Gerät hat dir besser gefallen und warum?
+	\item Glaubst du der \glqq nur Bilder\grqq\ Modus macht neugierig? Oder glaubst du er hemmt den Nachrichtenkonsum? 
+\end{enumerate}
+
+
+
 
 \subsection{Ergebnis}
 \label{subsec:ergebnis}
+
+
+\subsubsection{Intuitivität der App} 
+\label{subsubsec:intuitivitätderapp}
+Ob die App für die einzelne Testperson intuitiv bedienbar ist, hängt vermutlich direkt mit bereits gesammelten Windows 8 Erfahrungen zusammen. TP3-TP5 gaben bei der Frage nach der bisherigen Windows 8 Erfahrung an, bisher nur im Desktop-Modus von Windows 8 gearbeitet zu haben. Dies geschah ausschließlich mit Maus und Tastatur. TP1 hat bereits erste Erfahrungen mit der Modern UI Oberfläche gemacht. Außerdem ist sie vertraut mit dem Smartphonebetriebssystem von Microsoft, Windows Phone. TP2 hat bereits etwas tiefer gehende Erfahrungen mit Windows 8 und seinen Gesten, wenn auch hauptsächlich mit der Maus und weniger mit Touchbedienung.\\
+
+TP1 fand das Navigationskonzept \glqq absolut intuitiv\grqq, wobei sie anmerkte, ihr hätte eine weitere Verbindung aus der Artikelansicht direkt zur Hubansicht gefallen. Klickt der User erst auf die Ressortübersicht und anschließend auf einen Artikel, kann nicht direkt zurück zur Hubansicht navigiert werden, sondern es muss der \glqq Umweg\grqq\ zurück über die Ressortübersicht genommen werden. TP2 meinte die App sei gut strukturiert, da diese Ebenenstruktur bekannt sei, merkte aber gleichzeitig an, das er sich vorstellen kann, das \textit{nicht} Windows 8 Nutzer zunächst Schwierigkeiten mit der Bedienung und Gesten haben könnten. TP3 und TP4 fanden es etwas verwirrend, dass im Artikel horizontal gescrollt wird, im Gegensatz zu normalen Webseiten. TP5 \glqq fehlte die nötige Vertrautheit mit der Modern UI Oberfläche\grqq\ um die nicht sofort sichbaren Bereiche der App (die Menüs) aufzurufen. Die Texte hingegen, seien sehr gut lesbar.\\
+
+Generell lässt sich sagen, dass die Hauptnavigationsstruktur (Hubansicht, Ressortübersicht, Artikelansicht) von allen Testpersonen für intuitiv und gut verständlich empfunden wurde. Die meisten haben es auch geschafft die Menüs mit den Features (Titel ausblenden und Schriftgröße) aufzurufen. Ein Feature wurde allerdings nur von einer Testperson gefunden, der semantic Zoom. Das bedeutet, wenn dieses Navigationselement von einer App benutzt wird, sollte gezielt darauf hingewiesen werden, da die Möglichkeit eines semantic Zooms, gerade für Windows 8 Einsteiger, oft nicht sofort ersichtlich ist.
+
+\subsubsection{Der nur Bilder Modus}
+\label{subsubsec:nurbildermodus}
+Hier sollen die Möglichkeiten und die Sinnhaftigkeit des \glqq nur Bilder\grqq Modus dargestellt und untersucht werden. Alle Testpersonen gaben an, täglich über verschiedenste Kanäle Nachrichten zu konsumieren. Sei es im Fernsehen, Online, Radio, Smartphone oder die Zeitung. Das bedeutet, es ist zu vermuten, dass alle Testpersonen über ein gewisses Basiswissen, was tagesaktuelle Geschehnisse betrifft, verfügen.\\
+Im ersten Teil der Evaluation, sollten die Testpersonen versuchen herauszufinden, welcher Inhalt sich hinter den Teaserbildern von Abbildung \ref{fig:testbilder} verbergen könnte. Hierzu sollte zunächst ein grobes Themengebiet genannt werden und anschließend so genau wie möglich versucht werden, herauszufinden, worum es in dem jeweiligen Artikel geht. Ein Bild wurde in diesem Fall als \textit{genau} akzeptiert, wenn die Testperson nach dem obersten Themengebiet noch eine Stufe tiefer gehen konnte. So wurde es z.B. als richtig akzeptiert, wenn die Testperson bei Bild 10 nicht nur das grobe Thema \glqq Waldbrände\grqq, sondern auch \glqq San Francisco\grqq\ oder \glqq Yosemite Nationalpark\grqq\ richtig benannt hatte. Nach diesem Bewertungsschema wurden von den 12 Bildern im Durchschnitt 78,3\% grob, und 35\% auch genauer richtig zugeordnet. Das am häufigsten richtig zugeordnete Bild, ist Bild 10. Es wurde von allen Testpersonen grob als auch genau richtig erkannt. Dicht gefolgt Bild 5, welches alle Testpersonen grob, sowie 4 Testpersonen genauer richtig zuordnen konnten. Am wenigsten wurde Bild 3 erkannt. Es wurde nur von einer Testperson erkannt, dafür aber auch genau. Es geht in diesem Bild um die NSA-Affäre und den UN-Sicherheitsrat.\\
+Die Testpersonen wurden im Interview gefragt, wie sie an diese Aufgabe herangegangen sind. In einem Punkt waren sich alle Testpersonen einig. Wenn man z.B. eine Person erkennt, muss man über andere Nachrichtenkanäle schon vorher etwas über diese Person gehört haben um den Inhalt genauer zuordnen zu können. TP1 meint, bei Bild 1 sei es sehr schwer etwas genaues sagen zu können, da diese Person zu verschiedenen Themen in Frage kommt. TP5 sagt zu Bild 6: \glqq Bei Bildern auf denen keine öffentlichen Personen drauf waren, hab ich einfach versucht über Vorurteile die Personen zu lesen\grqq. \\
+Bei den Bildern aus dem Politik-Ressort wurde sich sehr auf das bereits aus anderen Nachrichtenquellen gehörte verlassen, wogegen bei den eher zeitlosen Artikeln und Bildern wie z.B. Bild 8 und Bild 11 die grobe Zuordnung recht leicht fiel, aber das Bild für die genaue Bestimmung nicht genügend Informationen lieferte und die Testpersonen auch nicht mit tagesaktuellem Wissen versuchen konnten zu raten. Bei Bild 8 geht es z.B. darum, dass Graf Zeppelin angeblich gar nicht der Erfinder des Zeppelins war und bei Bild 11 lautet der Titel: \glqq Hat nur der Mensch Sex in der Missionarsstellung?\grqq.
 
 \newpage
 \section{Fazit}
 \label{sec:fazit}
 
 \newpage
-\section*{Abkürzungsverzeichnis}
-\label{sec:abkürzungen}
-\begin{acronym}[SEPSEP]
-	\acro{xaml}[XAML]{Extensible Application Markup Language}
-	\acro{cms} [CMS]{Content Management System}
-	\acro{xml} [XML]{Extensible Markup Language}
-	\acro{xslt}[XSLT]{Extensible Stylesheet Language Transformations}
-	\acro{html}[HTML]{Hypertext Markup Language}
-	\acro{xhr}[XHR]{XMLHttpRequest}
-	\acro{winjs}[WinJS] {Windows Library for JavaScript}
-\end{acronym}
+\appendix
+%\pagenumbering{roman}
+\thispagestyle{plain}
+
+\includepdf[pages=1,scale=.9,pagecommand={\section{Detaillierte Evaluierung Bild-Inhalt Relation}}]{Evaluierung/rel_bilder_inhalt.pdf}
+\includepdf[pages=2,scale=.9,pagecommand={}]{Evaluierung/rel_bilder_inhalt.pdf}
 
 \newpage
 \begin{singlespace}
 	\bibliographystyle{natdin}
 	\bibliography{ba_literatur}
 \end{singlespace}
-
-\newpage
-\listoffigures
-
-\newpage
-\lstlistoflistings
-
 
 \end{document}
