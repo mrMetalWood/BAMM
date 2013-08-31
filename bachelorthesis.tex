@@ -1,10 +1,10 @@
-\documentclass[12pt,a4paper,bibtotoc]{scrartcl}
+\documentclass[12pt,a4paper,bibtotoc,abstracton]{scrartcl}
 
 \usepackage[sc]{mathpazo}
 \usepackage[onehalfspacing]{setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[english,ngerman]{babel}
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -25,7 +25,12 @@
 
 \pagestyle{headings}
 
-\author{Malte Modrow}
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
+
+\author{von Malte Modrow \\ Matrikel-Nr. 1975941}
+\title{\HRule \\ Konzeption und Erstellung einer Windows 8 App mit Webtechnologien bei ZEIT ONLINE zum Thema; Nachrichten visuell erleben \HRule}
+\subject{ \centering \includegraphics[width=0.8\textwidth]{Bilder/Abbildungen/haw_logo.png} \vspace{0.3cm} \\ Department Medientechnik \vspace{-1cm}}
+\date{}
 
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
@@ -82,8 +87,40 @@
    literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}2{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1{©}{{\copyright}}1
 }
 
-
 \begin{document}
+
+\maketitle
+\setcounter{page}{1}
+\thispagestyle{empty}
+\begin{center}		
+	\LARGE
+	\textbf{Bachelorthesis (B.Sc.)}
+	
+	\Large 
+	Studiengang Media Systems 
+	
+	\vfill	
+	\large
+  	Erstprüfer: Prof. Dr. Andreas Plaß
+	
+	Zweitprüfer: Arne Seemann (M.Sc.)
+	\vfill
+	Hamburg, 3. September 2013	
+\end{center}
+
+\newpage
+\selectlanguage{ngerman}
+\begin{abstract}
+	deutsch
+\end{abstract}
+
+\selectlanguage{english}
+\begin{abstract}
+	englisch
+\end{abstract}
+\selectlanguage{ngerman}
+
+\newpage
 %\clearpage\pdfbookmark{\contentsname}{toc}\tableofcontents
 \thispagestyle{plain}
 \tableofcontents
@@ -129,7 +166,7 @@ Beim Hochfahren von Windows 8, erwartet den User ein Interface, das er so vom Vo
 \end{figure}
 
 Dies können \glqq normale\grqq\ Programme sein, die auf dem Desktop laufen oder es können Modern UI Apps (Windows-Store) sein, welche nur über den Microsoft Store zu installieren sind. Der bekannte Desktop-Modus ist in diesem Sinne auch \glqq nur\grqq\ ein, wenn auch ein sehr spezielles, Programm (App), welches in der neuen Oberfläche gestartet und ausgeführt werden kann.\\
-Es gibt einige grundlegende Touch- und Mausgesten um in der Modern UI Oberfläche zwischen den Apps zu navigieren oder um Optionen oder Einstellungen aufzurufen. Wenn der User sich auf einem Tablet befindet und über den rechten Bildschirmrand von rechts nach links wischt (swipen), öffnet sich am rechten Bildschirmrand die von Microsoft \glqq Charms\grqq\ genannte Menüleiste (siehe Abbildung \ref{fig:charms}. Hier befinden sich die Schaltflächen: Suchen, Teilen, \glqq zur Startansicht\grqq\ , Geräte und Einstellungen. Um die Charms-Bar auf einem Gerät ohne Touch-Unterstützung aufzurufen, muss die Maus in die obere oder untere rechte Ecke des Bildschirms geführt werden. 
+Es gibt einige grundlegende Touch- und Mausgesten um in der Modern UI Oberfläche zwischen den Apps zu navigieren oder um Optionen oder Einstellungen aufzurufen. Wenn der User sich auf einem Tablet befindet und über den rechten Bildschirmrand von rechts nach links wischt (swipen), öffnet sich am rechten Bildschirmrand die von Microsoft \glqq Charms\grqq\ genannte Menüleiste (siehe Abbildung \ref{fig:charms}). Hier befinden sich die Schaltflächen: Suchen, Teilen, \glqq zur Startansicht\grqq\ , Geräte und Einstellungen. Um die Charms-Bar auf einem Gerät ohne Touch-Unterstützung aufzurufen, muss die Maus in die obere oder untere rechte Ecke des Bildschirms geführt werden. 
 
 \begin{figure}[h]	
 	\centering
@@ -170,8 +207,6 @@ Windows 8 kann sowohl auf herkömmlichen Desktop Computern, Notebooks und auf Ta
 \subsubsection{Windows Phone}
 \label{subsubsec:windowsphone}
 
-\newpage
-\section{Bildsprache}
 
 \newpage
 \section{Konzeption der App}
@@ -180,18 +215,69 @@ In dieser Sektion wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf 
 
 \subsection{ZEIT ONLINE}
 \label{subsec:zeitonline}
+ZEIT ONLINE ist das Internetangebot der Wochenzeitung DIE ZEIT. Berichtet wird über tagesaktuelle Geschehnisse, von einer eigenen Redaktion, welche größtenteils in Berlin sitzt. Den Themenschwerpunkt bildet das Politikressort. Um die ZEIT ONLINE Inhalte, sowie auch die Inhalte der gedruckten ZEIT möglichst vielen Nutzern zugänglich zu machen, betreibt (bzw. lässt betreiben) ZEIT ONLINE verschiedene Webseiten und Apps. Im folgenden soll ein kurzer Überblick über die bereits vorhandenen Webseiten und Apps gegeben werden.
 
 \subsubsection{Die Webseiten}
 \label{subsubsec:webseiten}
+Das Hauptaugenmerk bei ZEIT ONLINE liegt auf der herkömmlichen Webseite. Hier werden aktuelle Nachrichten dargestellt, welche laufend aktualisiert werden.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=0.6\textwidth]{Bilder/Screenshots/zeit.de/homepage.png} 
+	\caption{Die Homepage von ZEIT ONLINE.}
+	\label{fig:homepage}
+\end{figure}
+
+Abbildung \ref{fig:homepage} zeigt den obersten Teil der Homepage. Im oberen Bereich der Abbildung ist die Navigationsleiste zu erkennen. Sie zeigt die verschiedenen Haupt-Ressorts von ZEIT ONLINE. Klickt der User auf ein Ressort in der Navigation, landet er auf der jeweiligen sogenannten \textit{Centerpage} des Ressorts. Diese sehen im oberen Teil genauso aus wie die Homepage. Es gibt an erster Stelle ein großes Aufmacherbild oder Video und darunter meist mehrere kleinere \textit{Teaserelemente}. In der rechten Spalte sind die zurzeit meistgelesenen Artikel, sowie die Artikel mit den meisten Nutzerkommentaren aufgelistet. Auf der Startseite gilt diese Liste über alle Ressorts hinweg, auf den jeweiligen Centerpages der Ressorts, ist die Auflistung auf das jeweilige Ressort beschränkt.\\
+Es gibt auf der ZEIT ONLINE Webseite nicht nur Artikel zu lesen. Es werden außerdem u.a. Bilderstecken, Videos, Spiele oder Quizze angeboten. \\
+
+Da zunehmend immer mehr Leser sie Webseite vom Smartphone aus aufrufen, gibt es unter \textit{mobil.zeit.de}, eine für Smartphones optimierte mobile Webseite. In der Startansicht der mobilen Webseite werden alle Teaserelemente der Desktop Seite dargestellt. Außerdem werden darunter 3 Elemente aus jedem Ressort aufgeführt. Der Benutzer kann auch auf der mobilen Webseite direkt in ein Ressort wechseln und bekommt dort alle Elemente des jeweiligen Ressorts angezeigt. Auf Abbildung \ref{fig:mobilehomepage} sind von links nach recht, die Startseite, die Artikelansicht und das Navigationsmenü für die Ressorts dargestellt.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/mobil.zeit.de/mobile.png} 
+	\caption{Die mobile Webseite von ZEIT ONLINE.}
+	\label{fig:mobilehomepage}
+\end{figure}
 
 \subsubsection{Die iPad App}
 \label{subsubsec:ipadapp}
+Neben den ZEIT ONLINE Webseiten, existieren mehrere Apps für verschiedene Geräte. Dazu gehört auch die App für das iPad von Apple. In der iPad App können keine Inhalte von ZEIT ONLINE angesehen werden. Stattdessen bietet sie jede Woche die digitale Ausgabe der gedruckten ZEIT, sowie das ZEIT Magazin an. Die Ausgaben können sowohl im Abo, als auch einzeln erworben werben. Eine eigene iPad Redaktion bereitet jede Woche die Artikel der gedruckten Ausgabe der ZEIT für die digitale Ansicht auf. Es werden z.B. Fotostrecken oder Audiokommentare mit eingebunden.  
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/iPadApp/ipad1.png} 
+	\caption{Die iPad App zeigt die aufbereiteten Artikel der gedruckten Ausgabe der ZEIT.}
+	\label{fig:ipad1}
+\end{figure}
+
+Abbildung \ref{fig:ipad1} zeigt links die Ausgabenverwaltung der App. Hier können die Ausgaben erworben und heruntergeladen werden. In der Mitte ist das Inhaltsverzeichnis dargestellt. Hier ist gut zu sehen, in wieweit sich die Ressorts von ZEIT ONLINE und DIE ZEIT unterscheiden. Rechts auf der Abbildung ist ein zufälliger Artikel zu sehen. Findet der User einen Artikel interessant oder möchte ihn zum späteren Lesen speichern, kann er ihn im Bereich \textit{Meine Zeit} ablegen. 
 
 \subsubsection{Die Webapp}
 \label{subsubsec:webapp}
+Eine weitere App ist die Webapp. Sie ist im Grunde eine abgespeckte Version der iPad App. Es können ebenfalls keine ZEIT ONLINE Inhalte konsumiert werden, sondern nur die digitalen Ausgaben der ZEIT erworben werden. Die Webapp ist im Browser unter \textit{webapp.zeit.de} erreichbar. Des weiteren gibt es einen Android- und einen Kindle-Wrapper, sodass die App auch über den \textit{Google Play Store}, sowie den \textit{Amazon Store} zu beziehen ist. 
 
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/android-webapp/webapp.png} 
+	\caption{Die Webapp zeigt genau wie die iPad App, die aufbereiteten Artikel der gedruckten ZEIT.}
+	\label{fig:webapp}
+\end{figure}
 
+Abbildung \ref{fig:webapp} zeigt die Webapp auf einem Android Tablet (Nexus 7). Auf den ersten Blick scheint sie identisch mit der iPad App. In der Webapp können jedoch keine Lesezeichen, wie es in der iPad App möglich ist gesetzt werden. Außerdem kann hier aus einem Artikel heraus nicht direkt in ein Ressort gesprungen werden. Auch dies ist bei der iPad App möglich.
 
+\subsubsection{Die iPhone App}
+\label{subsubsec:iphoneapp}
+In iPhone App werden dem User sowohl Inhalte von ZEIT ONLINE, als auch die digitale PDF-Ausgabe der gedruckten Zeit angeboten. Die inhaltliche Struktur ähnelt der der mobilen Webseite. Allerdings kann der User die iPhone App nach seinen Vorlieben anpassen. So kann z.B. eingestellt werden wie viele Artikel pro Ressort auf der Startseite angezeigt werden sollen.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=\textwidth]{Bilder/Screenshots/iPhoneApp/iPhone.png} 
+	\caption{Die iPhone App zeigt sowohl Inhalte von ZEIT ONLINE, als auch von der ZEIT.}
+	\label{fig:iphoneapp}
+\end{figure}
+
+Abbildung \ref{fig:iphoneapp} zeigt eine Bildstrecke der iPhone App. Das zweite Bild von links zeigt einige der möglichen Einstellunge, welche der User vornehmen kann. Das Bild ganz rechts zeigt ein weiteres Feature der App. Es können ausgewählte Artikel heruntergeladen werden und so für den offline Betrieb gespeichert werden.
 
 \subsection{Ziel der App}
 \label{subsec:zielderapp}
@@ -215,7 +301,8 @@ Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufi
 	\label{fig:naviflach}
 \end{figure}
 
-Abbildung \ref{fig:naviflach} zeigt wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine, nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand streift (siehe Sektion \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permananten Zurück-Button. Ein flaches Navigationssystem eignet sich nicht unbedingt für eine Nachrichten App wie die, die in dieser Arbeit konzipiert und umgesetzt ist, weil es zu viele Bereiche (Ressorts) gibt, welche sich zudem sehr ähneln. Hier ist es angebracht ein hierarchisches Navigationssystem zu verwenden.    
+Abbildung \ref{fig:naviflach} zeigt wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine, nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand streift (siehe Sektion \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permananten Zurück-Button. \\
+Ein flaches Navigationssystem eignet sich nicht unbedingt für eine Nachrichten App wie die, die in dieser Arbeit konzipiert und umgesetzt werden soll, weil es zu viele Bereiche (Ressorts) gibt, welche sich zudem sehr ähneln. Hier ist es angebracht ein hierarchisches Navigationssystem zu verwenden.    
 
 
 
@@ -231,7 +318,7 @@ Die meisten Windows Store-App benutzen ein hierarchisches Navigationssystem. Mic
 \end{figure}
 
 Das Schema eines hierarchischen Systems ist in Abbildung \ref{fig:navihierarchisch} dargestellt. Der Einstiegspunkt in die App ist die sogenannte \glqq Hubseite\grqq\, hier ganz oben in der Abbildung zu sehen. Auf der Hubebene werden aus den vielen großen Bereichen der App jeweils ein kleiner Teil gesammelt und dargestellt, sodass sich der User vorstellen kann was ihn im jeweiligen Bereich erwartet. Die Anordnung, in welcher der Auszug der Inhalte dargestellt ist muss nicht für jeden Bereich gleich sein. Es kann das Nutzungserlebnis sogar verbessern und vielfältiger machen wenn unterschiedliche Darstellungen (z.B. in Höhe, Breite oder Anzahl der Objekte) für die Bereiche genutzt werden. Die Hubansicht wird horizontal gescrollt, d.h. weiterer Inhalt befindet sich hinter dem rechten Rand und kann entweder durch das Scrollrad der Maus oder auf einem Tablet, durch das swipen nach links in das Sichtfeld des Users gebracht werden.\\
-Die mittlere Darstellung in Abbildung \ref{fig:navihierarchisch} zeigt die zweite Detailstufe des hierarchischen Systems. Hier werden alle Elemente eines Bereichs dargestellt. In diesem Fall werden hier alle Artikel aus einem Ressort aufgelistet.\\
+Die mittlere Darstellung in Abbildung \ref{fig:navihierarchisch} zeigt die zweite Detailstufe des hierarchischen Systems. Hier werden alle Elemente eines Bereichs dargestellt.\\
 Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehen. Es handelt sich hierbei um den eigentlichen Inhalt (z.B. einen Artikel). Es ist ebenfalls möglich von der Hubansicht direkt in die Detailansicht eines Elements zu wechseln.  
 
 \begin{figure}[h]	
@@ -241,7 +328,7 @@ Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehe
 	\label{fig:semanticzoomkonzept}
 \end{figure}
 
-Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu viele Bereiche und es dauert zu lange bis zum Ende zu scrollen, kann man noch eine weitere Ebene \glqq davor\grqq\ legen. Das Konzept nennt Microsoft \glqq Semantic Zoom\grqq\ und ist in Abbildung \ref{fig:semanticzoomkonzept} schematisch dargestellt. Oben in der Abbildung ist die Hubansicht dargestellt, unten die zusätzliche semantic Zoom Ebene. In der Praxis kann der User auf diese Weise die Inhalte noch weiter vereinfachen und zusammenfassen lassen. Im Fall dieser App soll es einen semantischen Zoom geben, um ein flüssigeres und schnelleres Navigieren z.B. ganz zum Ende der Hubansicht zu ermöglichen, da es über zehn verschiedene Ressorts geben wird. Diese Ansicht soll nur die Namen der verschiedenen Ressorts, sowie ein zufälliges Bild aus dem jeweiligen Ressort zeigen. Um am Desktop-PC (mit Maus) diese Ansicht aufzurufen, muss der User auf ein kleines Minuszeichen am unteren rechten Rand klicken. Am Tablet wird der semantische Zoom mit der \glqq Pinch to Zoom (out)\footnote{Pinch to Zoom erklären}\grqq\  Geste aufgerufen. Klickt der User auf ein Element in dieser zusätzlichen Navigationsebene, wird er direkt zum jeweiligen Ausschnitt in die Hubansicht navigiert. Die semantic Zoom Ansicht kann von überall aus der Hubansicht aufgerufen werden.  
+Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu viele Bereiche und es dauert zu lange bis zum Ende zu scrollen, kann noch eine weitere Ebene \glqq davor\grqq\ gelegt werden. Das Konzept nennt Microsoft \glqq Semantic Zoom\grqq\ und ist in Abbildung \ref{fig:semanticzoomkonzept} schematisch dargestellt. Oben in der Abbildung ist die Hubansicht dargestellt, unten die zusätzliche semantic Zoom Ebene. In der Praxis kann der User auf diese Weise die Inhalte noch weiter vereinfachen und zusammenfassen lassen. Im Fall dieser App soll es einen semantischen Zoom geben, um ein flüssigeres und schnelleres Navigieren z.B. ganz zum Ende der Hubansicht zu ermöglichen, da es wahrscheinlich über zehn verschiedene Ressorts geben wird. Um am Desktop-PC (mit Maus) diese Ansicht aufzurufen, muss der User auf ein kleines Minuszeichen am unteren rechten Rand klicken. Am Tablet wird der semantische Zoom mit der \glqq Pinch to Zoom (out)\footnote{Zwei Finger (Berührungspunkte), die sich auf dem Bildschirm auf einander zu bewegen.}\grqq\  Geste aufgerufen. Klickt der User auf ein Element in dieser zusätzlichen Navigationsebene, wird er direkt zum jeweiligen Ausschnitt in die Hubansicht navigiert. Die semantic Zoom Ansicht kann von überall aus der Hubansicht aufgerufen werden.  
 
 
 \subsection{Nativ vs. Web}
@@ -314,7 +401,7 @@ Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzepti
 
 \subsubsection{ZEIT ONLINE Datenbestand}
 \label{subsubsec:zondatenbestand}
-Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} in einer zweistufigen Transformation das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
+Es soll zunächst geklärt werden wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} das fertige \ac{html} erstellt. Dies ist ein grober Überblick wie sich die Webseite von ZEIT ONLINE zusammensetzt.\\
 Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt um die gewünschten Informationen darzustellen. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politikressorts), sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, welcher kurz erläutert worum es in dem dahinter liegenden Artikel geht.\\
 
 \begin{minipage}{\linewidth}
@@ -493,7 +580,7 @@ Die Bezeichnung \glqq Fokusgruppe\grqq, die hier verwendet wird, steht in diesem
 \hline 
 \rule[-1ex]{0pt}{2.5ex} 3 & Student - Games Master & M & 27  \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} 4 & Wirtschaftspsychologin & W & • \\ 
+\rule[-1ex]{0pt}{2.5ex} 4 & Wirtschaftspsychologin & W & blubb \\ 
 \hline 
 \rule[-1ex]{0pt}{2.5ex} 5 & Student - Games Master & M & 27 \\ 
 \hline 
