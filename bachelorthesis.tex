@@ -143,6 +143,7 @@
 	\acro{html}[HTML]{Hypertext Markup Language}
 	\acro{xhr}[XHR]{XMLHttpRequest}
 	\acro{winjs}[WinJS] {Windows Library for JavaScript}
+	\acro{gui}[GUI]{Graphical User Interface}
 \end{acronym}
 
 \newpage
@@ -194,24 +195,56 @@ Die letzte grundlegende Geste, wird benutzt um z.B. Optionen, Einstellungen oder
 	\label{fig:menubar}
 \end{figure}  
 
-\subsection{Windows 8 Philosophie}
+\subsection{Die Windows 8 Philosophie}
 \label{subsec:win8philosophie}
 % touch, vorteile, nachteile
-Windows 8 kann sowohl auf herkömmlichen Desktop Computern, auf Notebooks und auf Tablet-Computern eingesetzt werden. 
+Windows 8 ist wohl der radikalste Umbruch bei Microsoft seit Windows 95. Es sollen hier einige Aspekte beleuchtet werden, warum Microsoft diesen Weg eingeschlagen hat.
+
+Viele Features die heute mit einem Windows PC verbunden werden, wie z.B. der Desktop, die Taskleiste oder das Startmenü, wurden ursprünglich in Windows 95 eingeführt. Damals hatte Windows noch keinen Browser. Mit der Zeit gewann das Internet immer mehr an Bedeutung und der Browser rückte mehr und mehr in den Mittelpunkt der vernetzten Computernutzung. Das Betriebssystem hingegen veränderte sich kaum. Mit Windows 8 versucht Microsoft diesen Schritt nachzuholen und das Betriebssystem um den vernetzten User herum zu konzipieren. Eine der Hauptaufgaben übernehmen hierbei die sogenannte \textit{Live Tiles} auf dem Startbildschirm. Sie zeigen stets aktuelle Informationen ohne dass der der User den Browser öffnen muss \citep{Pachal2012}. 
+
+\begin{quote}
+\textit{There's tons of stuff on the Internet and your PC basically has this little straw — Internet Explorer — to see all this. We didn't think that should be the case. The whole PC should be about that. Part of what the Start screen is really about is making all this activity — these people that you care about, and all this information — sort of explode so you're immersed in it.} ---Sam Moreau\footnote{Director of design and research for Windows}
+\end{quote}
+
+Sam Moreau bringt es gut auf den Punkt. Es gibt so viel zu entdecken im Internet, doch bisher hatte der User nur einen kleinen \glqq Strohhalm\grqq\ , den Browser, um dies alles zu entdecken. Diese Funktion soll in Windows 8 der gesamte PC übernehmen. Alle Informationen die dem User wichtig sind, sollten möglichst einfach einsehbar und erreichbar sein.
+
+
+
 \subsection{Windows RT}
 \label{subsec:winRT}
 Windows RT ist ein separates Windows Betriebssystem, welches für PCs oder Tablets mit ARM-Architektur optimiert ist. Die größten Vorteile dieser Geräte sind normalerweise ein leichteres Gewicht und eine längere Akkulaufzeit, gegenüber den Geräten, welche mit einer x86/x64 Architektur ausgestattet sind. Auf den ersten Blick sieht Windows RT, von der Bedienoberfläche her, genau aus wie Windows 8. Der größte und signifikanteste Unterschied zu Windows 8 ist jedoch, dass aufgrund der ARM-Architektur auf Windows RT nur Programme und Apps aus dem Windows-Store installiert und ausgeführt werden können. Das bedeutet, das installieren von herkömmlichen Programmen, wie es Windows 8 zulässt, ist nicht möglich. Windows RT verfügt zwar über einen Desktop, wie er auch in Windows 8 verfügbar ist, allerdings laufen hier nur die vorinstallierten Office Produkte von Microsoft, sowie der Microsoft Browser \textit{Internet Explorer}. Außerdem können nicht alle Peripheriegeräte wie z.B. Mäuse oder Tastaturen mit Windows RT verwendet. Nur speziell für Windows RT zertifizierte Geräte können benutzt werden. \citep{MicrosoftWinRT}  
  
 \subsection{Das Ökosystem}
 \label{subsec:ökosystem}
-Kaufte man früher einen PC, ein Notebook oder ein Handy, ging es bei der Abwägung der Kaufkriterien meist hauptsächlich um Hersteller und Hardwarespezifikationen. In einer mehr und mehr mobilen und \textit{mehrgerätigen} Welt, wie wir sie heute erleben kommt zu der Kaufentscheidung noch ein weiterer entscheidender Punkt hinzu. Welches Ökosystem passt am besten zu mir? Denn um auf mehreren Geräten , wie z.B. Notebook, Tablet und Smartphone stets seine Daten aktuell und synchron zu halten muss vorher genau bedacht werden ob das gewählte Ökosystem den eigenen Anforderungen entspricht. Fragen die sich zum  Ökosystem gestellt werden können sind z.B.: Wie sieht es mit der Anzahl und Verfügbarkeit von Apps im jeweilgen Store aus? Gibt es eine Musikstreaming-Lösung? Wie sieht es mit Filmen und Büchern aus? Wie sehen die Dienste zum Speichern von Daten in der Cloud aus? Es fällt auf, dass heute nicht mehr nur ein Gerät gekauft wird, sondern das an diesem Gerät oder Geräten meist ein ganzes Ökosystem mit geliefert wird, egal ob man sich für Apple, Google, Microsoft oder Amazon entscheidet. 
+Kaufte man früher einen PC, ein Notebook oder ein Handy, ging es bei der Abwägung der Kaufkriterien meist ausschließlich um Hersteller und Hardwarespezifikationen. In einer mehr und mehr mobilen und \textit{mehrgerätigen} Welt, wie wir sie heute erleben kommt zu der Kaufentscheidung noch ein weiterer entscheidender Punkt hinzu. Welches Ökosystem passt am besten zu mir? Denn um auf mehreren Geräten , wie z.B. Notebook, Tablet und Smartphone stets seine Daten aktuell und synchron zu halten muss vorher genau bedacht werden ob das gewählte Ökosystem den eigenen Anforderungen entspricht. Fragen die sich zum  Ökosystem gestellt werden können sind z.B.: Wie sieht es mit der Anzahl und Verfügbarkeit von Apps im jeweilgen Store aus? Gibt es eine Musikstreaming-Lösung? Wie sieht es mit Filmen und Büchern aus? Wie sehen die Dienste zum Speichern von Daten in der Cloud aus? Es fällt auf, dass heute nicht mehr nur ein Gerät gekauft wird, sondern das an diesem Gerät oder Geräten meist ein ganzes Ökosystem mit geliefert wird, egal ob man sich für Apple, Google, Microsoft oder Amazon entscheidet. 
 
 Mit der Einführung von Windows 8 hat Microsoft neuen Schwung in sein gesamtes Ökosystem gebracht. Es wurden verschiedene Dienste vereinheitlicht und zusammengefasst. Das Microsoft Ökosystem umfasst heute u.a. Windows 8, Windows RT, das Smartphone Betriebssystem Windows Phone 8, den Cloudspeicherdienst Skydrive, den Streamingdienst xBox Music, sowie den E-Mail Dienst \textit{outlook.com}. Viele dieser Dienste existierten schon vor der Einführung von Windows 8. Aber erst mit dieser Einführung wurden die Dienste und Betriebssysteme einer einheitlichen \glqq Designkur\grqq\ unterzogen und enger auf einander abgestimmt. Außerdem benötigt man, im gegensatz zu vorher, nur noch ein Benutzerkonto um diese Dienste nutzen zu können.
 
-\subsubsection{Microsoft App Stores}
-\label{subsubsec:stores}
 \subsubsection{Windows Phone}
 \label{subsubsec:windowsphone}
+Windows Phone ist das Smartphone Betriebssystem von Microsoft. Die aktuelle Version ist Windows Phone 8. Es besitzt, genau wie Windows 8 eine Kachel-Oberfläche. Obwohl Windows Phone 8 und Windows 8 auf dem gleichen Kernel basieren, können auf dem Smartphone keine Windows 8 Apps ausgeführt werden. Umgekehrt laufen auch keine Windows 8 Apps unter Windows Phone. Auch beim Entwickeln der Apps kann nicht gleichzeitig für beide Plattformen entwickelt werden. Abbildung \ref{fig:wp8} zeigt einen Startbildschirm von Windows Phone 8
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=0.25\textwidth]{Bilder/Screenshots/wp8/wp8_start.png} 
+	\caption{Ein möglicher Startscreen von Windows Phone 8.}
+	\label{fig:wp8}
+\end{figure}  
+
+\subsubsection{Microsoft App Stores}
+\label{subsubsec:stores}
+Eines der wichtigsten Elemente im Ökosystem eines Unternehmens ist der Store. Hier werden Apps für die Geräte mit dem jeweiligen Betriebssystem angeboten. Bei Apple ist es der \textit{App Store} und , bei Google der \textit{Google Play Store} und bei Microsoft ist es  zum einen der Windows Store für Windows 8 und Windows RT Apps und zum anderen der Windows Phone Store für Smartphones mit Windows Phone. Oft fällt eine Entscheidung für, bzw. gegen ein bestimmtes Gerät aus der Windows-Welt, mit der Begründung es gäbe zu wenig Apps im Windows Store.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[width=0.8\textwidth]{Bilder/Abbildungen/store_chart.jpg} 
+	\caption{Verfügbarkeit der Top 100 iOS Apps auf anderen Systemen \citep{WinbetaStore2013}.}
+	\label{fig:storechart}
+\end{figure}  
+
+Abbildung \ref{fig:storechart} zeigt die Verfügbarkeit der Top 100 iOS Apps \footnote{Liste: http://www.infragistics.com/community/blogs/nick-landry/archive/2013/08/06/top-100-apps-availability-on-ios-android-windows-phone-amp-windows-8.aspx} auf den anderen großen Systemen, wie Android, Windows Phone und Windows 8. Hiernach sind im Windows Phone Store 64\% der Top 100 Apps vorhanden und im Windows 8 Store 54\%. Gezählt wurden hier nur offizielle Apps und keine Apps von Drittanbietern. In absoluten Zahlen hat iOS ca. 900.000 Apps im Appstore, Google über 1 Million Apps im Play Store, Windows Phone ca. 160.000 Apps und Windows 8 ca. 110.000 Apps im Windows Store \citep{WinbetaStore2013}.
+
+Microsoft bemüht sich die fehlenden App wie z.B. \textit{Instagram}, \textit{Pinterest}, \textit{Instapaper} oder \textit{Readability} schnellstmöglich nachzuliefern. Microsoft bietet den Entwicklern teilweise sogar Geld damit sie eine offizielle \glqq große\grqq\ App entwickeln \citep{WinbetaStore2013}.
 
 
 \newpage
@@ -285,18 +318,18 @@ In iPhone App werden dem User sowohl Inhalte von ZEIT ONLINE, als auch die digit
 
 Abbildung \ref{fig:iphoneapp} zeigt eine Bildstrecke der iPhone App. Das zweite Bild von links zeigt einige der möglichen Einstellunge, welche der User vornehmen kann. Das Bild ganz rechts zeigt ein weiteres Feature der App. Es können ausgewählte Artikel heruntergeladen werden und so für den offline Betrieb gespeichert werden.
 
-\subsection{Ziel der App}
+\subsection{Ziele der App - Was wird dargestellt}
 \label{subsec:zielderapp}
 Das Ziel der zu erstellenden App ist, den Inhalt der ZEIT ONLINE Website auf ansprechende Art und Weise in einer Windows 8 Applikation darzustellen. Das Layout und die Darstellung der Inhalte soll sich an das sogenannte \glqq Look and Feel\grqq\ von Windows 8 anpassen und sich daran orientieren. Der Fokus bei den Inhalten liegt auf den Artikeln selbst und den jeweiligen Aufmacher bzw. Teaser Bildern. Das heißt andere Inhalte wie z.B. Bildergalerien, Infografiken, Blogartikel oder Quizze werden von der App nicht erfasst und nicht dargestellt. Hintergrund ist, die App möglichst einfach zu halten da es in der Fragestellung um die Relation zwischen den Aufmacherbildern und dem dahinter liegenden Artikeltext geht. Die App erhebt in dieser Hinsicht keinen Anspruch darauf, die gesamten redaktionellen Inhalte von \mbox{ZEIT ONLINE} darzustellen, sondern versteht sich eher als explorative Applikation im Sinne der Fragestellung.\\
 Der User soll die Möglichkeit haben die standardmäßig vorhandenen Artikeltitel auszublenden um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen. Hierzu soll einen Schalter in der Menüleiste am unteren Bildrand geben. Wenn der User sich im Artikel befindet soll er die Möglichkeit haben die Schriftgröße in gewissen Maß selbst zu bestimmen, da die App eventuell auf Monitoren mit verschieden großen Auflösungen ausgeführt werden wird oder die Sehkraft des Users nicht mehr ausreicht um eine normal große Schrift zu erkennen und zu lesen. So wird in den Artikeln ein gewisses Maß an Barrierefreiheit gewährleistet.\\
 Das übergeordnete Ziel der App ist es, eine rudimentäre Nachrichten Applikation für Windows 8 zu erstellen. Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, in wie weit es möglich ist allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Außerdem soll die App dazu dienen, zu erforschen, wie eine Nachrichten Applikation in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- als auch funktionstechnischen Vorgaben von Microsofts vorhanden sind. Sprich, wie eine App mit Nachrichteninhalten nach Microsofts Sichtweise auszusehen hat. 
 
 
-\subsection{Navigationskonzept}
-\label{subsec:navikonzept}
-Damit der User ein für ihn angenehmes und flüssiges Nutzungserlebnis hat, ist es notwendig sich über das Navigationskonzept Gedanken zu machen, gerade wenn es sich um eine App handelt, in der es viele verschiedene Inhaltsbereiche gibt. Der User soll sich möglichst intuitiv durch die Inhalte bewegen können. Außerdem muss dem User auf der Einstiegsebene der ein guter Überblick über die vorhandenen Inhalte gegeben werden, damit er von dort aus zielgerichtet weiter navigieren kann, ohne lange suchen zu müssen. Microsoft nennt in seinen Richtlinien für Windows Store Apps (Modern UI Apps) grundsätzlich zwei Möglichkeiten wie die Navigation umgesetzt werden kann.
+\subsection{Graphical User Interface}
+\label{subsec:gui}
+Damit der User ein für ihn angenehmes und flüssiges Nutzungserlebnis hat, ist es notwendig sich über das \ac{gui} Gedanken zu machen, gerade wenn es sich um eine App handelt, in der es viele verschiedene Inhaltsbereiche gibt. Der User soll sich möglichst intuitiv durch die Inhalte bewegen können. Außerdem muss dem User auf der Einstiegsebene der ein guter Überblick über die vorhandenen Inhalte gegeben werden, damit er von dort aus zielgerichtet weiter navigieren kann, ohne lange suchen zu müssen. Hierzu ist muss ein passendes Navigationskonzept gefunden werden.  Microsoft nennt in seinen Richtlinien für Windows Store Apps (Modern UI Apps) grundsätzlich zwei Möglichkeiten wie die Navigation umgesetzt werden kann.
 
-\subsubsection{Flaches System}
+\subsubsection{Flaches Navigationssystem}
 \label{subsubsec:flachessystem}
 Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufig in Spielen, Browsern oder in Apps zum Erstellen von Dokumenten. Es zeichnet sich dadurch aus, dass sich die Inhalte auf der gleichen hierachischen Ebene befinden. Dieses System eignet sich wenn ein schneller Wechsel zwischen wenigen Seiten oder Registerkarten möglich sein soll \citep{MicrosoftNavidesign2013}.
 
@@ -312,7 +345,7 @@ Ein flaches Navigationssystem eignet sich nicht unbedingt für eine Nachrichten 
 
 
 
-\subsubsection{Hierarchisches System}
+\subsubsection{Hierarchisches Navigationssystem}
 \label{subsubsec:hierachischessystem}
 Die meisten Windows Store-App benutzen ein hierarchisches Navigationssystem. Microsoft nennt es Hubnavigationsmuster. Es eignet sich um große Inhaltssammlungen zu ordnen und sie für User benutzerfreundlich auf zu bereiten. Der Schlüssel dazu ist die Unterteilung des Inhalts in verschiedene Detailebenen \citep{MicrosoftNavidesign2013}.
 
@@ -336,8 +369,13 @@ Im unteren Bereich der Abbildung ist schließlich die letzte Detailstufe zu sehe
 
 Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu viele Bereiche und es dauert zu lange bis zum Ende zu scrollen, kann noch eine weitere Ebene \glqq davor\grqq\ gelegt werden. Das Konzept nennt Microsoft \glqq Semantic Zoom\grqq\ und ist in Abbildung \ref{fig:semanticzoomkonzept} schematisch dargestellt. Oben in der Abbildung ist die Hubansicht dargestellt, unten die zusätzliche semantic Zoom Ebene. In der Praxis kann der User auf diese Weise die Inhalte noch weiter vereinfachen und zusammenfassen lassen. Im Fall dieser App soll es einen semantischen Zoom geben, um ein flüssigeres und schnelleres Navigieren z.B. ganz zum Ende der Hubansicht zu ermöglichen, da es wahrscheinlich über zehn verschiedene Ressorts geben wird. Um am Desktop-PC (mit Maus) diese Ansicht aufzurufen, muss der User auf ein kleines Minuszeichen am unteren rechten Rand klicken. Am Tablet wird der semantische Zoom mit der \glqq Pinch to Zoom (out)\footnote{Zwei Finger (Berührungspunkte), die sich auf dem Bildschirm auf einander zu bewegen.}\grqq\  Geste aufgerufen. Klickt der User auf ein Element in dieser zusätzlichen Navigationsebene, wird er direkt zum jeweiligen Ausschnitt in die Hubansicht navigiert. Die semantic Zoom Ansicht kann von überall aus der Hubansicht aufgerufen werden.  
 
+\subsubsection{Menü und Features}
+\label{subsubsec:menuandproperties}
+Da die App einen explorativen Charakter hat wird sich bei den Funktionen und Features auf das nötigste beschränkt. Es soll eine untere App-Leiste geben, in welcher, je nach dem in welcher Ansicht sich der User gerade befindet verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann, wenn man mit der Maus arbeitet durch einen Rechtsklick aufgerufen werden. Auf einem Tablet geschieht dies durch swipen vom oberen oder unteren Bildschirmrand.\\
+In der Startansicht, sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern, sowie die Schriftgröße wieder auf ihren Startwert zu setzen. 
 
-\subsection{Nativ vs. Web}
+
+\subsection{Umsetzungsmöglichkeiten in Visual Studio}
 \label{subsec:nativ_vs_web}
 Vor dem Entwickeln einer Windows 8 App muss sich entschieden werden mit welcher Technologie bzw. mit welcher Programmiersprache entwickelt werden soll. Die Rede ist hier von einer App die in der Modern UI Oberfläche von Windows 8 läuft und für diese konzipiert ist. Das heißt es handelt sich nicht um eine klassische .NET oder WIN32 Anwendung für Windows. Um eine Modern UI App zu entwickeln, müssen zwei Dinge zwingend vorhanden sein. Zum einen Windows 8 selbst und zum anderen wird die neueste Version von Visual Studio, Visual Studio 11\footnote{Visual Studio 2011 war die aktuellste Version beim Erstellen dieser Arbeit.}, benötigt. Visual Studio steht in der Express Version für Windows 8 kostenlos zur Verfügung. Des weiteren muss sich zwischen der nativen Umsetzung und der Implementierung mit Webtechnologien entschieden werden. Es soll zunächst erläutert werden was die beiden Begriffe bedeuten und in welcher Weise und welchem Zusammenhang sie bei der Entwicklung einer Windows 8 Modern UI App üblicherweise gebraucht werden.
 
@@ -349,14 +387,13 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 
 \subsubsection{Windows 8 App mit Webtechnologien}
 \label{subsubsec:webwin8}
+In Visual Studio können nicht nur Apps mit den klassischen Programmiersprachen, wie in der vorigen Sektion beschrieben, erstellt werden. Visual Studio erlaubt es Apps mit Webtechnologien zu benutzen. Das bedeutet, Apps können mit \ac{html}, CSS und Javascript erstellt werden. Das Markup wird mit \ac{html} erstellt. Dieses mit CSS gestylt und die Programmlogik wird mit JavaScript realisiert. Die resultierende App ist trotzdem eine native Windows 8 Anwendung und kann nur auf Windows 8 oder Windows RT Geräten installiert und ausgeführt werden. Das Design und das Layout einer solchen App können in Visual Studio allerdings nicht visuell oder per Drag \& Drop entworfen werden. Für diesen Zweck liefert Microsoft ein extra Programm mit. \textit{Blend für Visual Studio 2012}. In Blend können \ac{html} und CSS Änderungen direkt in einer Live-Vorschau angesehen werden. Außerdem können hier auch Elemente per Drag \& Drop angeordnet und verschoben werden. Ein geöffnetes Visual Studio Projekt kann mit zwei Klicks im Menü direkt in Blend geöffnet werden. 
 
-  
+Auf diese Weise wird es Webentwicklern ermöglicht einen komfortablen Einstieg in die Programmierung von Windows 8 Apps zu finden. Es findet so, in gewisser Weise, eine Zusammenführung von .NET- und Webentwicklern statt. Ganz ohne Lernaufwand kommen allerdings auch die Webentwickler nicht aus. Es muss sich trotzdem noch in die neue API-Technologie eingearbeitet werden \citep{Bleske2012}.
 
+Das Hauptaugenmerk liegt hierbei auf Microsofts hauseigener JavaScript-Bibliothek \textit{\ac{winjs}}. Sie bietet viele wichtige Funktionen z.B. zur Handhabung von Steuerelementen, oder zu Behandlung von großen Datenmengen. 
 
-\subsection{Menü und Features}
-\label{subsec:menuandproperties}
-Da die App einen explorativen Charakter hat wird sich bei den Funktionen und Features auf das nötigste beschränkt. Es soll eine untere App-Leiste geben, in welcher, je nach dem in welcher Ansicht sich der User gerade befindet verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann, wenn man mit der Maus arbeitet durch einen Rechtsklick aufgerufen werden. Auf einem Tablet geschieht dies durch swipen vom oberen oder unteren Bildschirmrand.\\
-In der Startansicht, sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern, sowie die Schriftgröße wieder auf ihren Startwert zu setzen. 
+Letztendlich macht es keinen großen Unterschied, ob mit herkömmlich Programmiersprachen oder mit Webtechnologien gearbeitet wird. Viele Apps lassen sich gleich gut umsetzen. Da die Entwicklung von nativen Apps mit Webtechnologien ein neues und interessantes Konzept ist, soll es in dieser Arbeit ausprobiert und angewandt werden.
 
 \newpage
 \section{Umsetzung der App}
@@ -670,4 +707,5 @@ Die Testpersonen stimmen bei dieser Frage grundlegend überein. Wenn der User ge
 \includepdf[pages=1,scale=.9,pagecommand={\section{Detaillierte Evaluierung Bild-Inhalt Relation}}]{Evaluierung/rel_bilder_inhalt.pdf}
 \includepdf[pages=2,scale=.9,pagecommand={}]{Evaluierung/rel_bilder_inhalt.pdf}
 
+\section{CD Inhalt}
 \end{document}
