@@ -123,7 +123,6 @@
 %\clearpage\pdfbookmark{\contentsname}{toc}
 \tableofcontents
 
-
 \newpage
 \thispagestyle{plain}
 \pagenumbering{Roman}
@@ -269,7 +268,9 @@ Microsoft bemüht sich, die fehlenden Apps wie z.B. \textit{Instagram}, \textit{
 \newpage
 \section{Konzeption der App}
 \label{sec:konzeption}
-In dieser Sektion wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf bereits vorhandene ZEIT ONLINE Apps geworfen. Anschließend geht es darum, die Konzeption für eine Windows 8 Nachrichten App darzustellen und zu erläutern. Dabei gilt es darzulegen, warum und mit welchem Hintergrund Entscheidungen zu Gunsten der einen oder der anderen technischen oder konzeptionellen Methode ausfallen. Dazu müssen zunächst die Ziele der App dargelegt werden. Anschließend muss festgelegt werden, mit welcher Technologie bzw. Programmiersprache gearbeitet werden soll. Zuletzt wird ein detaillierterer Blick auf das Herzstück der App geworfen, das Navigationskonzept. Hierbei ist eine der wichtigsten Fragen: \glqq Wie kann ich auch bei ggf. großen Datenmengen eine übersichtliche, intuitive Struktur schaffen, die sich in das Gesamtkonzept von Windows 8 eingliedert?\grqq  
+In dieser Sektion wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf bereits vorhandene ZEIT ONLINE Apps geworfen. Anschließend geht es darum, die Konzeption für eine Windows 8 Nachrichten App darzustellen und zu erläutern. Dabei gilt es darzulegen, warum und mit welchem Hintergrund Entscheidungen zu Gunsten der einen oder der anderen technischen oder konzeptionellen Methode ausfallen. Dazu müssen zunächst die Ziele der App dargelegt werden. Anschließend muss festgelegt werden, mit welcher Technologie bzw. Programmiersprache gearbeitet werden soll. Zuletzt wird ein detaillierterer Blick auf das Herzstück der App geworfen, das Navigationskonzept. Hierbei ist eine der wichtigsten Fragen: \glqq Wie kann ich auch bei ggf. großen Datenmengen eine übersichtliche, intuitive Struktur schaffen, die sich in das Gesamtkonzept von Windows 8 eingliedert?\grqq.
+
+Damit die zu erstellende App im Folgenden einen griffigeren Namen hat, wird an dieser Stelle die Namensfindung erläutert, sie heißt \glqq ZEIGHT\grqq\ (gesprochen: Zeit). Der Name setzt sich zusammen aus \glqq ZEIT\grqq\ und der englischen Zahl \glqq eight\grqq. Hintergrund ist, dass eine \glqq Zeit\grqq-App für Windows 8 (eight) entwickelt wird.
 
 \subsection{ZEIT ONLINE}
 \label{subsec:zeitonline}
@@ -457,29 +458,29 @@ Es wird von Microsoft empfohlen, dass Windows-Store Apps, die mit \ac{html} und 
 \subsubsection{HTML Dateien}
 \label{subsubsec:htmldateien} 
 Folgende \ac{html} Dateien sind bereits in der Raster-App Vorlage enthalten:
-\begin{description}
-	\item[default.html], wird als erstes geladen und enthält das \ac{html} für den Inhaltshost, dies ist die Seite in welche die anderen Inhalte im Zuge der single-page Navigation herein geladen werden.
-	\item[groupedItems.html], ist der Einstiegspunkt in die App (die Hubansicht).
-	\item[groupDetail.html], zeigt alle Elemente eines Bereichs.
-	\item[itemDetail.html], Einzelansicht eines Elements.
-\end{description}
+\begin{itemize}
+	\item Die \textit{default.html} Datei wird als erstes geladen und enthält das \ac{html} für den Inhaltshost, dies ist die Seite in welche die anderen Inhalte im Zuge der single-page Navigation herein geladen werden.
+	\item Die \textit{groupedItems.html} Datei ist der Einstiegspunkt in die App (die Hubansicht).
+	\item Die \textit{groupDetail.html} Datei zeigt alle Elemente eines Bereichs.
+	\item Die \textit{itemDetail.html} Datei beinhaltet die Einzelansicht eines Elements.
+\end{itemize}
 
 \subsubsection{Javascript Dateien}
 \label{subsubsec:javascriptdateien} 
 Folgende Javascript Dateien sind bereits in der Raster-App Vorlage enthalten:
-\begin{description}
-	\item[default.js], legt fest wie sich die App beim Start verhält.
-	\item[groupedItems.js | groupDetail.js | itemDetail.js], sind die Javascript Dateien, welche das Verhalten für die gleichnamigen \ac{html} Dateien festlegen.
-	\item[navigator.js], implementiert das hierarchische Navigationssystem, sowie das single-page Navigationmodell.
-	\item[data.js], stellt die benötigten Daten für den Rest der App bereit.
-\end{description}
+\begin{itemize}
+	\item Die \textit{default.js} Datei legt fest wie sich die App beim Start verhält.
+	\item Die \textit{groupedItems.js}, \textit{groupDetail.js} und \textit{itemDetail.js} Dateien sind die Javascript Dateien, welche das Verhalten für die gleichnamigen \ac{html} Dateien festlegen.
+	\item Die \textit{navigator.js} Datei implementiert das hierarchische Navigationssystem, sowie das single-page Navigationmodell.
+	\item Die \textit{data.js} Datei stellt die benötigten Daten für den Rest der App bereit.
+\end{itemize}
 
 \subsubsection{CSS Dateien}
 \label{subsubsec:cssdateien} 
-\begin{description}
-	\item[default.css], enthält Styles für Inhaltshostseite, sowie für die gesamte App.
-	\item[groupedItems.css | groupDetail.css | itemDetail.css], 
-\end{description}
+\begin{itemize}
+	\item Die \textit{default.css} Datei enthält die Styles für Inhaltshostseite, sowie andere globale Styles.
+	\item Die \textit{groupedItems.css}, \textit{groupDetail.css} und \textit{itemDetail.css} Dateien enthalten die Styles für die gleichnamigen \ac{html} Dateien.
+\end{itemize}
 Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzeptionierten Anforderungen erfüllt.
 
 \subsection{Datenanbindung}
@@ -741,7 +742,7 @@ Generell lässt sich sagen, dass die Hauptnavigationsstruktur (Hubansicht, Resso
 \label{subsubsec:nurbildermodus}
 Hier sollen die Möglichkeiten und die Sinnhaftigkeit des \glqq Nur-Bilder-Modus\grqq\  dargestellt und untersucht werden. Alle Testpersonen gaben an, täglich über verschiedenste Kanäle Nachrichten zu konsumieren. Sei es im Fernsehen, Online, Radio, Smartphone oder die Zeitung. Das bedeutet, es ist zu vermuten, dass alle Testpersonen über ein Basiswissen, was tagesaktuelle Geschehnisse betrifft, verfügen.
 
-Im ersten Teil der Evaluation sollten die Testpersonen versuchen herauszufinden, welcher Inhalt sich hinter den Teaserbildern von Abbildung \ref{fig:testbilder} verbergen könnte. Hierzu sollte zunächst ein grobes Themengebiet genannt werden und anschließend so genau wie möglich versucht werden, zu bestimmen, worum es in dem jeweiligen Artikel geht. Ein Bild wurde in diesem Fall als \glqq genau\grqq\ akzeptiert, wenn die Testperson nach dem obersten Themengebiet noch eine Stufe tiefer gehen konnte. So wurde es z.B. als richtig akzeptiert, wenn die Testperson bei Bild 10 nicht nur das grobe Thema \glqq Waldbrände\grqq, sondern auch \glqq San Francisco\grqq\ oder \glqq Yosemite Nationalpark\grqq\ richtig benannt hatte. Nach diesem Bewertungsschema wurden von den 12 Bildern im Durchschnitt 78\% grob und 35\% auch genauer richtig zugeordnet. Das am häufigsten richtig zugeordnete Bild ist Bild 10. Es wurde von allen Testpersonen genau richtig erkannt. Dicht gefolgt von Bild 5, welches von 4 Testpersonen genauer richtig zugeordnet werden konnte und von einer Testperson nur grob. Am wenigsten wurde Bild 3 erkannt. Es wurde nur von einer Testperson erkannt, dafür aber auch genau. Es geht in diesem Bild um die NSA-Affäre und den UN-Sicherheitsrat. Eine Übersicht mit allen zugehörigen Artikel Schlagzeilen befindet sich im Anhang \ref{sec:anhangA}.
+Im ersten Teil der Evaluation sollten die Testpersonen versuchen herauszufinden, welcher Inhalt sich hinter den Teaserbildern von Abbildung \ref{fig:testbilder} verbergen könnte. Hierzu sollte zunächst ein grobes Themengebiet genannt werden und anschließend so genau wie möglich versucht werden, zu bestimmen, worum es in dem jeweiligen Artikel geht. Ein Bild wurde in diesem Fall als \glqq genau\grqq\ akzeptiert, wenn die Testperson nach dem obersten Themengebiet noch eine Stufe tiefer gehen konnte. So wurde es z.B. als richtig akzeptiert, wenn die Testperson bei Bild 10 nicht nur das grobe Thema \glqq Waldbrände\grqq, sondern auch \glqq San Francisco\grqq\ oder \glqq Yosemite Nationalpark\grqq\ richtig benannt hatte. Nach diesem Bewertungsschema wurden von den 12 Bildern im Durchschnitt 78\% grob und 35\% auch genauer richtig zugeordnet. Das am häufigsten richtig zugeordnete Bild ist Bild 10. Es wurde von allen Testpersonen genau richtig erkannt. Dicht gefolgt von Bild 5, welches von 4 Testpersonen genauer richtig zugeordnet werden konnte und von einer Testperson nur grob. Am wenigsten wurde Bild 3 erkannt. Es wurde nur von einer Testperson erkannt, dafür aber auch genau. Es geht in diesem Bild um die NSA-Affäre und den UN-Sicherheitsrat. Eine Übersicht mit allen zugehörigen Artikel Schlagzeilen befindet sich im Anhang \ref{app:anhangA}.
 
 Die Testpersonen wurden im Interview gefragt, wie sie an diese Aufgabe herangegangen sind. In einem Punkt waren sich alle Testpersonen einig. Wenn nur eine Person abgebildet ist, müssen weitere Informationen über andere Nachrichtenkanäle bekannt sein, um den Inhalt genauer zu erkennen. TP1 meint, bei Bild 1 sei es sehr schwer, etwas genaues sagen zu können, da diese Person zu verschiedenen Themen in Frage kommt, z.B. Euro Hawk, Afghanistan, Syrien oder Strukturänderung Bundeswehr. TP5 sagt zu Bild 6: \glqq Bei Bildern auf denen keine öffentlichen Personen drauf waren, hab ich einfach versucht über Vorurteile die Personen zu lesen\grqq. 
 
@@ -768,9 +769,20 @@ Zusammenfassend lassen sind folgende Punkte zum \glqq Nur-Bilder-Modus\grqq\ fes
 \pagenumbering{roman}
 \thispagestyle{plain}
 
-\includepdf[pages=1,scale=.9,pagecommand={\section{Detaillierte Evaluierung Bild-Inhalt Relation}}]{Evaluierung/rel_bilder_inhalt.pdf}
-\label{sec:anhangA}
+\includepdf[pages=1,scale=.9,pagecommand={\section{Detaillierte Evaluierung Bild-Inhalt Relation} \label{app:anhangA}}]{Evaluierung/rel_bilder_inhalt.pdf}
+
 \includepdf[pages=2,scale=.9,pagecommand={}]{Evaluierung/rel_bilder_inhalt.pdf}
 
 \section{CD Inhalt}
+\label{app:cd}
+
+\newpage
+\section*{Eigenständigkeitserklärung}
+\thispagestyle{empty}
+Ich versichere, die vorliegende Arbeit selbständig ohne fremde Hilfe verfasst und keine anderen Quellen und Hilfsmittel als die angegebenen benutzt zu haben. Die aus anderen Werken wörtlich entnommenen Stellen oder dem Sinn nach entlehnten Passagen sind durch Quellenangaben eindeutig kenntlich gemacht.
+\vspace{3cm}
+\begin{tabbing}
+\hspace{6cm}  \= \kill
+\textit{Hamburg, 03.09.2013} \> \textit{Malte Modrow}
+\end{tabbing}
 \end{document}
