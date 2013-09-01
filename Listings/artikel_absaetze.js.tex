@@ -1,4 +1,4 @@
-\begin{lstlisting}[language= Javascript,caption=Vermeidung von Infoboxen \, Twitternachrichten und Hyperlinks in den Artikeln., label={lst:artikelabsätze}]
+\begin{lstlisting}[language= Javascript,caption=Vermeidung von Infoboxen und Twitternachrichten sowie Hyperlinks in den Artikeln., label={lst:artikelabsätze}]
 for (var n = 0; n < paragraphs.length; n++) {
     //exclude info box and tweets paragraphs
     if (paragraphs[n].parentNode.parentNode.parentNode.parentNode.nodeName != "infobox" && paragraphs[n].parentNode.getAttribute("class") != "twitter-tweet"){
