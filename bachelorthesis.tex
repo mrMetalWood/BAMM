@@ -21,9 +21,9 @@
 %\usepackage{hyperref}
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
-%\parindent1cm
 
-\pagestyle{headings}
+
+
 
 \newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
 
@@ -88,9 +88,9 @@
 }
 
 \begin{document}
-
+\pagestyle{empty}
 \maketitle
-\thispagestyle{empty}
+
 \begin{center}		
 	\LARGE
 	\textbf{Bachelorthesis (B.Sc.)}
@@ -120,17 +120,20 @@
 \selectlanguage{ngerman}
 
 \newpage
-%\clearpage\pdfbookmark{\contentsname}{toc}\tableofcontents
-\thispagestyle{plain}
+%\clearpage\pdfbookmark{\contentsname}{toc}
 \tableofcontents
-\thispagestyle{plain}
+
 
 \newpage
+\thispagestyle{plain}
+\pagenumbering{Roman}
 \listoffigures
+
 \vspace{2cm}
 \listoftables
 
 \newpage
+\thispagestyle{plain}
 \lstlistoflistings
 \vspace{2cm}
 \section*{Abkürzungsverzeichnis}
@@ -146,10 +149,28 @@
 	\acro{gui}[GUI]{Graphical User Interface}
 \end{acronym}
 
+\pagestyle{headings}
+
+
 \newpage
+\pagenumbering{arabic}
 \setcounter{page}{1}
 \section{Einleitung}
 \label{sec:einleitung}
+Das Konsumieren von Nachrichten erfolgt zunehmend über mobile Endgeräte. 
+In der Klasse der kleinen Endgeräte, zum Beispiel Smartphones, sind das herstellerübergreifende  Betriebssystem Android von Google und iOS von Apple führend, das Betriebssystem Windows Phone von Microsoft ist bisher weniger stark verbreitet.
+
+Bei den größeren mobilen Endgeräten, den modernen Tablet-Computern, waren zunächst nur die Betriebssysteme Android und iOS vertreten. Erst seit Oktober 2012 versucht Microsoft mit Windows 8 hier nachzuziehen, indem es ein Betriebssystem entwickelt hat, dass die Systembasis für herkömmliche Programme, aber zugleich auch für touchoptimierte Anwendungen bietet. Vor diesem Hintergrund gibt es für Windows 8 sehr viel weniger Apps als für die beiden anderen genannten Betriebssysteme, die deutlich früher an den Start gegangen sind.
+
+Das online Angebot der Wochenzeitung DIE ZEIT ist ZEIT ONLINE. 
+Für die Inhalte der ZEIT ONLINE Webseite gibt es bisher neben der mobilen Webseite \textit{mobil.zeit.de} nur eine App für mobile Geräte, und zwar für das iPhone. Mit der Entwicklung der in dieser Arbeit beschriebenen App für das Betriebssystem Windows 8 sollen die Inhalte von ZEIT ONLINE für weitere Endgeräte erschlossen werden. Des Weiteren wird untersucht, inwieweit das Konsumieren von Nachrichten über eine reine visuelle  Bildbetrachtung für den Leser möglich und sinnvoll ist. 
+
+Als Grundlage wird zunächst auf ausgewählte Aspekte von Windows 8 eingegangen, auf die Windows 8-Philosophie und das neue Bedienkonzept. Anschließend wird die aktuelle Situation bezüglich der mobilen Apps bei der bei ZEIT ONLINE betrachtet. Im weiteren Verlauf der Arbeit wird detailliert auf die Konzeption der App und deren Umsetzung eingegangen: Was soll dargestellt werden? Wie soll es dargestellt werden? Und wie wird es entwickelt?
+
+Im Rahmen der Evaluierung wird die intuitive Handhabung der App untersucht sowie auf Aspekte des rein visuellen Erlebens von Nachrichten eingegangen.
+
+
+
 \newpage
 \section{Windows 8}
 \label{sec:windows8}
@@ -338,7 +359,7 @@ Zusammengefasst soll eine Windows 8 App erstellt werden, welche die Artikel der 
 		\item Die Nutzer können die App intuitiv bedienen
 	\end{itemize}
 	\item Die Umsetzung eines \glqq Nur-Bilder-Modus\grqq\ ist vorhanden
-	\item Für zukünftige Entwicklungen ist Know How über die Windows 8 App-Entwicklung mit Webtechnologien vorhanden
+	\item Für zukünftige Windows 8 Entwicklungen bei ZEIT ONLINE ist Know How über die App-Entwicklung mit Webtechnologien vorhanden
 \end{enumerate}
 
 
@@ -392,7 +413,7 @@ Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu 
 \label{subsubsec:menuandproperties}
 Da die App einen explorativen Charakter hat, werden die Funktionen und Features auf das Nötigste beschränkt. Es soll eine untere App-Leiste geben, in der, in Abhängigkeit von der gerade gewählten Ansicht verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann durch einen Rechtsklick aufgerufen werden, falls mit der Maus gearbeitet wird. Auf einem Tablet geschieht dies durch Swipen vom oberen oder unteren Bildschirmrand.
 
-In der Startansicht sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User alternativ ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern oder wieder auf ihren Startwert zu setzen. 
+In der Startansicht sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User alternativ ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern oder wieder auf ihren Startwert zu setzen, da die App eventuell auf Monitoren mit verschieden großen Auflösungen ausgeführt wird oder die Sehkraft des Users nicht mehr ausreicht, um eine normal große Schrift zu erkennen und zu lesen. So wird ein gewisses Maß an Barrierefreiheit gewährleistet. 
 
 
 \subsection{Umsetzungsmöglichkeiten in Visual Studio}
@@ -404,13 +425,12 @@ Vor dem Entwickeln einer Windows 8 App muss entschieden werden, mit welcher Tech
 Der heutige Begriff \glqq native App\grqq\ unterscheidet sich in einigen Punkten von der früheren oder ursprünglichen Verwendung des Begriffs. Früher sprach man von einer nativen App, wenn direkt auf die Ressourcen der  Maschine zugegriffen wurde, wie z.B. Maschinencode, der direkt von der CPU ausgeführt wird. Heute wird eine App oftmals schon als nativ deklariert, wenn es sich nicht um eine Webapp handelt. Eine sinnvolle Definition liegt zwischen diesen beiden Varianten. Eine App ist dann nativ, wenn sie geräte- , betriebssystem- oder laufzeitumgebungsabhängig ist. Das heißt, sie ist für ein spezielles Gerät entwickelt und kann nur auf diesem ausgeführt werden. Sie kann dabei alle Geräte- oder Betriebssystemspezifischen Funktionen nutzen, es ist jedoch nicht relevant wie nah an der Hardware tatsächlich programmiert wurde \citep{OBrian2013}.
 
 In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen C++, C\# oder Visual Basic erstellt werden. Für das Design bzw. das Aussehen der App wird die Markupsprache - \ac{xaml} - verwendet. Es gibt zwei Möglichkeiten, wie das \ac{xaml} erstellt werden kann. Es kann entweder von Hand geschrieben oder automatisch generiert werden. Zum automatischen Generieren lassen sich per Drag \& Drop Elemente wie z.B. Buttons und andere Schaltflächen aus einer Werkzeugpalette direkt auf die \glqq App-Leinwand\grqq\ ziehen und dort verschieben oder nach Belieben anordnen.
-%Listing XAML oder Screenshot 
 
 \subsubsection{Windows 8 App mit Webtechnologien}
 \label{subsubsec:webwin8}
 In Visual Studio können nicht nur Apps mit den klassischen Programmiersprachen, wie in der vorigen Sektion beschrieben, erstellt werden. Visual Studio erlaubt es, Apps mit Webtechnologien zu erstellen. So können Apps mit \ac{html}, CSS und Javascript erstellt werden. Das Markup wird mit \ac{html} erstellt, dieses dann mit CSS gestylt und die Programmlogik mit JavaScript realisiert. Die resultierende App ist trotzdem eine native Windows 8 Anwendung und kann nur auf Windows 8 oder Windows RT Geräten installiert und ausgeführt werden. Das Design und das Layout einer solchen App können in Visual Studio allerdings nicht visuell oder per Drag \& Drop entworfen werden. Für diesen Zweck liefert Microsoft ein gesondertes Programm mit, \textit{Blend für Visual Studio 2012}. In Blend können \ac{html} und CSS Änderungen direkt in einer Live-Vorschau angesehen werden. Außerdem können hier auch Elemente per Drag \& Drop angeordnet und verschoben werden. Ein geöffnetes Visual Studio Projekt kann mit zwei Klicks im Menü direkt in Blend geöffnet werden. 
 
-Auf diese Weise wird es Webentwicklern ermöglicht, einen komfortablen Einstieg in die Programmierung von Windows 8 Apps zu finden. Damit bleibt die Entwicklung nicht nur den .NET-Entwicklern vorbehalten. Ganz ohne Lernaufwand kommen allerdings auch die Webentwickler nicht aus. Um eine App mit Webtechnologien erstellen zu können, müssen sich die Entwickler zuvor mit der neuen API-Technologie, vertraut machen  \citep{Bleske2012}.
+Auf diese Weise wird es Webentwicklern ermöglicht, einen komfortablen Einstieg in die Programmierung von Windows 8 Apps zu finden. Damit bleibt die Entwicklung nicht nur den .NET-Entwicklern vorbehalten. Ganz ohne Lernaufwand kommen allerdings auch die Webentwickler nicht aus. Um eine App mit Webtechnologien erstellen zu können, müssen sich die Entwickler zuvor mit der neuen API-Technologie vertraut machen \citep{Bleske2012}.
 
 Das Hauptaugenmerk liegt hierbei auf Microsofts hauseigener JavaScript-Bibliothek \textit{\ac{winjs}}. Sie bietet viele wichtige Funktionen z.B. zur Handhabung von Steuerelementen oder zu Behandlung von großen Datenmengen. 
 
@@ -419,6 +439,7 @@ Letztendlich macht es keinen großen Unterschied, ob mit herkömmlich Programmie
 \newpage
 \section{Umsetzung der App}
 \label{sec:umsetzungderapp}
+Nachdem die Konzeption der App abgeschlossen ist, wird in dieser Sektion erläutert, wie die App umgesetzt wird. Dazu wird zunächst Microsofts Raster-Vorlage näher beleuchtet. Anschließend werden die Datenanbindung, die Darstellung der Daten sowie die Features erklärt. Am Ende dieser Sektion befindet sich die Entwicklungschronologie. Sie gibt einen detaillierten Einblick in den zeitlichen Ablauf des Entwicklungsprozesses.
 
 \subsection[Rastervorlage] {Rastervorlage\footnote{Die Namen der verwendeten Dateien in der Rastervorlage wurden mittlerweile von Microsoft geändert.}}
 \label{subsec:rastervorlage}
@@ -463,6 +484,7 @@ Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzepti
 
 \subsection{Datenanbindung}
 \label{subsec:datenanbindung}
+Damit Nachrichten in der App angezeigt werden können, muss eine Datenverbindung zu ZEIT ONLINE hergestellt werden. Diese Verbindung muss nicht permanent sein, es reicht wenn beim Start der App die aktuellen Daten eingelesen werden. Sollte der Bedarf nach weiteren Daten bestehen, kann jederzeit eine neue Anfrage abgesetzt werden. Zunächst wird erläutert wie der Datenbestand von ZEIT ONLINE generiert wird. Anschließend wird darauf eingegangen, wie diese Daten in der App verfügbar gemacht werden.
 
 \subsubsection{ZEIT ONLINE Datenbestand}
 \label{subsubsec:zondatenbestand}
@@ -501,6 +523,7 @@ Sobald die Daten in der \textit{WinJS.Binding.List} gespeichert sind, können si
 
 \subsection{Darstellung der Daten}
 \label{subsec:darstellungderdaten}
+In dieser Sektion wird darauf eingegangen, wie die zuvor verarbeiteten und gespeicherten Daten für die ansprechende Darstellung in der App aufbereitet werden.
 
 \subsubsection{Die Hubansicht}
 \label{subsubsec:hubansicht}
@@ -571,6 +594,7 @@ Beim Parsen des Artikel-\ac{xml}s müssen folgende drei Sachverhalte besonders b
 
 \subsection{Features}
 \label{subsec:features}
+Im Folgenden werden hier die Features der App erläutert. Es handelt sich hierbei zum einen um die Einstellungen, die der User über die untere Menüleiste vornehmen kann und zum anderen um das \glqq Semantic Zoom\grqq\ Feature.
 
 \subsubsection{Artikeltitel ausblenden}
 \label{subsubsec:artikeltitelausblenden}
@@ -726,6 +750,8 @@ Bei den Bildern aus dem Politik-Ressort wurde sich sehr auf das bereits aus ande
 Es bleibt noch zu klären ob ein \glqq Nur-Bilder-Modus\grqq\ sinnvoll ist und inwieweit der User dadurch neugierig gemacht wird oder ob dieser Modus ihn eher in seinem Nachrichtenkonsumfluss stört und hemmt. TP1 sagt dazu: \glqq Das kommt drauf an, was ich gerade möchte, [...] wenn ich mich kurz und prägnant informieren möchte [...] muss unbedingt der Text drin sein, [aber] wenn ich mal ein bisschen Zeit habe und sitze irgendwo und warte, dann ist es eher der Entdeckermodus\grqq. TP2 meint, es hänge von der Veranlagung der Person ab. Es sei eine offene Herangehensweise nötig: \glqq Ich gucke mal was mir angeboten wird\grqq. Weiterhin glaubt TP2, dass Inhalte so eventuell besser im Gedächtnis bleiben, weil der User auf diese Weise aktiv auf ein Bild, welches seine Neugier geweckt hat, klickt und sich damit den Inhalt gewissermaßen selbst \glqq erarbeitet\grqq\ hat. TP4 sieht es ähnlich wie TP1. Es komme auf die Situation an und das Ziel des Nachrichtenkonsums an. TP5 meint, es hänge auch sehr stark vom jeweiligen Bild ab: \glqq Es muss eine klare Verbindung zum Inhalt geben [,um die Neugier zu wecken,] was bei reinen Personenbildern nicht der Fall ist.\grqq. 
 
 Die Testpersonen stimmen bei dieser Frage grundlegend überein. Wenn der User gezielt tagesaktuelle Nachrichten konsumieren will, ist ein \glqq{Nur-Bilder-Modus\grqq\ nicht zielführend. Es muss zu viel geraten und vermutet werden und im Zweifel klickt der User auf ein Bild und hat etwas ganz anderes erwartet und hat auf diese Weise ein Negativ-Erlebnis. Hat der User andererseits ein bisschen mehr Zeit und möchte mal etwas Neues ausprobieren, sich durch die Nachrichtenwelt treiben lassen, dann stellt der \glqq{Nur-Bilder-Modus\grqq\ eine interessante Alternative dar. Hier kann sich der User ganz auf seinen Neugier- und Entdecker-trieb verlassen und das anklicken, wo er vielleicht schon etwas vermutet und er wissen möchte ob er richtig liegt. Der Trend zeigt deutlich, um den \glqq{Nur-Bilder-Modus\grqq\ genießen zu können, sollte der User etwas Zeit mitbringen und sich bewusst darauf einlassen, nicht auf den ersten Blick alle Informationen dargelegt zu bekommen, sondern sich von der Neugier leiten zu lassen und es aktiv herauszufinden.
+
+Zusammenfassend lassen sind folgende Punkte zum \glqq Nur-Bilder-Modus\grqq\ feststellen. Um aus den Bildern auf Inhalte schließen zu können müssen Basiskenntnisse aus anderen Nachrichtenquellen vorhanden sein. Auf die groben Inhalte der Artikel kann bei den meisten Bildern geschlossen werden sowohl bei den aktuellen als auch bei zeitlosen Artikeln. Bei Bildern, auf denen nur Personen dargestellt sind, ist es schwierig inhaltliche Details bestimmen. Des Weiteren gelingt Identifizierung von genauen Inhalten eher für aktuelle Themen. Für den gezielten Nachrichtenkonsum wird die Kombination von Bild und Text bevorzugt. Der \glqq Nur-Bilder-Modus\grqq\ funktioniert nur, wenn der Leser genügend Zeit und Interesse mitbringt.
 
 \newpage
 \section{Fazit}
