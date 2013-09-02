@@ -133,6 +133,7 @@
 
 \newpage
 \thispagestyle{plain}
+\renewcommand\lstlistlistingname{Listingsverzeichnis}
 \lstlistoflistings
 \vspace{2cm}
 \section*{Abkürzungsverzeichnis}
@@ -164,20 +165,20 @@ Bei den größeren mobilen Endgeräten, den modernen Tablet-Computern, waren zun
 Das online Angebot der Wochenzeitung DIE ZEIT ist ZEIT ONLINE. 
 Für die Inhalte der ZEIT ONLINE Webseite gibt es bisher neben der mobilen Webseite \textit{mobil.zeit.de} nur eine App für mobile Geräte, und zwar für das iPhone. Mit der Entwicklung der in dieser Arbeit beschriebenen App für das Betriebssystem Windows 8 sollen die Inhalte von ZEIT ONLINE für weitere Endgeräte erschlossen werden. Des Weiteren wird untersucht, inwieweit das Konsumieren von Nachrichten über eine reine visuelle  Bildbetrachtung für den Leser möglich und sinnvoll ist. 
 
-Als Grundlage wird zunächst auf ausgewählte Aspekte von Windows 8 eingegangen, auf die Windows 8-Philosophie und das neue Bedienkonzept. Anschließend wird die aktuelle Situation bezüglich der mobilen Apps bei der bei ZEIT ONLINE betrachtet. Im weiteren Verlauf der Arbeit wird detailliert auf die Konzeption der App und deren Umsetzung eingegangen: Was soll dargestellt werden? Wie soll es dargestellt werden? Und wie wird es entwickelt?
+Als Grundlage wird zunächst auf ausgewählte Aspekte von Windows 8 eingegangen, auf die Windows 8-Philosophie und das neue Bedienkonzept. Anschließend wird die aktuelle Situation bezüglich der mobilen Apps bei ZEIT ONLINE betrachtet. Im weiteren Verlauf der Arbeit wird detailliert auf die Konzeption der App und deren Umsetzung eingegangen: Was soll dargestellt werden? Wie soll es dargestellt werden? Und wie wird es entwickelt?
 
-Im Rahmen der Evaluierung wird die intuitive Handhabung der App untersucht sowie auf Aspekte des rein visuellen Erlebens von Nachrichten eingegangen.
+Abschließend wird im Rahmen der Evaluierung wird die intuitive Handhabung der App untersucht sowie auf Aspekte des rein visuellen Erlebens von Nachrichten eingegangen.
 
 
 
 \newpage
 \section{Windows 8}
 \label{sec:windows8}
-Seit dem 26. Oktober 2012 ist Microsofts aktuellstes Betriebssystem \glqq Windows 8\grqq\ für die breite Öffentlichkeit verfügbar. Dieses unterscheidet sich grundlegend von seinem Vorgänger \glqq Windows 7\grqq. Microsoft verfolgt mit Windows 8 den Ansatz, das gleiche Betriebssystem sowohl für Desktop- als auch für Tablet-Computer\footnote{Tablet-Computer: kleiner, flacher, tragbarer Computer mit einem Touchscreen. Es wird im Weiteren, der Einfachheit halber die englische Version \glqq Tablet\grqq\ benutzt.} zu verwenden. Es besitzt nach wie vor den bekannten Desktop von Windows 7. Äußerlich sind hier nur kleine Änderungen vorgenommen worden. So besitzt z.B. der Windows Explorer ein neues, kontextsensitives Ribbon-Menü\footnote{Auch bekannt als Menüband oder Multifunktionsleiste.}. Neu ist hingegen das "Modern User Interface" (Modern UI, früher Metro), eine für Touch-Gesten optimierte Oberfläche. Obwohl die neue Oberfläche für Touch-Gesten optimiert ist, kann sie ebenso mit Maus und Tastatur bedient werden. Es können, im Gegensatz zum Desktop, keine herkömmlichen Programme im Modern UI ausgeführt werden. In der Modern UI Oberfläche laufen nur Programme (Apps), die speziell für Windows 8 entwickelt wurden und über den Microsoft Store (siehe Sektion \ref{subsubsec:store} auf Seite \pageref{subsubsec:store}) erhältlich sind. Es soll nun ein etwas detaillierterer Blick auf die neue Oberfläche und dessen Eigenheiten geworfen werden.
+Seit dem 26. Oktober 2012 ist Microsofts aktuellstes Betriebssystem Windows 8 für die breite Öffentlichkeit verfügbar. Dieses unterscheidet sich grundlegend von seinem Vorgänger Windows 7. Microsoft verfolgt mit Windows 8 den Ansatz, das gleiche Betriebssystem sowohl für Desktop- als auch für Tablet-Computer\footnote{Tablet-Computer: kleiner, flacher, tragbarer Computer mit einem Touchscreen. Es wird im Weiteren der Einfachheit halber die englische Version \glqq Tablet\grqq\ benutzt.} zu verwenden. Es besitzt nach wie vor den bekannten Desktop von Windows 7. Äußerlich sind hier nur kleine Änderungen vorgenommen worden. So besitzt z.B. der Windows Explorer ein neues, kontextsensitives Ribbon-Menü\footnote{Auch bekannt als Menüband oder Multifunktionsleiste.}. Neu ist hingegen das "Modern User Interface" (Modern UI, früher Metro), eine für Touch-Gesten optimierte Oberfläche. Diese kann jedoch ebenso auf herkömmliche Weise mit Maus und Tastatur bedient werden. Es können, im Gegensatz zum Desktop, keine herkömmlichen Programme im Modern UI ausgeführt werden. In der Modern UI Oberfläche laufen nur Programme (Apps), die speziell für Windows 8 entwickelt wurden und über den Microsoft Store (siehe Sektion \ref{subsubsec:store} auf Seite \pageref{subsubsec:store}) erhältlich sind. Es soll nun ein etwas detaillierterer Blick auf die neue Oberfläche und dessen Eigenheiten geworfen werden.
 
 \subsection{Neues Bedienkonzept}
 \label{subsec:bedienkonzept}
-Beim Hochfahren von Windows 8, erwartet den User ein Interface, das er so vom Vorgänger Windows 7 nicht kennt. Viele bunte, viereckige Kacheln, in verschiedenen Größen. Auf dem Startbildschirm von Windows 8 sind die verschiedenen Apps analog Abbildung \ref{fig:win8startscreen} angeordnet.
+Beim Hochfahren von Windows 8, erwartet den User ein Interface, das er so vom Vorgänger Windows 7 nicht kennt, nämlich viele bunte, viereckige Kacheln in verschiedenen Größen. Auf dem Startbildschirm von Windows 8 sind die verschiedenen Apps analog Abbildung \ref{fig:win8startscreen} angeordnet.
 
 \begin{figure}[h]	
 	\centering
@@ -186,8 +187,9 @@ Beim Hochfahren von Windows 8, erwartet den User ein Interface, das er so vom Vo
 	\label{fig:win8startscreen}
 \end{figure}
 
-Dies können Desktop-Programme oder Modern UI Apps (Windows-Store) sein, welche nur über den Microsoft Store zu installieren sind. Der bekannte Desktop-Modus ist in diesem Sinne auch \glqq nur\grqq\ ein, wenn auch ein sehr spezielles, Programm (App), welches in der neuen Oberfläche gestartet und ausgeführt werden kann.\\
-Es gibt einige grundlegende Touch- und Mausgesten um in der Modern UI Oberfläche zwischen den Apps zu navigieren oder um Optionen oder Einstellungen aufzurufen. Wenn der User sich auf einem Tablet befindet und über den rechten Bildschirmrand von rechts nach links wischt (swipen), öffnet sich am rechten Bildschirmrand die von Microsoft \glqq Charms\grqq\ genannte Menüleiste (siehe Abbildung \ref{fig:charms}). Hier befinden sich die Schaltflächen: Suchen, Teilen, Start , Geräte und Einstellungen. Um die Charms-Bar auf einem Gerät ohne Touch-Unterstützung aufzurufen, muss die Maus in die obere oder untere rechte Ecke des Bildschirms geführt werden. 
+Dies können Desktop-Programme oder Modern UI Apps (Windows-Store) sein, welche nur über den Microsoft Store zu installieren sind. Der bekannte Desktop-Modus ist in diesem Sinne auch \glqq nur\grqq\ ein spezielles Programm (App), welches in der neuen Oberfläche gestartet und ausgeführt werden kann.
+
+Es gibt einige grundlegende Touch- und Mausgesten, um in der Modern UI Oberfläche zwischen den Apps zu navigieren oder um Optionen oder Einstellungen aufzurufen. Wenn der User sich auf einem Tablet befindet und über den rechten Bildschirmrand von rechts nach links wischt (swipen), öffnet sich am rechten Bildschirmrand die von Microsoft \glqq Charms\grqq\ genannte Menüleiste (siehe Abbildung \ref{fig:charms}). Hier befinden sich die Schaltflächen: Suchen, Teilen, Start , Geräte und Einstellungen. Um die Charms-Bar auf einem Gerät ohne Touch-Unterstützung aufzurufen, muss die Maus in die obere oder untere rechte Ecke des Bildschirms geführt werden. 
 
 \begin{figure}[h]	
 	\centering
@@ -196,7 +198,7 @@ Es gibt einige grundlegende Touch- und Mausgesten um in der Modern UI Oberfläch
 	\label{fig:charms}
 \end{figure}  
 
-Es können zwei verschiedene Gesten benutzt werden,um bequem zwischen den geöffneten Apps zu wechseln. Abbildung \ref{fig:appschanging} zeigt die beiden Möglichkeiten. Um eine Liste, wie sie die Abbildung auf der linken Seite darstellt, angezeigt zu bekommen, wird von links nach rechts über den linken Bildschirmrand gewischt. Anschließend wird ohne den Finger hochzunehmen zurück in Richtung des Bildschirmrandes gewischt. Bei der Bedienung mit der Maus wird die Maus zunächst in die obere oder untere linke Ecke bewegt, um anschließend nach unten bzw. nach oben zur Bildschirmmitte geführt zu werden.
+Es können zwei verschiedene Gesten benutzt werden, um bequem zwischen den geöffneten Apps zu wechseln. Abbildung \ref{fig:appschanging} zeigt die beiden Möglichkeiten. Um eine Liste, wie sie die Abbildung auf der linken Seite darstellt, angezeigt zu bekommen, wird von links nach rechts über den linken Bildschirmrand gewischt. Anschließend wird ohne den Finger hochzunehmen zurück in Richtung des Bildschirmrandes gewischt. Bei der Bedienung mit der Maus wird die Maus zunächst in die obere oder untere linke Ecke bewegt, um anschließend nach unten bzw. nach oben zur Bildschirmmitte geführt zu werden.
 
 Die zweite Möglichkeit besteht darin, die Apps direkt in der Reihenfolge, wie sie zuletzt aktiv waren, wieder in den Vordergrund zu bringen. Dazu wird von links nach rechts über den linken Bildschirmrand gewischt. Der rechte Teil von Abbildung \ref{fig:appschanging} zeigt diese Geste.
  
@@ -207,21 +209,21 @@ Die zweite Möglichkeit besteht darin, die Apps direkt in der Reihenfolge, wie s
 	\label{fig:appschanging}
 \end{figure}  
 
-Die letzte grundlegende Geste wird benutzt, um z.B. Optionen, Einstellungen oder eine Navigationsleiste aufzurufen. Hierzu wird über den oberen oder den unteren Bildschirmrand in Richtung Bildschirmmitte gewischt. Wird diese Geste ausgeführt, öffnen sich die untere und die obere Menüleiste. Unabhängig davon ob der User die Geste am oberen oder am unteren Bildrand ausführt. Wenn es in der App oben und unten Menüleisten gibt, öffnen sich immer beide. Es ist nicht möglich z.B. nur die obere Leiste zu öffnen. In der unteren Menüleiste befinden sich typischer Weise Einstellungen für die aktuelle Ansicht, in welcher sich die App gerade befindet. Sofern es eine Leiste am oberen Bildrand gibt, ist in dieser häufig eine Art von Navigation untergebracht. Abbildung \ref{fig:menubar} zeigt die obere und untere Menüleisten am Beispiel der vorinstallierten Wetter App.
+Die letzte grundlegende Geste wird benutzt, um z.B. Optionen, Einstellungen oder eine Navigationsleiste aufzurufen. Hierzu wird über den oberen oder den unteren Bildschirmrand in Richtung Bildschirmmitte gewischt. Wird diese Geste ausgeführt, öffnen sich die untere und die obere Menüleiste, unabhängig davon, ob der User die Geste am oberen oder am unteren Bildrand ausführt. Wenn es in der App oben und unten Menüleisten gibt, öffnen sich immer beide. Es ist nicht möglich, z.B. nur die obere Leiste zu öffnen. In der unteren Menüleiste befinden sich typischer Weise Einstellungen für die aktuelle Ansicht, in welcher sich die App gerade befindet. Sofern es eine Leiste am oberen Bildrand gibt, ist in dieser häufig eine Art von Navigation untergebracht. Abbildung \ref{fig:menubar} zeigt die obere und untere Menüleiste am Beispiel der vorinstallierten Wetter App.
 
 \begin{figure}[h]	
 	\centering
 	\includegraphics[width=0.6\textwidth]{Bilder/Screenshots/windows8/app_leisten.png} 
-	\caption{Die Geste zum Öffnen der unteren und oberen Menüleisten.}
+	\caption{Die Geste zum Öffnen der unteren und oberen Menüleiste.}
 	\label{fig:menubar}
 \end{figure}  
 
-\subsection{Die Windows 8 Philosophie}
+\subsection{Die Windows 8-Philosophie}
 \label{subsec:win8philosophie}
 % touch, vorteile, nachteile
 Windows 8 ist wohl der radikalste Umbruch bei den Microsoft-Betriebssystemen seit Windows 95. Es sollen hier einige Aspekte beleuchtet werden, warum Microsoft diesen Weg eingeschlagen hat.
 
-Viele Features, die heute mit einem Windows PC verbunden werden wie z.B. der Desktop, die Taskleiste oder das Startmenü, wurden ursprünglich in Windows 95 eingeführt. Damals hatte Windows noch keinen Browser. Mit der Zeit gewann das Internet immer mehr an Bedeutung und der Browser rückte mehr und mehr in den Mittelpunkt der vernetzten Computernutzung. Das Betriebssystem hingegen veränderte sich kaum. Mit Windows 8 versucht Microsoft diesen Schritt nachzuholen und das Betriebssystem um den vernetzten User herum zu konzipieren. Eine der Hauptaufgaben übernehmen hierbei die sogenannte \textit{Live Tiles} auf dem Startbildschirm. Sie zeigen stets aktuelle Informationen, ohne dass der User den Browser öffnen muss \citep{Pachal2012}. 
+Viele Features, die heute mit einem Windows PC verbunden werden wie z.B. der Desktop, die Taskleiste oder das Startmenü, wurden ursprünglich in Windows 95 eingeführt. Damals hatte Windows noch keinen Browser. Mit der Zeit gewann das Internet immer mehr an Bedeutung, und der Browser rückte mehr und mehr in den Mittelpunkt der vernetzten Computernutzung. Das Betriebssystem hingegen veränderte sich kaum. Mit Windows 8 versucht Microsoft diesen Schritt nachzuholen und das Betriebssystem um den vernetzten User herum zu konzipieren. Eine der Hauptaufgaben übernehmen hierbei die sogenannte \textit{Live Tiles} auf dem Startbildschirm. Sie zeigen stets aktuelle Informationen, ohne dass der User den Browser öffnen muss \citep{Pachal2012}. 
 
 \begin{quote}
 \textit{There's tons of stuff on the Internet and your PC basically has this little straw — Internet Explorer — to see all this. We didn't think that should be the case. The whole PC should be about that. Part of what the Start screen is really about is making all this activity — these people that you care about, and all this information — sort of explode so you're immersed in it.} ---Sam Moreau\footnote{Director of design and research for Windows}
@@ -231,13 +233,13 @@ Sam Moreau bringt es gut auf den Punkt. Es gibt so viel zu entdecken im Internet
 
 \subsection{Windows RT}
 \label{subsec:winRT}
-Windows RT ist ein separates Windows Betriebssystem, welches für PCs oder Tablets mit ARM-Architektur optimiert ist. Die größten Vorteile dieser Geräte sind normalerweise ein leichteres Gewicht und eine längere Akkulaufzeit gegenüber den Geräten, die mit einer x86/x64 Architektur ausgestattet sind. Auf den ersten Blick sieht Windows RT, von der Bedienoberfläche her, genau so aus wie Windows 8. Der größte und signifikanteste Unterschied zu Windows 8 ist jedoch, dass aufgrund der ARM-Architektur auf Windows RT nur Programme und Apps aus dem Windows-Store installiert und ausgeführt werden können. Das Installieren von herkömmlichen Programmen, wie es Windows 8 zulässt, ist nicht möglich. Windows RT verfügt zwar über einen Desktop, wie er auch in Windows 8 verfügbar ist, allerdings laufen hier nur die vorinstallierten Office Produkte von Microsoft sowie der Microsoft Browser \textit{Internet Explorer}. Außerdem können nur speziell für Windows RT zertifizierte Geräte benutzt werden, das gilt u.a. auch für Mäuse und Tastaturen. \citep{MicrosoftWinRT}  
+Windows RT ist ein separates Windows Betriebssystem, welches für PCs oder Tablets mit ARM-Architektur optimiert ist. Die größten Vorteile dieser Geräte sind normalerweise ein leichteres Gewicht und eine längere Akkulaufzeit gegenüber den Geräten, die mit einer x86/x64 Architektur ausgestattet sind. Auf den ersten Blick sieht Windows RT, von der Bedienoberfläche her, genau so aus wie Windows 8. Der größte und signifikanteste Unterschied zu Windows 8 ist jedoch der, dass aufgrund der ARM-Architektur auf Windows RT nur Programme und Apps aus dem Windows-Store installiert und ausgeführt werden können. Das Installieren von herkömmlichen Programmen, wie es Windows 8 zulässt, ist nicht möglich. Windows RT verfügt zwar über einen Desktop, wie er auch in Windows 8 vorhanden ist, allerdings laufen hier nur die vorinstallierten Office Produkte von Microsoft sowie der Microsoft Browser \textit{Internet Explorer}. Außerdem können nur speziell für Windows RT zertifizierte Geräte benutzt werden, das gilt u.a. auch für Mäuse und Tastaturen. \citep{MicrosoftWinRT}  
  
 \subsection{Das Ökosystem}
 \label{subsec:ökosystem}
-Kaufte man früher einen PC, ein Notebook oder ein Handy, ging es bei der Abwägung der Kaufkriterien meist ausschließlich um Hersteller und Hardwarespezifikationen. In einer mehr und mehr mobilen und \textit{mehrgerätigen} Welt, wie wir sie heute erleben, kommt zu der Kaufentscheidung noch ein weiterer entscheidender Punkt hinzu. Welches Ökosystem passt am besten zu mir? Denn um auf mehreren Geräten wie z.B. Notebook, Tablet und Smartphone stets seine Daten aktuell und synchron zu halten, muss vorher genau bedacht werden, ob das gewählte Ökosystem den eigenen Anforderungen entspricht. Fragen, die zum  Ökosystem gestellt werden können, sind z.B.: Wie sieht es mit der Anzahl und Verfügbarkeit von Apps im jeweiligen Store aus? Gibt es eine Musikstreaming-Lösung? Wie sieht es mit Filmen und Büchern aus? Wie sehen die Dienste zum Speichern von Daten in der Cloud aus? Es fällt auf, dass heute nicht mehr nur ein Gerät gekauft wird, sondern dass an diesem Gerät oder diesen Geräten meist ein ganzes Ökosystem mit geliefert wird, unabhängig davon ob man sich für Apple, Google, Microsoft oder Amazon entscheidet. 
+Kaufte man früher einen PC, ein Notebook oder ein Handy, ging es bei der Abwägung der Kaufkriterien meist ausschließlich um Hersteller und Hardwarespezifikationen. In einer mehr und mehr mobilen und \textit{mehrgerätigen} Welt, wie wir sie heute erleben, kommt zu der Kaufentscheidung noch ein weiterer entscheidender Punkt hinzu. Welches Ökosystem passt am besten zu mir? Denn um auf mehreren Geräten wie z.B. Notebook, Tablet und Smartphone stets seine Daten aktuell und synchron zu halten, muss vorher genau bedacht werden, ob das gewählte Ökosystem den eigenen Anforderungen entspricht. Fragen, die zum  Ökosystem gestellt werden können, sind z.B.: Wie sieht es mit der Anzahl und Verfügbarkeit von Apps im jeweiligen Store aus? Gibt es eine Musikstreaming-Lösung? Wie sieht es mit Filmen und Büchern aus? Wie sehen die Dienste zum Speichern von Daten in der Cloud aus? Es fällt auf, dass heute nicht mehr nur ein Gerät gekauft wird, sondern dass zu diesem Gerät oder diesen Geräten meist ein ganzes Ökosystem mit geliefert wird, unabhängig davon, ob man sich für Apple, Google, Microsoft oder Amazon entscheidet. 
 
-Mit der Einführung von Windows 8 hat Microsoft neuen Schwung in sein gesamtes Ökosystem gebracht. Es wurden verschiedene Dienste vereinheitlicht und zusammengefasst. Das Microsoft Ökosystem umfasst heute u.a. Windows 8, Windows RT, das Smartphone Betriebssystem Windows Phone 8, den Cloudspeicherdienst Skydrive, den Streamingdienst xBox Music und den E-Mail Dienst outlook.com. Viele dieser Dienste existierten schon vor der Einführung von Windows 8. Aber erst mit dieser Einführung wurden die Dienste und Betriebssysteme einer einheitlichen \glqq Designkur\grqq\ unterzogen und enger auf einander abgestimmt. Außerdem wird im Gegensatz zu vorher, nur noch ein Benutzerkonto benötigt, um diese Dienste nutzen zu können.
+Mit der Einführung von Windows 8 hat Microsoft neuen Schwung in sein gesamtes Ökosystem gebracht. Es wurden verschiedene Dienste vereinheitlicht und zusammengefasst. Das Microsoft Ökosystem umfasst heute u.a. Windows 8, Windows RT, das Smartphone Betriebssystem Windows Phone 8, den Cloudspeicherdienst Skydrive, den Streamingdienst xBox Music und den E-Mail Dienst outlook.com. Viele dieser Dienste existierten schon vor der Einführung von Windows 8. Aber erst mit dessen Einführung wurden die Dienste und Betriebssysteme einer einheitlichen \glqq Designkur\grqq\ unterzogen und enger aufeinander abgestimmt. Außerdem wird im Gegensatz zu vorher nur noch ein Benutzerkonto benötigt, um diese Dienste nutzen zu können.
 
 \subsubsection{Windows Phone}
 \label{subsubsec:windowsphone}
@@ -252,7 +254,7 @@ Windows Phone ist das Smartphone Betriebssystem von Microsoft. Die aktuelle Vers
 
 \subsubsection{Microsoft App Stores}
 \label{subsubsec:stores}
-Eines der wichtigsten Elemente im Ökosystem eines Unternehmens ist der Store. Hier werden Apps für die Geräte mit dem jeweiligen Betriebssystem angeboten. Bei Apple ist es der \textit{App Store} und , bei Google der \textit{Google Play Store} und bei Microsoft ist es  zum einen der \textit{Windows Store} für Windows 8 und Windows RT Apps und zum anderen der \textit{Windows Phone Store} für Smartphones mit Windows Phone. Oft fällt eine Entscheidung gegen ein bestimmtes Gerät aus der Windows-Welt mit der Begründung, es gäbe zu wenig Apps im Windows Store.
+Eines der wichtigsten Elemente im Ökosystem eines Unternehmens ist der Store. Hier werden Apps für die Geräte mit dem jeweiligen Betriebssystem angeboten. Bei Apple ist es der \textit{App Store}, bei Google der \textit{Google Play Store} und bei Microsoft ist es  zum einen der \textit{Windows Store} für Windows 8- und Windows RT Apps und zum anderen der \textit{Windows Phone Store} für Smartphones mit Windows Phone. Oft fällt eine Entscheidung gegen ein bestimmtes Gerät aus der Windows-Welt mit der Begründung, es gäbe zu wenig Apps im Windows Store.
 
 \begin{figure}[h]	
 	\centering
@@ -263,12 +265,12 @@ Eines der wichtigsten Elemente im Ökosystem eines Unternehmens ist der Store. H
 
 Abbildung \ref{fig:storechart} zeigt die Verfügbarkeit der Top 100 iOS Apps \footnote{Liste: http://www.infragistics.com/community/blogs/nick-landry/archive/2013/08/06/top-100-apps-availability-on-ios-android-windows-phone-amp-windows-8.aspx} auf den anderen großen Systemen wie Android, Windows Phone und Windows 8. Hiernach sind im Windows Phone Store 64\% der Top 100 Apps vorhanden und im Windows 8 Store 54\%. Gezählt wurden hier nur offizielle Apps und keine Apps von Drittanbietern. In absoluten Zahlen hat iOS ca. 900.000 Apps im Appstore, Google über 1 Million Apps im Play Store, Windows Phone ca. 160.000 Apps und Windows 8 ca. 110.000 Apps im Windows Store \citep{WinbetaStore2013}.
 
-Microsoft bemüht sich, die fehlenden Apps wie z.B. \textit{Instagram}, \textit{Pinterest}, \textit{Instapaper} oder \textit{Readability} schnellstmöglich nachzuliefern. Microsoft bietet den Entwicklern teilweise sogar Geld, damit sie eine offizielle \glqq große\grqq\ App entwickeln \citep{WinbetaStore2013}.
+Microsoft bemüht sich, die fehlenden Apps wie z.B. \textit{Instagram}, \textit{Pinterest}, \textit{Instapaper} oder \textit{Readability} schnellstmöglich nachzuliefern. Dabei wird den Entwicklern teilweise sogar Geld geboten, damit sie eine offizielle \glqq große\grqq\ App entwickeln \citep{WinbetaStore2013}.
 
 \newpage
 \section{Konzeption der App}
 \label{sec:konzeption}
-In dieser Sektion wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf bereits vorhandene ZEIT ONLINE Apps geworfen. Anschließend geht es darum, die Konzeption für eine Windows 8 Nachrichten App darzustellen und zu erläutern. Dabei gilt es darzulegen, warum und mit welchem Hintergrund Entscheidungen zu Gunsten der einen oder der anderen technischen oder konzeptionellen Methode ausfallen. Dazu müssen zunächst die Ziele der App dargelegt werden. Anschließend muss festgelegt werden, mit welcher Technologie bzw. Programmiersprache gearbeitet werden soll. Zuletzt wird ein detaillierterer Blick auf das Herzstück der App geworfen, das Navigationskonzept. Hierbei ist eine der wichtigsten Fragen: \glqq Wie kann ich auch bei ggf. großen Datenmengen eine übersichtliche, intuitive Struktur schaffen, die sich in das Gesamtkonzept von Windows 8 eingliedert?\grqq.
+In diesem Abschnitt wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf bereits vorhandene ZEIT ONLINE Apps geworfen. Anschließend geht es darum, die Konzeption für eine Windows 8 Nachrichten App darzustellen und zu erläutern. Dabei gilt es darzulegen, warum und mit welchem Hintergrund Entscheidungen zu Gunsten der einen oder der anderen technischen oder konzeptionellen Methode ausfallen. Dazu müssen zunächst die Ziele der App dargelegt werden. Anschließend muss festgelegt werden, mit welcher Technologie bzw. Programmiersprache gearbeitet werden soll. Zuletzt wird ein detaillierterer Blick auf das Herzstück der App geworfen, das Navigationskonzept. Hierbei ist eine der wichtigsten Fragen: \glqq Wie kann ich auch bei ggf. großen Datenmengen eine übersichtliche, intuitive Struktur schaffen, die sich in das Gesamtkonzept von Windows 8 eingliedert?\grqq.
 
 Damit die zu erstellende App im Folgenden einen griffigeren Namen hat, wird an dieser Stelle die Namensfindung erläutert, sie heißt \glqq ZEIGHT\grqq\ (gesprochen: Zeit). Der Name setzt sich zusammen aus \glqq ZEIT\grqq\ und der englischen Zahl \glqq eight\grqq. Hintergrund ist, dass eine \glqq Zeit\grqq-App für Windows 8 (eight) entwickelt wird.
 
@@ -287,11 +289,11 @@ Das Hauptaugenmerk bei ZEIT ONLINE liegt auf der herkömmlichen Webseite. Hier w
 	\label{fig:homepage}
 \end{figure}
 
-Abbildung \ref{fig:homepage} zeigt den obersten Teil der Homepage. Im oberen Bereich der Abbildung ist die Navigationsleiste zu erkennen. Sie zeigt die verschiedenen Haupt-Ressorts von ZEIT ONLINE. Klickt der User auf ein Ressort in der Navigation, landet er auf der jeweiligen sogenannten \textit{Centerpage} des Ressorts. Diese sehen im oberen Teil genauso aus wie die Homepage. Es gibt an erster Stelle ein großes Aufmacherbild oder Video und darunter meist mehrere kleinere \textit{Teaserelemente}. In der rechten Spalte sind die zurzeit meistgelesenen Artikel sowie die Artikel mit den meisten Nutzerkommentaren aufgelistet. Auf der Startseite gilt diese Liste über alle Ressorts hinweg, auf den jeweiligen Centerpages der Ressorts ist die Auflistung auf das jeweilige Ressort beschränkt.
+Abbildung \ref{fig:homepage} zeigt den obersten Teil der Homepage. Im oberen Bereich der Abbildung ist die Navigationsleiste zu erkennen. Sie zeigt die verschiedenen Haupt-Ressorts von ZEIT ONLINE. Klickt der User auf ein Ressort in der Navigation, landet er auf der jeweiligen sogenannten \textit{Centerpage} des Ressorts. Diese sieht im oberen Teil genauso aus wie die Homepage. Es gibt an erster Stelle ein großes Aufmacherbild oder Video und darunter meist mehrere kleinere \textit{Teaserelemente}. In der rechten Spalte sind die zurzeit meistgelesenen Artikel sowie die Artikel mit den meisten Nutzerkommentaren aufgelistet. Auf der Startseite gilt diese Liste über alle Ressorts hinweg, auf den jeweiligen Centerpages der Ressorts ist die Auflistung auf das jeweilige Ressort beschränkt.
 
 Es gibt auf der ZEIT ONLINE Webseite nicht nur Nachrichtenbeiträge zu lesen. Daneben werden außerdem u.a. Bilderstecken, Videos, Spiele und Quizze angeboten. 
 
-Da zunehmend immer mehr Leser die Webseite vom Smartphone aus aufrufen, gibt es unter \textit{mobil.zeit.de} eine für Smartphones optimierte mobile Webseite. In der Startansicht der mobilen Webseite werden alle Teaserelemente der Desktop Seite dargestellt. Außerdem werden darunter 3 Elemente aus jedem Ressort aufgeführt. Der Benutzer kann auch auf der mobilen Webseite direkt in ein Ressort wechseln und bekommt dort alle Elemente des jeweiligen Ressorts angezeigt. Auf Abbildung \ref{fig:mobilehomepage} sind von links nach recht, die Startseite, die Artikelansicht und das Navigationsmenü für die Ressorts dargestellt.
+Da zunehmend immer mehr Leser die Webseite vom Smartphone aus aufrufen, gibt es unter \textit{mobil.zeit.de} eine für Smartphones optimierte mobile Webseite. In der Startansicht der mobilen Webseite werden alle Teaserelemente der Desktop Seite dargestellt. Außerdem werden darunter 3 Elemente aus jedem Ressort aufgeführt. Der Benutzer kann auch auf der mobilen Webseite direkt in ein Ressort wechseln und bekommt dort alle Elemente des jeweiligen Ressorts angezeigt. Auf Abbildung \ref{fig:mobilehomepage} sind von links nach rechts, die Startseite, die Artikelansicht und das Navigationsmenü für die Ressorts dargestellt.
 
 \begin{figure}[h]	
 	\centering
@@ -315,7 +317,7 @@ Abbildung \ref{fig:ipad1} zeigt links die Ausgabenverwaltung der App. Hier könn
 
 \subsubsection{Die Webapp}
 \label{subsubsec:webapp}
-Eine weitere App ist die Webapp. Sie ist im Grunde eine abgespeckte Version der iPad App. Es können ebenfalls keine ZEIT ONLINE Inhalte konsumiert werden, sondern nur die digitalen Ausgaben der ZEIT erworben werden. Die Webapp ist im Browser unter \textit{webapp.zeit.de} erreichbar. Des Weiteren gibt es einen Android- und einen Kindle-Wrapper, sodass die App auch über den \textit{Google Play Store}, sowie den \textit{Amazon Store} zu beziehen ist. 
+Eine weitere App ist die Webapp. Sie ist im Grunde eine abgespeckte Version der iPad App. Es können ebenfalls keine ZEIT ONLINE Inhalte konsumiert werden, sondern nur die digitalen Ausgaben der ZEIT erworben werden. Die Webapp ist im Browser unter \textit{webapp.zeit.de} erreichbar. Des Weiteren gibt es einen Android- und einen Kindle-Wrapper, sodass die App auch über den \textit{Google Play Store} sowie den \textit{Amazon Store} zu beziehen ist. 
 
 \begin{figure}[h]	
 	\centering
@@ -343,15 +345,15 @@ Abbildung \ref{fig:iphoneapp} zeigt eine Bildstrecke der iPhone App. Das zweite 
 
 \subsection{Ziele der App - Was wird dargestellt}
 \label{subsec:zielderapp}
-Das übergeordnete Ziel der App ist es, eine Nachrichten Applikation für Windows 8 zu erstellen, die den Inhalt der ZEIT ONLINE Webseite auf für den Nutzer ansprechende und intuitive Art und Weise darstellt. Das Layout und die Darstellung der Inhalte soll sich an das sogenannte \glqq Look and Feel\grqq\ von Windows 8 anpassen und sich daran orientieren.
+Das übergeordnete Ziel der App ist es, eine Nachrichten Applikation für Windows 8 zu erstellen, die den Inhalt der ZEIT ONLINE Webseite auf für den Nutzer ansprechende und intuitive Art und Weise darstellt. Das Layout und die Darstellung der Inhalte sollen sich an das sogenannte \glqq Look and Feel\grqq\ von Windows 8 anpassen und sich daran orientieren.
 
-Der Fokus bei den Inhalten liegt auf den Artikeln selbst und den jeweiligen Aufmacher bzw. Teaser Bildern. Das heißt andere Inhalte wie z.B. Bildergalerien, Infografiken, Blogartikel oder Quizze werden von der App nicht erfasst und nicht dargestellt. Hintergrund ist, die App möglichst übersichtlich zu halten da es in der Fragestellung um die Relation zwischen den Aufmacherbildern und den dahinter liegenden Artikeltexten geht. Die App erhebt in dieser Hinsicht keinen Anspruch darauf, die gesamten redaktionellen Inhalte von \mbox{ZEIT ONLINE} darzustellen, sondern versteht sich eher als explorative Applikation im Sinne der Fragestellung.
+Der Fokus bei den Inhalten liegt auf den Artikeln selbst und den jeweiligen Aufmacher bzw. Teaser Bildern. Andere Inhalte wie z.B. Bildergalerien, Infografiken, Blogartikel oder Quizze werden von der App nicht erfasst und nicht dargestellt, da es in der Fragestellung schwerpunktmäßig um die Relation zwischen den Aufmacherbildern und den dahinter liegenden Artikeltexten geht. Die App erhebt in dieser Hinsicht keinen Anspruch darauf, die gesamten redaktionellen Inhalte von \mbox{ZEIT ONLINE} darzustellen, sondern versteht sich eher als explorative Applikation im Sinne der Fragestellung.
 
-Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, inwieweit es möglich ist, allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Der User soll die Möglichkeit haben die standardmäßig vorhandenen Artikeltitel auszublenden, um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen.
+Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, inwieweit es möglich ist, allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Der User soll die Möglichkeit haben, die standardmäßig vorhandenen Artikeltitel auszublenden, um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen.
 
-Außerdem soll die App dazu dienen, zu erforschen, wie eine Nachrichten App in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- und auch funktionstechnischen Vorgaben von Microsoft vorhanden sind. Sprich, wie eine App mit Nachrichteninhalten aus Microsofts Sichtweise auszusehen hat.
+Außerdem soll die App dazu dienen zu erforschen, wie eine Nachrichten App in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- und auch funktionstechnischen Vorgaben von Microsoft vorhanden sind, das heißt wie eine App mit Nachrichteninhalten aus Microsofts Sichtweise auszusehen hat.
 
-Zusammengefasst soll eine Windows 8 App erstellt werden, welche die Artikel der ZEIT ONLINE Webseite darstellt. Dieses übergeordnete Ziel um fasst drei Teilziele.
+Zusammengefasst soll eine Windows 8 App erstellt werden, welche die Artikel der ZEIT ONLINE Webseite darstellt. Dieses übergeordnete Ziel umfasst drei Teilziele.
 
 \begin{enumerate}
 	\item Das User Interface der App ist ansprechend gestaltet
@@ -477,10 +479,12 @@ Folgende Javascript Dateien sind bereits in der Raster-App Vorlage enthalten:
 
 \subsubsection{CSS Dateien}
 \label{subsubsec:cssdateien} 
+Folgende CSS Dateien sind bereits in der Raster-App Vorlage enthalten:
 \begin{itemize}
 	\item Die \textit{default.css} Datei enthält die Styles für Inhaltshostseite, sowie andere globale Styles.
 	\item Die \textit{groupedItems.css}, \textit{groupDetail.css} und \textit{itemDetail.css} Dateien enthalten die Styles für die gleichnamigen \ac{html} Dateien.
 \end{itemize}
+
 Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzeptionierten Anforderungen erfüllt.
 
 \subsection{Datenanbindung}
@@ -626,7 +630,7 @@ In der Artikelansicht hat der User die Möglichkeit, die Schriftgröße anzupass
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/font_size_menu_kompakt.png} 
-	\caption[Die Schriftgröße Buttons]{Links: Schriftgröße Button im unteren Menü | Mitte: Das Flyout-Menü mit allen Schaltflächen. |Rechts: Das Flyout-Menü beim Aufruf wenn der größte Wert eingestellt ist.}
+	\caption[Die Schriftgröße-Buttons]{Links: Schriftgröße Button im unteren Menü | Mitte: Das Flyout-Menü mit allen Schaltflächen. |Rechts: Das Flyout-Menü beim Aufruf wenn der größte Wert eingestellt ist.}
 	\label{fig:fontsizemenü}
 \end{figure} 
 
@@ -637,7 +641,7 @@ Das \glqq Semantic Zoom\grqq\ Feature wird eingesetzt, wenn es in der Hubansicht
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{Bilder/Screenshots/app/reise_aegypten_1zoom.png} 
-	\caption{Die \glqq Semantic Zoom\grqq\ Ansicht.}
+	\caption[Die Semantic Zoom Ansicht]{Die \glqq Semantic Zoom\grqq\ Ansicht.}
 	\label{fig:semanticzoom}
 \end{figure}  
 
@@ -738,7 +742,7 @@ TP1 fand das Navigationskonzept \glqq absolut intuitiv\grqq, wobei sie anmerkte,
 
 Generell lässt sich sagen, dass die Hauptnavigationsstruktur (Hubansicht, Ressortübersicht, Artikelansicht) von allen Testpersonen für intuitiv und gut verständlich empfunden wurde. Die meisten haben es auch geschafft, die Menüs mit den Features \glqq Titel ausblenden\grqq\ und \glqq Schriftgröße\grqq\ aufzurufen. Ein Feature wurde allerdings nur von einer Testperson gefunden, der \glqq Semantic Zoom\grqq. Wenn dieses Navigationselement von einer App benutzt wird, sollte gezielt darauf hingewiesen werden, da die Möglichkeit eines \glqq Semantic Zooms\grqq, gerade für Windows 8 Einsteiger, oft nicht intuitiv ersichtlich ist.
 
-\subsubsection{Der \glqq Nur-Bilder-Modus\grqq\ }
+\subsubsection{Der Nur-Bilder-Modus}
 \label{subsubsec:nurbildermodus}
 Hier sollen die Möglichkeiten und die Sinnhaftigkeit des \glqq Nur-Bilder-Modus\grqq\  dargestellt und untersucht werden. Alle Testpersonen gaben an, täglich über verschiedenste Kanäle Nachrichten zu konsumieren. Sei es im Fernsehen, Online, Radio, Smartphone oder die Zeitung. Das bedeutet, es ist zu vermuten, dass alle Testpersonen über ein Basiswissen, was tagesaktuelle Geschehnisse betrifft, verfügen.
 
