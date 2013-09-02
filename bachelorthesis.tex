@@ -345,13 +345,13 @@ Abbildung \ref{fig:iphoneapp} zeigt eine Bildstrecke der iPhone App. Das zweite 
 
 \subsection{Ziele der App - Was wird dargestellt}
 \label{subsec:zielderapp}
-Das übergeordnete Ziel der App ist es, eine Nachrichten Applikation für Windows 8 zu erstellen, die den Inhalt der ZEIT ONLINE Webseite auf für den Nutzer ansprechende und intuitive Art und Weise darstellt. Das Layout und die Darstellung der Inhalte sollen sich an das sogenannte \glqq Look and Feel\grqq\ von Windows 8 anpassen und sich daran orientieren.
+Das übergeordnete Ziel der ZEIGHT App ist es, eine Nachrichten Applikation für Windows 8 zu erstellen, die den Inhalt der ZEIT ONLINE Webseite auf für den Nutzer ansprechende und intuitive Art und Weise darstellt. Das Layout und die Darstellung der Inhalte sollen sich an das sogenannte \glqq Look and Feel\grqq\ von Windows 8 anpassen und sich daran orientieren.
 
 Der Fokus bei den Inhalten liegt auf den Artikeln selbst und den jeweiligen Aufmacher bzw. Teaser Bildern. Andere Inhalte wie z.B. Bildergalerien, Infografiken, Blogartikel oder Quizze werden von der App nicht erfasst und nicht dargestellt, da es in der Fragestellung schwerpunktmäßig um die Relation zwischen den Aufmacherbildern und den dahinter liegenden Artikeltexten geht. Die App erhebt in dieser Hinsicht keinen Anspruch darauf, die gesamten redaktionellen Inhalte von \mbox{ZEIT ONLINE} darzustellen, sondern versteht sich eher als explorative Applikation im Sinne der Fragestellung.
 
 Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, inwieweit es möglich ist, allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Der User soll die Möglichkeit haben, die standardmäßig vorhandenen Artikeltitel auszublenden, um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen.
 
-Außerdem soll die App dazu dienen zu erforschen, wie eine Nachrichten App in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- und auch funktionstechnischen Vorgaben von Microsoft vorhanden sind, das heißt wie eine App mit Nachrichteninhalten aus Microsofts Sichtweise auszusehen hat.
+Außerdem soll ZEIGHT dazu dienen zu erforschen, wie eine Nachrichten App in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- und auch funktionstechnischen Vorgaben von Microsoft vorhanden sind, das heißt wie eine App mit Nachrichteninhalten aus Microsofts Sichtweise auszusehen hat.
 
 Zusammengefasst soll eine Windows 8 App erstellt werden, welche die Artikel der ZEIT ONLINE Webseite darstellt. Dieses übergeordnete Ziel umfasst drei Teilziele.
 
@@ -414,7 +414,7 @@ Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu 
 
 \subsubsection{Menü und Features}
 \label{subsubsec:menuandproperties}
-Da die App einen explorativen Charakter hat, werden die Funktionen und Features auf das Nötigste beschränkt. Es soll eine untere App-Leiste geben, in der in Abhängigkeit von der gerade gewählten Ansicht verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann durch einen Rechtsklick aufgerufen werden, falls mit der Maus gearbeitet wird. Auf einem Tablet geschieht dies durch Swipen vom oberen oder unteren Bildschirmrand.
+Da die ZEIGHT App einen explorativen Charakter hat, werden die Funktionen und Features auf das Nötigste beschränkt. Es soll eine untere App-Leiste geben, in der in Abhängigkeit von der gerade gewählten Ansicht verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann durch einen Rechtsklick aufgerufen werden, falls mit der Maus gearbeitet wird. Auf einem Tablet geschieht dies durch Swipen vom oberen oder unteren Bildschirmrand.
 
 In der Startansicht sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden, um so dem User alternativ ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern oder wieder auf ihren Startwert zu setzen, da die App eventuell auf Monitoren mit verschieden großen Auflösungen ausgeführt wird oder die Sehkraft des Users nicht mehr ausreicht, um eine normal große Schrift zu erkennen und zu lesen. So wird ein gewisses Maß an Barrierefreiheit gewährleistet. 
 
@@ -442,7 +442,7 @@ Letztendlich macht es keinen großen Unterschied, ob mit herkömmlich Programmie
 \newpage
 \section{Umsetzung der App}
 \label{sec:umsetzungderapp}
-Nachdem die Konzeption der App abgeschlossen ist, wird in dieser Sektion erläutert, wie die App umgesetzt wird. Dazu wird zunächst Microsofts Raster-Vorlage näher beleuchtet. Anschließend werden die Datenanbindung, die Darstellung der Daten sowie die Features erklärt. Am Ende dieser Sektion befindet sich die Entwicklungschronologie. Sie gibt einen detaillierten Einblick in den zeitlichen Ablauf des Entwicklungsprozesses.
+Nachdem die Konzeption der ZEIGHT App abgeschlossen ist, wird in dieser Sektion erläutert, wie die App umgesetzt wird. Dazu wird zunächst Microsofts Raster-Vorlage näher beleuchtet. Anschließend werden die Datenanbindung, die Darstellung der Daten sowie die Features erklärt. Am Ende dieser Sektion befindet sich die Entwicklungschronologie. Sie gibt einen detaillierten Einblick in den zeitlichen Ablauf des Entwicklungsprozesses.
 
 \subsection[Rastervorlage] {Rastervorlage\footnote{Die Namen der verwendeten Dateien in der Rastervorlage wurden mittlerweile von Microsoft geändert.}}
 \label{subsec:rastervorlage}
@@ -503,7 +503,7 @@ Damit Nachrichten in der App angezeigt werden können, muss eine Datenverbindung
 \label{subsubsec:zondatenbestand}
 Es soll zunächst geklärt werden, wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} das fertige \ac{html} erstellt.
 
-Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt, um die gewünschten Informationen darzustellen, zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politik-Ressorts) sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, der erläutert, worum es in dem dahinter liegenden Artikel geht.\\
+Für ZEIGHT wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt, um die gewünschten Informationen darzustellen, zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politik-Ressorts) sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, der erläutert, worum es in dem dahinter liegenden Artikel geht.\\
 
 \begin{minipage}{\linewidth}
 \input{Listings/cp_button_digital.xml.tex}
@@ -607,7 +607,7 @@ Beim Parsen des Artikel-\ac{xml}s müssen folgende drei Sachverhalte besonders b
 
 \subsection{Features}
 \label{subsec:features}
-Im Folgenden werden hier die Features der App erläutert. Es handelt sich hierbei zum einen um die Einstellungen, die der User über die untere Menüleiste vornehmen kann und zum anderen um das \glqq Semantic Zoom\grqq\ Feature.
+Im Folgenden werden hier die Features der ZEIGHT App erläutert. Es handelt sich hierbei zum einen um die Einstellungen, die der User über die untere Menüleiste vornehmen kann und zum anderen um das \glqq Semantic Zoom\grqq\ Feature.
 
 \subsubsection{Artikeltitel ausblenden}
 \label{subsubsec:artikeltitelausblenden}
@@ -682,7 +682,7 @@ Es sind hier nur die wichtigen Schritte im Entwicklungsprozess beschrieben. Auf 
 \newpage
 \section{Evaluierung} 
 \label{sec:evaluierung}
-Bei der Evaluierung soll herausgefunden werden, inwieweit die App intuitiv bedienbar ist und ob eine rein bildliche Darstellung ohne Artikeltitel beim Konsumieren von Nachrichten Sinn ergibt. Es wird hierzu eine Abwandlung der Fokusgruppenevaluierung angewendet. 
+Bei der Evaluierung soll herausgefunden werden, inwieweit die ZEIGHT App intuitiv bedienbar ist und ob eine rein bildliche Darstellung ohne Artikeltitel beim Konsumieren von Nachrichten Sinn ergibt. Es wird hierzu eine Abwandlung der Fokusgruppenevaluierung angewendet. 
 
 \subsection{Fokusgruppe}
 \label{subsec:fokusgruppe}
