@@ -22,13 +22,10 @@
 
 \geometry{a4paper, portrait, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 
-
-
-
 \newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
 
 \author{von Malte Modrow \\ Matrikel-Nr. 1975941}
-\title{\HRule \\ Konzeption und Erstellung einer Windows 8 App mit Webtechnologien bei ZEIT ONLINE zum Thema; Nachrichten visuell erleben \HRule}
+\title{\HRule \\ Konzeption und Erstellung einer Windows 8 App mit Webtechnologien bei ZEIT ONLINE zum Thema: Nachrichten visuell erleben \HRule}
 \subject{ \centering \includegraphics[width=0.8\textwidth]{Bilder/Abbildungen/haw_logo.png} \vspace{0.3cm} \\ Department Medientechnik \vspace{-1cm}}
 \date{}
 
@@ -90,7 +87,7 @@
 \begin{document}
 \pagestyle{empty}
 \maketitle
-
+\thispagestyle{empty}
 \begin{center}		
 	\LARGE
 	\textbf{Bachelorthesis (B.Sc.)}
@@ -108,7 +105,6 @@
 \end{center}
 
 \newpage
-\parindent0cm
 \selectlanguage{ngerman}
 \begin{abstract}
 Das Ziel dieser Arbeit ist es eine ansprechende und intuitive Window 8 Nachrichten Applikation mit Artikeln von ZEIT ONLINE zu konzeptionieren und zu entwickeln. Des Weiteren wird untersucht, inwieweit es möglich ist, Nachrichten auf der Einstiegsebene rein visuell zu konsumieren. Zur Entwicklung wird Microsofts neuer Ansatz, die Erstellung von nativen Apps mit Webtechnologien, genutzt. Als Evaluation wird zunächst eine Untersuchung durchgeführt, in der Testpersonen versuchen sollen, Bilder von Nachrichtenartikeln auch ohne erklärenden Text einem Thema zuzuordnen. Anschließend sollen sie die App benutzen, um danach im Interview ihre Erfahrungen und Meinungen bezüglich der Intuitivität und des \glqq Nur-Bilder-Modus\grqq\ darzustellen. Hierbei wird festgestellt, dass die App fast durchgängig intuitiv bedienbar ist. Der durchgeführte Versuch zur Erkennung von Inhalten alleine aufgrund von Bildern zeigt, dass ein Großteil der Bilder auch ohne Artikeltitel grob einem Thema zugeordnet werden kann. Der \glqq Nur-Bilder-Modus\grqq\ funktioniert jedoch nur, wenn der Leser nicht gezielt nach Informationen sucht, sondern Nachrichten eher entdecken möchte.
@@ -116,7 +112,7 @@ Das Ziel dieser Arbeit ist es eine ansprechende und intuitive Window 8 Nachricht
 
 \selectlanguage{english}
 \begin{abstract}
-The goal of this thesis is, to conceptualize and develop an intuitive and appealing news app for Windows 8 with ZEIT ONLINE content. Further will be examined whether or not it is possible and useful to view and consume news only by looking at images on the initial content level. For developing this Windows 8 app, Microsofts new approach, which is developing native Apps with webtechnologies, will be used.
+The goal of this thesis is, to conceptualize and develop an intuitive and appealing news app for Windows 8 with ZEIT ONLINE content. Further will be examined whether or not it is possible and useful to view and consume news only by looking at images on the initial content level. For developing this Windows 8 app, Microsofts new approach, which is developing native Apps with webtechnologies, will be used. The first step in the evaluation process was a survey, in which the test persons were asked to try to determine the specific content of an article only by looking at the articles image. After that, the test persons are asked to use the app for a while, so they can share their experiences and opinions regarding the intuitivity of the app and the \glqq picture-only-mode\grqq\ in an interview afterwards. The result is, that the app can be used intuitively most of the time. The initial survey, in which the test person were asked to determine the content of an article only by looking at the teaser image, showed that it is possible most of the times to identify the rough topic of an article, without having the article-title to rely on. The \glqq picture-only-mode\grqq\ however only works if the reader is not looking for specific information, but rather has some time to downright discover the news, opposed to \glqq only\grqq\ consuming them.
 \end{abstract}
 \selectlanguage{ngerman}
 
@@ -169,14 +165,14 @@ Für die Inhalte der ZEIT ONLINE Webseite gibt es bisher neben der mobilen Webse
 
 Als Grundlage wird zunächst auf ausgewählte Aspekte von Windows 8 eingegangen, auf die Windows 8-Philosophie und das neue Bedienkonzept. Anschließend wird die aktuelle Situation bezüglich der mobilen Apps bei ZEIT ONLINE betrachtet. Im weiteren Verlauf der Arbeit wird detailliert auf die Konzeption der App und deren Umsetzung eingegangen: Was soll dargestellt werden? Wie soll es dargestellt werden? Und wie wird es entwickelt?
 
-Abschließend wird im Rahmen der Evaluierung wird die intuitive Handhabung der App untersucht sowie auf Aspekte des rein visuellen Erlebens von Nachrichten eingegangen.
+Abschließend wird im Rahmen der Evaluierung die intuitive Handhabung der App untersucht sowie auf Aspekte des rein visuellen Erlebens von Nachrichten eingegangen.
 
 
 
 \newpage
 \section{Windows 8}
 \label{sec:windows8}
-Seit dem 26. Oktober 2012 ist Microsofts aktuellstes Betriebssystem Windows 8 für die breite Öffentlichkeit verfügbar. Dieses unterscheidet sich grundlegend von seinem Vorgänger Windows 7. Microsoft verfolgt mit Windows 8 den Ansatz, das gleiche Betriebssystem sowohl für Desktop- als auch für Tablet-Computer\footnote{Tablet-Computer: kleiner, flacher, tragbarer Computer mit einem Touchscreen. Es wird im Weiteren der Einfachheit halber die englische Version \glqq Tablet\grqq\ benutzt.} zu verwenden. Es besitzt nach wie vor den bekannten Desktop von Windows 7. Äußerlich sind hier nur kleine Änderungen vorgenommen worden. So besitzt z.B. der Windows Explorer ein neues, kontextsensitives Ribbon-Menü\footnote{Auch bekannt als Menüband oder Multifunktionsleiste.}. Neu ist hingegen das "Modern User Interface" (Modern UI, früher Metro), eine für Touch-Gesten optimierte Oberfläche. Diese kann jedoch ebenso auf herkömmliche Weise mit Maus und Tastatur bedient werden. Es können, im Gegensatz zum Desktop, keine herkömmlichen Programme im Modern UI ausgeführt werden. In der Modern UI Oberfläche laufen nur Programme (Apps), die speziell für Windows 8 entwickelt wurden und über den Microsoft Store (siehe Sektion \ref{subsubsec:store} auf Seite \pageref{subsubsec:store}) erhältlich sind. Es soll nun ein etwas detaillierterer Blick auf die neue Oberfläche und dessen Eigenheiten geworfen werden.
+Seit dem 26. Oktober 2012 ist Microsofts aktuellstes Betriebssystem Windows 8 für die breite Öffentlichkeit verfügbar. Dieses unterscheidet sich grundlegend von seinem Vorgänger Windows 7. Microsoft verfolgt mit Windows 8 den Ansatz, das gleiche Betriebssystem sowohl für Desktop- als auch für Tablet-Computer\footnote{Tablet-Computer: kleiner, flacher, tragbarer Computer mit einem Touchscreen. Es wird im Weiteren der Einfachheit halber die englische Version \glqq Tablet\grqq\ benutzt.} zu verwenden. Es besitzt nach wie vor den bekannten Desktop von Windows 7. Äußerlich sind hier nur kleine Änderungen vorgenommen worden. So besitzt z.B. der Windows Explorer ein neues, kontextsensitives Ribbon-Menü\footnote{Auch bekannt als Menüband oder Multifunktionsleiste.}. Neu ist hingegen das "Modern User Interface" (Modern UI, früher Metro), eine für Touch-Gesten optimierte Oberfläche. Diese kann jedoch ebenso auf herkömmliche Weise mit Maus und Tastatur bedient werden. Es können, im Gegensatz zum Desktop, keine herkömmlichen Programme im Modern UI ausgeführt werden. In der Modern UI Oberfläche laufen nur Programme (Apps), die speziell für Windows 8 entwickelt wurden und über den Microsoft Store (siehe Abschnitt \ref{subsubsec:stores} auf Seite \pageref{subsubsec:stores}) erhältlich sind. Es soll nun ein etwas detaillierterer Blick auf die neue Oberfläche und dessen Eigenheiten geworfen werden.
 
 \subsection{Neues Bedienkonzept}
 \label{subsec:bedienkonzept}
@@ -191,7 +187,7 @@ Beim Hochfahren von Windows 8, erwartet den User ein Interface, das er so vom Vo
 
 Dies können Desktop-Programme oder Modern UI Apps (Windows-Store) sein, welche nur über den Microsoft Store zu installieren sind. Der bekannte Desktop-Modus ist in diesem Sinne auch \glqq nur\grqq\ ein spezielles Programm (App), welches in der neuen Oberfläche gestartet und ausgeführt werden kann.
 
-Es gibt einige grundlegende Touch- und Mausgesten, um in der Modern UI Oberfläche zwischen den Apps zu navigieren oder um Optionen oder Einstellungen aufzurufen. Wenn der User sich auf einem Tablet befindet und über den rechten Bildschirmrand von rechts nach links wischt (swipen), öffnet sich am rechten Bildschirmrand die von Microsoft \glqq Charms\grqq\ genannte Menüleiste (siehe Abbildung \ref{fig:charms}). Hier befinden sich die Schaltflächen: Suchen, Teilen, Start , Geräte und Einstellungen. Um die Charms-Bar auf einem Gerät ohne Touch-Unterstützung aufzurufen, muss die Maus in die obere oder untere rechte Ecke des Bildschirms geführt werden. 
+Es gibt einige grundlegende Touch- und Mausgesten, um in der Modern UI Oberfläche zwischen den Apps zu navigieren oder um Optionen oder Einstellungen aufzurufen. Wenn sich der User auf einem Tablet befindet und über den rechten Bildschirmrand von rechts nach links wischt (swipen), öffnet sich am rechten Bildschirmrand die von Microsoft \glqq Charms\grqq\ genannte Menüleiste (siehe Abbildung \ref{fig:charms}). Hier befinden sich die Schaltflächen: Suchen, Teilen, Start , Geräte und Einstellungen. Um die Charms-Bar auf einem Gerät ohne Touch-Unterstützung aufzurufen, muss die Maus in die obere oder untere rechte Ecke des Bildschirms geführt werden. 
 
 \begin{figure}[h]	
 	\centering
@@ -225,7 +221,7 @@ Die letzte grundlegende Geste wird benutzt, um z.B. Optionen, Einstellungen oder
 % touch, vorteile, nachteile
 Windows 8 ist wohl der radikalste Umbruch bei den Microsoft-Betriebssystemen seit Windows 95. Es sollen hier einige Aspekte beleuchtet werden, warum Microsoft diesen Weg eingeschlagen hat.
 
-Viele Features, die heute mit einem Windows PC verbunden werden wie z.B. der Desktop, die Taskleiste oder das Startmenü, wurden ursprünglich in Windows 95 eingeführt. Damals hatte Windows noch keinen Browser. Mit der Zeit gewann das Internet immer mehr an Bedeutung, und der Browser rückte mehr und mehr in den Mittelpunkt der vernetzten Computernutzung. Das Betriebssystem hingegen veränderte sich kaum. Mit Windows 8 versucht Microsoft diesen Schritt nachzuholen und das Betriebssystem um den vernetzten User herum zu konzipieren. Eine der Hauptaufgaben übernehmen hierbei die sogenannte \textit{Live Tiles} auf dem Startbildschirm. Sie zeigen stets aktuelle Informationen, ohne dass der User den Browser öffnen muss \citep{Pachal2012}. 
+Viele Features, die heute mit einem Windows PC verbunden werden wie z.B. der Desktop, die Taskleiste oder das Startmenü, wurden ursprünglich in Windows 95 eingeführt. Damals hatte Windows noch keinen Browser. Mit der Zeit gewann das Internet immer mehr an Bedeutung, und der Browser rückte mehr und mehr in den Mittelpunkt der vernetzten Computernutzung. Das Betriebssystem hingegen veränderte sich kaum. Mit Windows 8 versucht Microsoft diesen Schritt nachzuholen und das Betriebssystem um den vernetzten User herum zu konzipieren. Eine der Hauptaufgaben übernehmen hierbei die sogenannten \textit{Live Tiles} auf dem Startbildschirm. Sie zeigen stets aktuelle Informationen, ohne dass der User den Browser öffnen muss \citep{Pachal2012}. 
 
 \begin{quote}
 \textit{There's tons of stuff on the Internet and your PC basically has this little straw — Internet Explorer — to see all this. We didn't think that should be the case. The whole PC should be about that. Part of what the Start screen is really about is making all this activity — these people that you care about, and all this information — sort of explode so you're immersed in it.} ---Sam Moreau\footnote{Director of design and research for Windows}
@@ -241,7 +237,7 @@ Windows RT ist ein separates Windows Betriebssystem, welches für PCs oder Table
 \label{subsec:ökosystem}
 Kaufte man früher einen PC, ein Notebook oder ein Handy, ging es bei der Abwägung der Kaufkriterien meist ausschließlich um Hersteller und Hardwarespezifikationen. In einer mehr und mehr mobilen und \textit{mehrgerätigen} Welt, wie wir sie heute erleben, kommt zu der Kaufentscheidung noch ein weiterer entscheidender Punkt hinzu. Welches Ökosystem passt am besten zu mir? Denn um auf mehreren Geräten wie z.B. Notebook, Tablet und Smartphone stets seine Daten aktuell und synchron zu halten, muss vorher genau bedacht werden, ob das gewählte Ökosystem den eigenen Anforderungen entspricht. Fragen, die zum  Ökosystem gestellt werden können, sind z.B.: Wie sieht es mit der Anzahl und Verfügbarkeit von Apps im jeweiligen Store aus? Gibt es eine Musikstreaming-Lösung? Wie sieht es mit Filmen und Büchern aus? Wie sehen die Dienste zum Speichern von Daten in der Cloud aus? Es fällt auf, dass heute nicht mehr nur ein Gerät gekauft wird, sondern dass zu diesem Gerät oder diesen Geräten meist ein ganzes Ökosystem mit geliefert wird, unabhängig davon, ob man sich für Apple, Google, Microsoft oder Amazon entscheidet. 
 
-Mit der Einführung von Windows 8 hat Microsoft neuen Schwung in sein gesamtes Ökosystem gebracht. Es wurden verschiedene Dienste vereinheitlicht und zusammengefasst. Das Microsoft Ökosystem umfasst heute u.a. Windows 8, Windows RT, das Smartphone Betriebssystem Windows Phone 8, den Cloudspeicherdienst Skydrive, den Streamingdienst xBox Music und den E-Mail Dienst outlook.com. Viele dieser Dienste existierten schon vor der Einführung von Windows 8. Aber erst mit dessen Einführung wurden die Dienste und Betriebssysteme einer einheitlichen \glqq Designkur\grqq\ unterzogen und enger aufeinander abgestimmt. Außerdem wird im Gegensatz zu vorher nur noch ein Benutzerkonto benötigt, um diese Dienste nutzen zu können.
+Mit der Einführung von Windows 8 hat Microsoft neuen Schwung in sein gesamtes Ökosystem gebracht. Es wurden verschiedene Dienste vereinheitlicht und zusammengefasst. Das Microsoft Ökosystem umfasst heute u.a. Windows 8, Windows RT, das Smartphone-Betriebssystem Windows Phone 8, den Cloudspeicherdienst Skydrive, den Streamingdienst xBox Music und den E-Mail Dienst outlook.com. Viele dieser Dienste existierten schon vor der Einführung von Windows 8. Aber erst mit dessen Einführung wurden die Dienste und Betriebssysteme einer einheitlichen \glqq Designkur\grqq\ unterzogen und enger aufeinander abgestimmt. Außerdem wird im Gegensatz zu vorher nur noch ein Benutzerkonto benötigt, um diese Dienste nutzen zu können.
 
 \subsubsection{Windows Phone}
 \label{subsubsec:windowsphone}
@@ -267,12 +263,12 @@ Eines der wichtigsten Elemente im Ökosystem eines Unternehmens ist der Store. H
 
 Abbildung \ref{fig:storechart} zeigt die Verfügbarkeit der Top 100 iOS Apps \footnote{Liste: http://www.infragistics.com/community/blogs/nick-landry/archive/2013/08/06/top-100-apps-availability-on-ios-android-windows-phone-amp-windows-8.aspx} auf den anderen großen Systemen wie Android, Windows Phone und Windows 8. Hiernach sind im Windows Phone Store 64\% der Top 100 Apps vorhanden und im Windows 8 Store 54\%. Gezählt wurden hier nur offizielle Apps und keine Apps von Drittanbietern. In absoluten Zahlen hat iOS ca. 900.000 Apps im Appstore, Google über 1 Million Apps im Play Store, Windows Phone ca. 160.000 Apps und Windows 8 ca. 110.000 Apps im Windows Store \citep{WinbetaStore2013}.
 
-Microsoft bemüht sich, die fehlenden Apps wie z.B. \textit{Instagram}, \textit{Pinterest}, \textit{Instapaper} oder \textit{Readability} schnellstmöglich nachzuliefern. Dabei wird den Entwicklern teilweise sogar Geld geboten, damit sie eine offizielle \glqq große\grqq\ App entwickeln \citep{WinbetaStore2013}.
+Microsoft bemüht sich, die bekanntesten fehlenden Apps wie z.B. \textit{Instagram}, \textit{Pinterest}, \textit{Instapaper} oder \textit{Readability} schnellstmöglich nachzuliefern. Dabei wird den Entwicklern teilweise sogar Geld geboten, damit sie eine offizielle \glqq große\grqq\ App entwickeln \citep{WinbetaStore2013}.
 
 \newpage
 \section{Konzeption der App}
 \label{sec:konzeption}
-In diesem Abschnitt wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf bereits vorhandene ZEIT ONLINE Apps geworfen. Anschließend geht es darum, die Konzeption für eine Windows 8 Nachrichten App darzustellen und zu erläutern. Dabei gilt es darzulegen, warum und mit welchem Hintergrund Entscheidungen zu Gunsten der einen oder der anderen technischen oder konzeptionellen Methode ausfallen. Dazu müssen zunächst die Ziele der App dargelegt werden. Anschließend muss festgelegt werden, mit welcher Technologie bzw. Programmiersprache gearbeitet werden soll. Zuletzt wird ein detaillierterer Blick auf das Herzstück der App geworfen, das Navigationskonzept. Hierbei ist eine der wichtigsten Fragen: \glqq Wie kann ich auch bei ggf. großen Datenmengen eine übersichtliche, intuitive Struktur schaffen, die sich in das Gesamtkonzept von Windows 8 eingliedert?\grqq.
+In diesem Abschnitt wird zunächst ein Blick auf die ZEIT ONLINE Webseite und auf bereits vorhandene ZEIT ONLINE Apps geworfen. Anschließend geht es darum, die Konzeption für eine Windows 8 Nachrichten App darzustellen und zu erläutern. Dabei gilt es darzulegen, warum und mit welchem Hintergrund Entscheidungen zu Gunsten der einen oder der anderen technischen oder konzeptionellen Methode ausfallen. Dazu müssen zunächst die Ziele der App dargelegt werden. Anschließend wird ein detaillierterer Blick auf das Herzstück der App geworfen, das Navigationskonzept. Hierbei ist eine der wichtigsten Fragen: \glqq Wie kann ich auch bei ggf. großen Datenmengen eine übersichtliche, intuitive Struktur schaffen, die sich in das Gesamtkonzept von Windows 8 eingliedert?\grqq. Zuletzt wird festgelegt, mit welcher Technologie bzw. Programmiersprache gearbeitet werden soll. 
 
 Damit die zu erstellende App im Folgenden einen griffigeren Namen hat, wird an dieser Stelle die Namensfindung erläutert, sie heißt \glqq ZEIGHT\grqq\ (gesprochen: Zeit). Der Name setzt sich zusammen aus \glqq ZEIT\grqq\ und der englischen Zahl \glqq eight\grqq. Hintergrund ist, dass eine \glqq Zeit\grqq-App für Windows 8 (eight) entwickelt wird.
 
@@ -343,7 +339,7 @@ In der iPhone App werden dem User sowohl Inhalte von ZEIT ONLINE als auch die di
 
 Die inhaltliche Struktur ähnelt der der mobilen Webseite. Allerdings kann der User die iPhone App nach seinen Vorlieben anpassen. So kann z.B. eingestellt werden, wie viele Artikel pro Ressort auf der Startseite angezeigt werden sollen.
 
-Abbildung \ref{fig:iphoneapp} zeigt eine Bildstrecke der iPhone App. Das zweite Bild von links zeigt einige der möglichen Einstellungen, die der User vornehmen kann. Das Bild ganz rechts zeigt ein weiteres Feature der App. Es können ausgewählte Artikel heruntergeladen werden und so für den Offline-Betrieb gespeichert werden.
+Abbildung \ref{fig:iphoneapp} zeigt eine Bilderstrecke der iPhone App. Das zweite Bild von links zeigt einige der möglichen Einstellungen, die der User vornehmen kann. Das Bild ganz rechts zeigt ein weiteres Feature der App. Es können ausgewählte Artikel heruntergeladen werden und so für den Offline-Betrieb gespeichert werden.
 
 \subsection{Ziele der App - Was wird dargestellt}
 \label{subsec:zielderapp}
@@ -351,7 +347,7 @@ Das übergeordnete Ziel der ZEIGHT App ist es, eine Nachrichten Applikation für
 
 Der Fokus bei den Inhalten liegt auf den Artikeln selbst und den jeweiligen Aufmacher bzw. Teaser Bildern. Andere Inhalte wie z.B. Bildergalerien, Infografiken, Blogartikel oder Quizze werden von der App nicht erfasst und nicht dargestellt, da es in der Fragestellung schwerpunktmäßig um die Relation zwischen den Aufmacherbildern und den dahinter liegenden Artikeltexten geht. Die App erhebt in dieser Hinsicht keinen Anspruch darauf, die gesamten redaktionellen Inhalte von \mbox{ZEIT ONLINE} darzustellen, sondern versteht sich eher als explorative Applikation im Sinne der Fragestellung.
 
-Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, inwieweit es möglich ist, allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Sektion \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Der User soll die Möglichkeit haben, die standardmäßig vorhandenen Artikeltitel auszublenden, um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen.
+Gleichzeitig soll eine Umgebung geschaffen werden, die es erlaubt Untersuchungen anzustellen, inwieweit es möglich ist, allein durch das Betrachten der Aufmacherbilder auf den Inhalt der jeweiligen Artikel zu schließen (siehe Abschnitt \ref{subsubsec:nurbildermodus} auf Seite \pageref{subsubsec:nurbildermodus}). Der User soll die Möglichkeit haben, die standardmäßig vorhandenen Artikeltitel auszublenden, um so, wenn gewünscht, einen rein visuellen Eindruck der Artikelbilder zu bekommen.
 
 Außerdem soll ZEIGHT dazu dienen zu erforschen, wie eine Nachrichten App in der Modern UI Oberfläche von Windows 8 erstellt wird und welche design- und auch funktionstechnischen Vorgaben von Microsoft vorhanden sind, das heißt wie eine App mit Nachrichteninhalten aus Microsofts Sichtweise auszusehen hat.
 
@@ -383,7 +379,7 @@ Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufi
 	\label{fig:naviflach}
 \end{figure}
 
-Abbildung \ref{fig:naviflach} zeigt, wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand wischt (siehe Sektion \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte, geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permanenten Zurück-Button. 
+Abbildung \ref{fig:naviflach} zeigt, wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand wischt (siehe Abschnitt \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte, geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permanenten Zurück-Button. 
 
 Ein flaches Navigationssystem eignet sich nicht für eine Nachrichten App wie die, die in dieser Arbeit konzipiert und umgesetzt werden soll, weil es zu viele Bereiche (Ressorts) gibt, die sich strukturell zudem sehr ähneln. Hier ist es angebracht, ein hierarchisches Navigationssystem zu verwenden.    
 
@@ -433,7 +429,7 @@ In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen
 
 \subsubsection{Windows 8 App mit Webtechnologien}
 \label{subsubsec:webwin8}
-In Visual Studio können nicht nur Apps mit den klassischen Programmiersprachen, wie in der vorigen Sektion beschrieben, erstellt werden. Visual Studio erlaubt es, Apps mit Webtechnologien zu erstellen. So können Apps mit \ac{html}, CSS und Javascript erstellt werden. Das Markup wird mit \ac{html} erstellt, dieses dann mit CSS gestylt und die Programmlogik mit JavaScript realisiert. Die resultierende App ist trotzdem eine native Windows 8 Anwendung und kann nur auf Windows 8 oder Windows RT Geräten installiert und ausgeführt werden. Das Design und das Layout einer solchen App können in Visual Studio allerdings nicht visuell oder per Drag \& Drop entworfen werden. Für diesen Zweck liefert Microsoft ein gesondertes Programm mit, \textit{Blend für Visual Studio 2012}. In Blend können \ac{html} und CSS Änderungen direkt in einer Live-Vorschau angesehen werden. Außerdem können hier auch Elemente per Drag \& Drop angeordnet und verschoben werden. Ein geöffnetes Visual Studio Projekt kann mit zwei Klicks im Menü direkt in Blend geöffnet werden. 
+In Visual Studio können nicht nur Apps mit den klassischen Programmiersprachen, wie im vorigen Abschnitt beschrieben, erstellt werden. Visual Studio erlaubt es, Apps mit Webtechnologien zu erstellen. So können Apps mit \ac{html}, CSS und JavaScript erstellt werden. Das Markup wird mit \ac{html} erstellt, dieses dann mit CSS gestylt und die Programmlogik mit JavaScript realisiert. Die resultierende App ist trotzdem eine native Windows 8 Anwendung und kann nur auf Windows 8 oder Windows RT Geräten installiert und ausgeführt werden. Das Design und das Layout einer solchen App können in Visual Studio allerdings nicht visuell oder per Drag \& Drop entworfen werden. Für diesen Zweck liefert Microsoft ein gesondertes Programm mit, \textit{Blend für Visual Studio 2012}. In Blend können \ac{html} und CSS Änderungen direkt in einer Live-Vorschau angesehen werden. Außerdem können hier auch Elemente per Drag \& Drop angeordnet und verschoben werden. Ein geöffnetes Visual Studio Projekt kann mit zwei Klicks im Menü direkt in Blend geöffnet werden. 
 
 Auf diese Weise wird es Webentwicklern ermöglicht, einen komfortablen Einstieg in die Programmierung von Windows 8 Apps zu finden. Damit bleibt die Entwicklung nicht nur den .NET-Entwicklern vorbehalten. Ganz ohne Lernaufwand kommen allerdings auch die Webentwickler nicht aus. Um eine App mit Webtechnologien erstellen zu können, müssen sich die Entwickler zuvor mit der neuen API-Technologie vertraut machen \citep{Bleske2012}.
 
@@ -444,11 +440,11 @@ Letztendlich macht es keinen großen Unterschied, ob mit herkömmlich Programmie
 \newpage
 \section{Umsetzung der App}
 \label{sec:umsetzungderapp}
-Nachdem die Konzeption der ZEIGHT App abgeschlossen ist, wird in diesem Abschnitt erläutert, wie die App umgesetzt wird. Dazu wird zunächst Microsofts Raster-Vorlage näher beleuchtet. Anschließend werden die Datenanbindung, die Darstellung der Daten sowie die Features erklärt. Am Ende dieser Sektion befindet sich die Entwicklungschronologie. Sie gibt einen detaillierten Einblick in den zeitlichen Ablauf der einzelnen Entwicklungsschritte.
+Nachdem die Konzeption der ZEIGHT App abgeschlossen ist, wird in diesem Abschnitt erläutert, wie die App umgesetzt wird. Dazu wird zunächst Microsofts Raster-Vorlage näher beleuchtet. Anschließend werden die Datenanbindung, die Darstellung der Daten sowie die Features erklärt. Am Ende dieses Abschnitts befindet sich die Entwicklungschronologie. Sie gibt einen detaillierten Einblick in den zeitlichen Ablauf der einzelnen Entwicklungsschritte.
 
 \subsection[Rastervorlage] {Rastervorlage\footnote{Die Namen der verwendeten Dateien in der Rastervorlage wurden mittlerweile von Microsoft geändert.}}
 \label{subsec:rastervorlage}
-Beim Erstellen einer Windows 8 Modern UI App mit \ac{html} und Javascript bietet Microsoft von Haus aus verschiedene Vorlagen für Visual Studio, welche schon einige Grundfunktionen besitzen und sich so als guter Startpunkt für eine weiterführende App eignen. Die Vorlage, die für diese App verwendet wird, ist die Raster-App (engl. Grid Application) Vorlage. Sie bietet die Grundarchitektur für ein hierarchisches Navigationssystem wie es in Sektion \ref{subsubsec:hierachischessystem} auf Seite \pageref{subsubsec:hierachischessystem} beschrieben ist.
+Beim Erstellen einer Windows 8 Modern UI App mit \ac{html} und JavaScript bietet Microsoft von Haus aus verschiedene Vorlagen für Visual Studio, welche schon einige Grundfunktionen besitzen und sich so als guter Startpunkt für eine weiterführende App eignen. Die Vorlage, die für diese App verwendet wird, ist die Raster-App (engl. Grid Application) Vorlage. Sie bietet die Grundarchitektur für ein hierarchisches Navigationssystem wie es in Abschnitt \ref{subsubsec:hierachischessystem} auf Seite \pageref{subsubsec:hierachischessystem} beschrieben ist.
 
 \begin{figure}[h]
 	\centering
@@ -457,7 +453,7 @@ Beim Erstellen einer Windows 8 Modern UI App mit \ac{html} und Javascript bietet
 	\label{fig:single-page}
 \end{figure}
 
-Es wird von Microsoft empfohlen, dass Windows-Store Apps, die mit \ac{html} und Javascript erstellt werden, das single-page Navigationmodell verwenden. Die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Wrapper-Seite nachgeladen, ähnlich wie ein iframe. Abbildung \ref{fig:single-page} verdeutlicht das Single-Page-Navigation Konzept. Auf diese Weise gibt es keine sichtbare Unterbrechung beim Navigieren, d.h. es ist kein zwischenzeitlich weißer Bildschirm zu sehen. Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}. Abbildung \ref{fig:projektmappe} zeigt die Dateistruktur des Projektes. Anschließend wird erläutert, wofür die einzelnen Dateien verwendet werden.
+Es wird von Microsoft empfohlen, dass Windows-Store Apps, die mit \ac{html} und JavaScript erstellt werden, das single-page Navigationmodell verwenden. Die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Wrapper-Seite nachgeladen, ähnlich wie ein iframe. Abbildung \ref{fig:single-page} verdeutlicht das Single-Page-Navigation Konzept. Auf diese Weise gibt es keine sichtbare Unterbrechung beim Navigieren, d.h. es ist kein zwischenzeitlich weißer Bildschirm zu sehen. Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}. Abbildung \ref{fig:projektmappe} zeigt die Dateistruktur des Projektes. Anschließend wird erläutert, wofür die einzelnen Dateien verwendet werden.
 
 
 \begin{figure}[h]
@@ -477,12 +473,12 @@ Folgende \ac{html} Dateien sind bereits in der Raster-App Vorlage enthalten:
 	\item Die \textit{itemDetail.html} Datei beinhaltet die Einzelansicht eines Elements.
 \end{itemize}
 
-\subsubsection{Javascript Dateien}
+\subsubsection{JavaScript Dateien}
 \label{subsubsec:javascriptdateien} 
-Folgende Javascript Dateien sind bereits in der Raster-App Vorlage enthalten:
+Folgende JavaScript Dateien sind bereits in der Raster-App Vorlage enthalten:
 \begin{itemize}
 	\item Die \textit{default.js} Datei legt fest, wie sich die App beim Start verhält.
-	\item Die \textit{groupedItems.js}, \textit{groupDetail.js} und \textit{itemDetail.js} Dateien sind die Javascript Dateien, welche das Verhalten für die gleichnamigen \ac{html} Dateien festlegen.
+	\item Die \textit{groupedItems.js}, \textit{groupDetail.js} und \textit{itemDetail.js} Dateien sind die JavaScript Dateien, welche das Verhalten für die gleichnamigen \ac{html} Dateien festlegen.
 	\item Die \textit{navigator.js} Datei implementiert das hierarchische Navigationssystem sowie das single-page Navigationmodell.
 	\item Die \textit{data.js} Datei stellt die benötigten Daten für den Rest der App bereit.
 \end{itemize}
@@ -499,7 +495,7 @@ Diese Vorlage wird nachfolgend angepasst und verändert, sodass sie die konzepti
 
 \subsection{Datenanbindung}
 \label{subsec:datenanbindung}
-Damit Nachrichten in der App angezeigt werden können, muss eine Datenverbindung zu ZEIT ONLINE hergestellt werden. Diese Verbindung muss nicht permanent sein, es reicht wenn beim Start der App die aktuellen Daten eingelesen werden. Sollte der Bedarf nach weiteren Daten bestehen, kann jederzeit eine neue Anfrage abgesetzt werden. Zunächst wird erläutert, wie der Datenbestand von ZEIT ONLINE generiert wird. Anschließend wird darauf eingegangen, wie diese Daten in der App verfügbar gemacht werden.
+Damit Nachrichten in der App angezeigt werden können, muss eine Datenverbindung zu ZEIT ONLINE hergestellt werden. Diese Verbindung ist nicht permanent aktiv. Beim Start der App werden zunächst die Basis-Daten eingelesen, anschließend werden nach Bedarf, z.B. wenn der User auf einen Artikel klickt, die benötigten Daten nachgeladen, indem eine weitere Anfrage abgesetzt wird. Zunächst wird erläutert, wie der Datenbestand von ZEIT ONLINE generiert wird. Anschließend wird darauf eingegangen, wie diese Daten in der App verfügbar gemacht werden.
 
 \subsubsection{ZEIT ONLINE Datenbestand}
 \label{subsubsec:zondatenbestand}
@@ -511,17 +507,17 @@ Für ZEIGHT wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert w
 \input{Listings/cp_button_digital.xml.tex}
 \end{minipage}
 
-Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11). Das \ac{xml} für die Artikelansicht ist ähnlich aufgebaut, nur ist hier zusätzlich noch der Artikeltext in Form von Paragraphen-Tags (<p>) enthalten. Wie die Daten im Detail verarbeitet werden, wird in der nächsten Sektion erläutert.
+Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestellt. Es werden jedoch nicht alle Informationen aus dem \ac{xml} verwendet. Die verwendeten Informationen sind das \glqq date-first-released\grqq\ (Zeile 1), der \glqq title\grqq\ (Zeile 3), sowie die \glqq description\grqq\ (Zeile 7) und das \glqq image\grqq\ (Zeile 11). Das \ac{xml} für die Artikelansicht ist ähnlich aufgebaut, nur ist hier zusätzlich noch der Artikeltext in Form von Paragraphen-Tags (<p>) enthalten. Wie die Daten im Detail verarbeitet werden, wird im nächsten Abschnitt erläutert.
 
 \subsubsection{Daten verfügbar machen}
 \label{subsubsec:datenverfügbarmachen}
-Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet, werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim Starten der App, und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Einlesen und Verarbeiten der Daten geschieht in der \textit{data.js} Datei. Es werden alle Teaserelemente aller Ressorts letztendlich in einer  \textit{WinJS.Binding.List} gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine Javascript Bibliothek für Windows-Store Apps, die mit Javascript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise, wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet, wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit. In Listing \ref{lst:bindinglst} ist die Initialisierung einer \textit{WinJS.Binding.List} dargestellt.
+Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet, werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim Starten der App, und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Einlesen und Verarbeiten der Daten geschieht in der \textit{data.js} Datei. Es werden alle Teaserelemente aller Ressorts letztendlich in einer  \textit{WinJS.Binding.List} gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine JavaScript Bibliothek für Windows-Store Apps, die mit JavaScript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise, wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet, wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit. In Listing \ref{lst:bindinglst} ist die Initialisierung einer \textit{WinJS.Binding.List} dargestellt.
 
 \begin{minipage}{\linewidth}
 \input{Listings/binding_list.js.tex}
 \end{minipage}
 
-Die Grundinformationen zu den einzelnen Ressorts wie der Name und die URL werden zunächst als normales Javascript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.
+Die Grundinformationen zu den einzelnen Ressorts wie der Name und die URL werden zunächst als normales JavaScript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.
 
 \begin{minipage}{\linewidth}
 \input{Listings/ressorts_array.js.tex}
@@ -538,13 +534,13 @@ Sobald die Daten in der \textit{WinJS.Binding.List} gespeichert sind, können si
 
 \subsection{Darstellung der Daten}
 \label{subsec:darstellungderdaten}
-In dieser Sektion wird darauf eingegangen, wie die zuvor verarbeiteten und gespeicherten Daten für eine ansprechende Darstellung in der App aufbereitet werden.
+In diesem Abschnitt wird darauf eingegangen, wie die zuvor verarbeiteten und gespeicherten Daten für eine ansprechende Darstellung in der App aufbereitet werden.
 
 \subsubsection{Die Hubansicht}
 \label{subsubsec:hubansicht}
 Wenn die App startet, befindet sich der User in der Hubansicht. Hier werden ihm für alle Haupt-Ressorts die ersten sechs Artikel angezeigt, in der Reihenfolge wie sie auch auf der Webseite zu finden sind (siehe Abbildung \ref{fig:hubressortübersicht}).
 
-Zu der Hubansicht gehören eine \ac{html} Datei, in welcher das Markup festgelegt ist, eine CSS Datei, die das Layout der Seite bestimmt und eine Javascript Datei, in der das Verhalten (die Logik) der Hubseite programmiert wird. 
+Zu der Hubansicht gehören eine \ac{html} Datei, in welcher das Markup festgelegt ist, eine CSS Datei, die das Layout der Seite bestimmt und eine JavaScript Datei, in der das Verhalten (die Logik) der Hubseite programmiert wird. 
 
 \begin{figure}[h]
 	\centering
@@ -553,7 +549,7 @@ Zu der Hubansicht gehören eine \ac{html} Datei, in welcher das Markup festgeleg
 	\label{fig:hubressortübersicht}
 \end{figure}
 
-Um die Daten aus der \textit{WinJS.Binding.List} auf der Hubseite anzeigen zu können, sind einige Schritte notwendig. Zunächst soll der Aufbau der \ac{html} Datei erläutert werden. Listing \ref{lst:hubmarkup} zeigt einen Ausschnitt aus der \textit{groupedItems.html} Datei. Im oberen Teil befindet sich ein Template mit der Klasse \textit{itemtemplate}, welches auf jedes einzelne Element der Hubansicht angewandt wird. Das besondere an diesem Template ist, dass es ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.Binding.Template\grqq\ besitzt. Es akzeptiert Daten aus einer \textit{WinJS.Binding.List}, wie sie in der Rohdatenverarbeitung genutzt wurde. Im unteren Teil ab Zeile 10 steht der Container für den eigentlichen Inhalt. Dieses Objekt besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.ListView\grqq\ . Eine \textit{WinJS.ListView} stellt Elemente in anpassbaren Listen oder Rastern dar. 
+Um die Daten aus der \textit{WinJS.Binding.List} auf der Hubseite anzeigen zu können, sind einige Schritte notwendig. Zunächst soll der Aufbau der \ac{html} Datei erläutert werden. Listing \ref{lst:hubmarkup} zeigt einen Ausschnitt aus der \textit{groupedItems.html} Datei. Im oberen Teil befindet sich ein Template mit der Klasse \textit{itemtemplate}, welches auf jedes einzelne Element der Hubansicht angewandt wird. Das Besondere an diesem Template ist, dass es ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.Binding.Template\grqq\ besitzt. Es akzeptiert Daten aus einer \textit{WinJS.Binding.List}, wie sie in der Rohdatenverarbeitung genutzt wurde. Im unteren Teil ab Zeile 10 steht der Container für den eigentlichen Inhalt. Dieses Objekt besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.ListView\grqq. Eine \textit{WinJS.ListView} stellt Elemente in anpassbaren Listen oder Rastern dar. 
 
 \begin{minipage}{\linewidth}
 \input{Listings/hubmarkup.html.tex}  
@@ -582,11 +578,11 @@ Die Ressortansicht, die zweite Detailstufe zeigt alle Elemente eines Ressorts (s
 	\label{fig:einzelressortübersicht}
 \end{figure}
 
-Die Programmlogik funktioniert analog zur Hubansicht. Es werden die gleichen Mechanismen zur Darstellung des Raster-Musters benutzt. Auch die zu dieser Ansicht gehörende \ac{html} und Javascript Dateien ähneln denen von der Hubansicht sehr. Ein wesentlicher Unterschied besteht darin, dass im Gegensatz zu Hubansicht nicht die Funktion \textit{getClippedList()}, sondern stattdessen die Funktion \textit{getItemsFromGroup()} aufgerufen wird. Sie gibt alle Elemente der übergebenen Gruppe zurück. Diese können nun mit einem \textit{itemTemplate} und einer \textit{WinJS.ListView} dargestellt werden. 
+Die Programmlogik funktioniert analog zur Hubansicht. Es werden die gleichen Mechanismen zur Darstellung des Raster-Musters benutzt. Auch die zu dieser Ansicht gehörende \ac{html} und JavaScript Dateien ähneln denen von der Hubansicht sehr. Ein wesentlicher Unterschied besteht darin, dass im Gegensatz zu Hubansicht nicht die Funktion \textit{getClippedList()}, sondern stattdessen die Funktion \textit{getItemsFromGroup()} aufgerufen wird. Sie gibt alle Elemente der übergebenen Gruppe zurück. Diese können nun mit einem \textit{itemTemplate} und einer \textit{WinJS.ListView} dargestellt werden. 
 
 \subsubsection{Die Artikelansicht}
 \label{subsubsec:artikelansicht}
-Die Artikelansicht ist die letzte Detailstufe. Sie zeigt den eigentlichen Artikelinhalt (siehe Abbildung \ref{fig:artikelansicht}). Dargestellt werden das Ressort, der Titel, der Teasertext, das Aufmacherbild in groß, die Bildunterschrift, das Copyright für das Bild, der Artikeltext, die Quelle des Artikels (z.B. ZEIT ONLINE oder dpa), der Autor sowie das Erstellungsdatum. Die Artikeldarstellung funktioniert etwas anders als die Hub- und der Ressortdarstellung. Es wird kein Template verwendet, stattdessen wird das \ac{html} mit Hilfe von Javascript befüllt. In der \textit{ready()} Funktion der \textit{itemDetail.js} Datei werden zunächst die bereits vorhandenen Informationen in das \ac{html} eingefügt.
+Die Artikelansicht ist die letzte Detailstufe. Sie zeigt den eigentlichen Artikelinhalt (siehe Abbildung \ref{fig:artikelansicht}). Dargestellt werden das Ressort, der Titel, der Teasertext, das Aufmacherbild in groß, die Bildunterschrift, das Copyright für das Bild, der Artikeltext, die Quelle des Artikels (z.B. ZEIT ONLINE oder dpa), der Autor sowie das Erstellungsdatum. Die Artikeldarstellung funktioniert etwas anders als die Hub- und der Ressortdarstellung. Es wird kein Template verwendet, stattdessen wird das \ac{html} mit Hilfe von JavaScript befüllt. In der \textit{ready()} Funktion der \textit{itemDetail.js} Datei werden zunächst die bereits vorhandenen Informationen in das \ac{html} eingefügt.
 
 \begin{figure}[h]
 	\centering
@@ -601,7 +597,7 @@ Listing \ref{lst:artikelinfos} zeigt das Einfügen von Titel, Teasertext und  de
 \input{Listings/artikelinfos.js.tex}  
 \end{minipage}
 
-Beim Parsen des Artikel-\ac{xml}s müssen folgende drei Sachverhalte besonders beachtet werden. Die Absätze des Artikels liegen in Paragraphen-Tags (<p></p>) vor. Es kann vorkommen, dass außer dem reinen Text, zusätzlich noch Infoboxen im Artikel vorhanden sind. Der zweite Besonderheit ist die, dass Nachrichten vom Mikroblogging Dienst Twitter eingebunden werden können. Diese Abschnitte arbeiten ebenfalls mit Paragraphen-Tags. Da Infoboxen und Twitternachrichten sich inhaltlich nicht direkt in den Artikeltext eingliedern, müssen diese Abschnitte vorher herausgefiltert werden. Des weiteren sind in den meisten Artikeln auf der ZEIT ONLINE Webseite Hyperlinks auf andere Artikel oder auf andere Webseiten vorhanden. Diese sind genau wie Infoboxen und Twitternachrichten unerwünscht, da sie, wenn sie vom User aufgerufen werden, außerhalb der aktuellen App im Browser geöffnet würden. Dies unterbricht und stört das App-Erlebnis. Es muss dementsprechend darauf geachtet werden, dass nur der reine Artikeltext als Artikel gespeichert wird. Listing \ref{lst:artikelabsätze} verdeutlicht, wie dies umgesetzt wird. In Zeile 3 werden die Infoboxen und die Twitternachrichten herausgefiltert und in den Zeilen 8-13 werden die \textit{<a></a>} Tags mit Hilfe regulärer Ausdrücke gelöscht. Sobald der Artikel komplett geladen ist, wird er analog zu Listing \ref{lst:artikelinfos} in das \ac{html} Markup eingefügt.
+Beim Parsen des Artikel-\ac{xml}s müssen folgende drei Sachverhalte besonders beachtet werden. Die Absätze des Artikels liegen in Paragraphen-Tags (<p></p>) vor. Es kann vorkommen, dass außer dem reinen Text, zusätzlich noch Infoboxen im Artikel vorhanden sind. Der zweite Besonderheit ist die, dass Nachrichten vom Mikroblogging Dienst Twitter eingebunden werden können. Diese Abschnitte arbeiten ebenfalls mit Paragraphen-Tags. Da Infoboxen und Twitternachrichten sich inhaltlich nicht direkt in den Artikeltext eingliedern, müssen diese Abschnitte vorher herausgefiltert werden. Des Weiteren sind in den meisten Artikeln auf der ZEIT ONLINE Webseite Hyperlinks auf andere Artikel oder auf andere Webseiten vorhanden. Diese sind genau wie Infoboxen und Twitternachrichten unerwünscht, da sie, wenn sie vom User aufgerufen werden, außerhalb der aktuellen App im Browser geöffnet würden. Dies unterbricht und stört das App-Erlebnis. Es muss dementsprechend darauf geachtet werden, dass nur der reine Artikeltext als Artikel gespeichert wird. Listing \ref{lst:artikelabsätze} verdeutlicht, wie dies umgesetzt wird. In Zeile 3 werden die Infoboxen und die Twitternachrichten herausgefiltert und in den Zeilen 8-13 werden die \textit{<a></a>} Tags mit Hilfe regulärer Ausdrücke gelöscht. Sobald der Artikel komplett geladen ist, wird er analog zu Listing \ref{lst:artikelinfos} in das \ac{html} Markup eingefügt.
 
 \begin{minipage}{\linewidth}
 \input{Listings/artikel_absaetze.js.tex}  
@@ -667,7 +663,7 @@ Hier soll beschrieben werden, wie der Entwicklungsprozess von ZEIGHT abgelaufen 
 
 Es wurde zunächst viel recherchiert, zu nennen sind hier insbesondere die Microsoft Richtlinien und Styleguides, um herauszufinden, wie aus Microsoft Sichtweise eine Nachrichten-App auszusehen hat. Dabei war immer wieder die Rede von der Rastervorlage, die sich für solche Zwecke eignen solle. Diese Grundvorlage wurde schließlich für die App ausgewählt. Da die Rastervorlage keine triviale Vorlage ist, musste einige Zeit investiert werden, um alle Vorgänge und Dateien der Vorlage richtig ein- und zuordnen zu können. 
 
-Eines der ersten größeren Probleme war die Dezimierung der Daten für die Hubansicht. Hier musste die Funktion \textit{getClippedList} entwickelt werden (wie in Sektion \ref{subsubsec:hubansicht} beschrieben). Des weiteren wurde in dieser Phase das CSS für Hubansicht und die Ressortübersicht angepasst. Gerade bei der Ressortansicht musste einiges an der Vorlage verändert werden.
+Eines der ersten größeren Probleme war die Dezimierung der Daten für die Hubansicht. Hier musste die Funktion \textit{getClippedList} entwickelt werden (wie in Abschnitt \ref{subsubsec:hubansicht} beschrieben). Des weiteren wurde in dieser Phase das CSS für Hubansicht und die Ressortübersicht angepasst. Gerade bei der Ressortansicht musste einiges an der Vorlage verändert werden.
 
 Danach wurden die Menüleisten hinzugefügt  und die \textit{titleToggle} zum Ausschalten der Artikeltitel programmiert. Da bisher noch keine Versionierung der App vorhanden war, wurde zu diesem Zeitpunkt ein GitHub Repository angelegt\footnote{Link zum GitHub Repository: https://github.com/mohdr0w/Z8} und die App unter Versionskontrolle gestellt. 
 
@@ -739,7 +735,7 @@ Die Evaluierung endet mit dem dritten Teil, einem Interview. Hier sollen im Gesp
 	\item Glaubst du der \glqq Nur-Bilder-Modus\grqq\ macht neugierig? Oder glaubst du er hemmt den Nachrichtenkonsum? 
 \end{enumerate}
 
-Um den Redefluss der Teilnehmer nicht zu unterbrechen, werden die Interviews als Audiomitschnitt gespeichert und später ausgewertet. Quelle der aufgeführten Zitate sind diese Mitschnitte.
+Um den Redefluss der Teilnehmer nicht zu unterbrechen, werden die Interviews als Audiomitschnitt gespeichert und später ausgewertet. Quelle der aufgeführten Zitate sind diese Mitschnitte, welche auf der beigelegten CD angehört werden können.
 
 \subsection{Ergebnisse}
 \label{subsec:ergebnisse}
@@ -761,7 +757,7 @@ Im ersten Teil der Evaluation sollten die Testpersonen versuchen herauszufinden,
 
 Die Testpersonen wurden im Interview gefragt, wie sie an diese Aufgabe herangegangen sind. In einem Punkt waren sich alle Testpersonen einig. Wenn nur eine Person abgebildet ist, müssen weitere Informationen über andere Nachrichtenkanäle bekannt sein, um den Inhalt genauer zu erkennen. TP1 meint, bei Bild 1 sei es sehr schwer, etwas genaues sagen zu können, da diese Person für verschiedene Themen in Frage kommt, z.B. Euro Hawk, Afghanistan, Syrien oder Strukturänderung Bundeswehr. TP5 sagt zu Bild 6: \glqq Bei Bildern, auf denen keine öffentlichen Personen drauf waren, hab ich einfach versucht, über Vorurteile die Personen zu lesen\grqq. 
 
-Bei den Bildern aus dem Politik-Ressort wurde wurde oft auf das bereits aus anderen Nachrichtenquellen Gehörte zurückgegriffen, wohingegen bei den eher zeitlosen Artikeln und Bildern wie z.B. Bild 8 und Bild 11 die grobe Zuordnung recht leicht fiel, aber das Bild für die genaue Bestimmung nicht genügend Informationen lieferte und die Testpersonen auch nicht mit tagesaktuellem Wissen auf die konkreten Inhalte schließen konnten. Bei Bild 8 geht es z.B. darum, dass Graf Zeppelin angeblich gar nicht der Erfinder des Zeppelins war, und bei Bild 11 lautet der Titel: \glqq Hat nur der Mensch Sex in der Missionarsstellung?\grqq. 
+Bei den Bildern aus dem Politik-Ressort wurde oft auf das bereits aus anderen Nachrichtenquellen Gehörte zurückgegriffen, wohingegen bei den eher zeitlosen Artikeln und Bildern wie z.B. Bild 8 und Bild 11 die grobe Zuordnung recht leicht fiel, aber das Bild für die genaue Bestimmung nicht genügend Informationen lieferte und die Testpersonen auch nicht mit tagesaktuellem Wissen auf die konkreten Inhalte schließen konnten. Bei Bild 8 geht es z.B. darum, dass Graf Zeppelin angeblich gar nicht der Erfinder des Zeppelins war, und bei Bild 11 lautet der Titel: \glqq Hat nur der Mensch Sex in der Missionarsstellung?\grqq. 
 
 Es bleibt noch zu klären, ob ein \glqq Nur-Bilder-Modus\grqq\ sinnvoll ist und inwieweit der User dadurch neugierig gemacht wird oder ob dieser Modus ihn eher in seinem Nachrichtenkonsumfluss stört und hemmt. TP1 sagt dazu: \glqq Das kommt drauf an, was ich gerade möchte, [...] wenn ich mich kurz und prägnant informieren möchte [...] muss unbedingt der Text drin sein, [aber] wenn ich mal ein bisschen Zeit habe und sitze irgendwo und warte, dann ist es eher der Entdeckermodus\grqq. TP2 meint, es hänge von der Veranlagung der Person ab. Es sei eine offene Herangehensweise nötig: \glqq Ich gucke mal was mir angeboten wird\grqq. Weiterhin glaubt TP2, dass Inhalte so eventuell besser im Gedächtnis bleiben, weil der User auf diese Weise aktiv auf ein Bild, welches seine Neugier geweckt hat, klickt und sich damit den Inhalt gewissermaßen selbst \glqq erarbeitet\grqq\ hat. TP4 sieht es ähnlich wie TP1. Es komme auf die Situation an und das Ziel des Nachrichtenkonsums an. TP5 meint, es hänge auch sehr stark vom jeweiligen Bild ab: \glqq Es muss eine klare Verbindung zum Inhalt geben [,um die Neugier zu wecken,] was bei reinen Personenbildern nicht der Fall ist.\grqq. 
 
@@ -776,7 +772,7 @@ Nachdem die ZEIGHT App konzeptioniert, umgesetzt und evaluiert wurde, soll festg
 
 Es sollte eine intuitive und ansprechende Nachrichten App entwickelt werden. Durch das hierarchische Navigationssystem und das Einsetzen von Menüleisten gliedert sich die App in das \glqq Look \& Feel\grqq\ von Windows 8 ein. Die Evaluierung hat gezeigt, dass die App intuitiv bedienbar ist. Lediglich bei den Windows 8 spezifischen Gesten, gab es vereinzelt Schwierigkeiten aufgrund mangelnder Erfahrung mit dem System.
 
-Des Weiteren sollte eine Umgebung geschaffen werden, die es erlaubt die  Nachrichten auf der Einstiegsebene rein visuell zu erleben, um anschließend untersuchen zu können, ob so ein Modus sinnvoll ist. Diese Funktionalität wurde umgesetzt, indem eine Funktion zum Aus- und Einblenden der Artikeltitel implementiert wurde. In der Evaluierung wurde untersucht,inwieweit nur aus Bildern auf die jeweiligen Themen der Artikel geschlossen werden kann mit dem Ergebnis, dass die meisten Bilder grob zugeordnet werden können. Hierbei hat sich gezeigt, dass ein \glqq Nur-Bilder-Modus\grqq\ nur in bestimmten Situationen Sinn macht. Möchte sich der User gezielt über die aktuelle Nachrichtenlage informieren, werden ihm hierfür im \glqq Nur-Bilder-Modus\grqq zu wenig Informationen geliefert. Bringt der User mehr Zeit zum Konsumieren der Nachrichten mit, hat sich gezeigt, dass der rein visuelle Modus eine interessante Alternative darstellt. Der User kann auf diese Weise die Nachrichten eher entdecken als sie \glqq nur\grqq\ zu konsumieren. Die ZEIGHT App ist für beide Herangehensweisen flexibel einsetzbar.
+Des Weiteren sollte eine Umgebung geschaffen werden, die es erlaubt die  Nachrichten auf der Einstiegsebene rein visuell zu erleben, um anschließend untersuchen zu können, ob so ein Modus sinnvoll ist. Diese Funktionalität wurde umgesetzt, indem eine Funktion zum Aus- und Einblenden der Artikeltitel implementiert wurde. In der Evaluierung wurde untersucht, inwieweit nur aus Bildern auf die jeweiligen Themen der Artikel geschlossen werden kann mit dem Ergebnis, dass die meisten Bilder grob zugeordnet werden können. Hierbei hat sich gezeigt, dass ein \glqq Nur-Bilder-Modus\grqq\ nur in bestimmten Situationen Sinn macht. Möchte sich der User gezielt über die aktuelle Nachrichtenlage informieren, werden ihm hierfür im \glqq Nur-Bilder-Modus\grqq zu wenig Informationen geliefert. Bringt der User mehr Zeit zum Konsumieren der Nachrichten mit, hat sich gezeigt, dass der rein visuelle Modus eine interessante Alternative darstellt. Der User kann auf diese Weise die Nachrichten eher entdecken als sie \glqq nur\grqq\ zu konsumieren. Die ZEIGHT App ist für beide Herangehensweisen flexibel einsetzbar.
 
 Zusammenfassend kann gesagt werden, dass die Ziele dieser Arbeit und der App erfüllt wurden. 
 
@@ -799,6 +795,16 @@ Abschließend wird ein Ausblick auf die Zukunft von ZEIGHT gegeben. Im allgemein
 
 \section{CD Inhalt}
 \label{app:cd}
+Folgende Dateien sind auf der beigelegten CD enthalten:
+
+\begin{itemize}
+	\item Die Bachelorthesis als PDF-Datei
+	\item Die Bachelorthesis als LaTeX Projekt
+	\item Die ZEIGHT App als Visual Studio Projekt
+	\item Die digitale Version von Anhang \ref{app:anhangA}, inklusive Excel Datei
+	\item Die Audiomitschnitte der Interviews
+	\item Ein Video, welches die ZEIGHT App zeigt und ihre Funktionen erklärt
+\end{itemize}
 
 \newpage
 \section*{Eigenständigkeitserklärung}
