@@ -368,11 +368,11 @@ Zusammengefasst soll eine Windows 8 App erstellt werden, welche die Artikel der 
 
 \subsection{Graphical User Interface}
 \label{subsec:gui}
-Damit der User ein für ihn angenehmes und flüssiges Nutzungserlebnis hat, ist es notwendig, sich über das \ac{gui} Gedanken zu machen, gerade wenn es sich um eine App handelt, in der es viele verschiedene Inhaltsbereiche gibt. Der User soll sich möglichst intuitiv durch die Inhalte bewegen können. Außerdem muss dem User auf der Einstiegsebene ein guter Überblick über die vorhandenen Inhalte gegeben werden, damit er von dort aus zielgerichtet weiter navigieren kann, ohne lange suchen zu müssen. Hierzu ist muss ein passendes Navigationskonzept gefunden werden.  Microsoft nennt in seinen Richtlinien für Windows Store Apps (Modern UI Apps) grundsätzlich zwei Möglichkeiten wie die Navigation umgesetzt werden kann, welche nachfolgend beschrieben werden.
+Damit der User ein für ihn angenehmes und flüssiges Nutzungserlebnis hat, ist es notwendig, sich über das \ac{gui} Gedanken zu machen, gerade wenn es sich um eine App handelt, in der es viele verschiedene Inhaltsbereiche gibt. Der User soll sich möglichst intuitiv durch die Inhalte bewegen können. Außerdem muss dem User auf der Einstiegsebene ein guter Überblick über die vorhandenen Inhalte gegeben werden, damit er von dort aus zielgerichtet weiter navigieren kann, ohne lange suchen zu müssen. Hierzu ist muss ein passendes Navigationskonzept gefunden werden.  Microsoft nennt in seinen Richtlinien für Windows Store Apps (Modern UI Apps) grundsätzlich zwei Möglichkeiten, wie die Navigation umgesetzt werden kann. Diese werden nachfolgend beschrieben.
 
 \subsubsection{Flaches Navigationssystem}
 \label{subsubsec:flachessystem}
-Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufig in Spielen, Browsern oder in Apps zum Erstellen von Dokumenten. Es zeichnet sich dadurch aus, dass sich die Inhalte auf der gleichen hierachischen Ebene befinden. Dieses System eignet sich in den Fällen, wenn ein schneller Wechsel zwischen wenigen Seiten oder Registerkarten möglich sein soll \citep{MicrosoftNavidesign2013}.
+Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufig in Spielen, Browsern oder in Apps zum Erstellen von Dokumenten. Es zeichnet sich dadurch aus, dass sich die Inhalte auf der gleichen hierachischen Ebene befinden. Dieses System eignet sich dann, wenn ein schneller Wechsel zwischen wenigen Seiten oder Registerkarten möglich sein soll \citep{MicrosoftNavidesign2013}.
 
 \begin{figure}[h]	
 	\centering
@@ -381,7 +381,7 @@ Das flache Navigationssystem wird in vielen Windows Store Apps verwendet, häufi
 	\label{fig:naviflach}
 \end{figure}
 
-Abbildung \ref{fig:naviflach} zeigt wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine, nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand wischt (siehe Sektion \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte, geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permanenten Zurück-Button. 
+Abbildung \ref{fig:naviflach} zeigt, wie das flache Navigationssystem funktioniert. Am oberen Rand befindet sich eine nicht immer sichtbare Navigationsleiste mit den verschiedenen Registerkarten oder Seiten. Die Leiste wird angezeigt, wenn der User vom unteren oder oberen Bildrand wischt (siehe Sektion \ref{subsec:bedienkonzept}). Wenn der User die Seite wechseln möchte, geschieht dies  direkt über die Navigationsleiste, d.h. es gibt meist keinen permanenten Zurück-Button. 
 
 Ein flaches Navigationssystem eignet sich nicht für eine Nachrichten App wie die, die in dieser Arbeit konzipiert und umgesetzt werden soll, weil es zu viele Bereiche (Ressorts) gibt, die sich strukturell zudem sehr ähneln. Hier ist es angebracht, ein hierarchisches Navigationssystem zu verwenden.    
 
@@ -397,7 +397,7 @@ Die meisten Windows Store-Apps benutzen ein hierarchisches Navigationssystem, Mi
 	\label{fig:navihierarchisch}
 \end{figure}
 
-Das Schema eines hierarchischen Systems ist in Abbildung \ref{fig:navihierarchisch} dargestellt. Der Einstiegspunkt in die App ist die sogenannte \glqq Hubansicht\grqq, hier ganz oben in der Abbildung zu sehen. In der Hubansicht werden aus den vielen großen Bereichen der App jeweils ein kleiner Teil gesammelt und dargestellt, sodass sich der User vorstellen kann, was ihn im jeweiligen Bereich erwartet. Die Anordnung, in welcher der Auszug der Inhalte dargestellt ist, muss nicht für alle Bereiche gleich sein, es können verschiedene Templates für den Seitenaufbau hinterlegt werden. Es kann das Nutzungserlebnis verbessern und vielfältiger gestalten, wenn unterschiedliche Darstellungen z.B. in Höhe, Breite oder Anzahl der Objekte für die Bereiche genutzt werden. Die Hubansicht wird horizontal gescrollt, d.h. weiterer Inhalt befindet sich hinter dem rechten Rand und kann entweder durch das Scrollrad der Maus oder auf einem Tablet, durch das Swipen nach links in das Sichtfeld des Users gebracht werden.
+Das Schema eines hierarchischen Systems ist in Abbildung \ref{fig:navihierarchisch} dargestellt. Der Einstiegspunkt in die App ist die sogenannte \glqq Hubansicht\grqq, hier ganz oben in der Abbildung zu sehen. In der Hubansicht wird aus den vielen großen Bereichen der App jeweils ein kleiner Teil gesammelt und dargestellt, sodass sich der User vorstellen kann, was ihn im jeweiligen Bereich erwartet. Die Anordnung, in welcher der Auszug der Inhalte dargestellt ist, muss nicht für alle Bereiche gleich sein, es können verschiedene Templates für den Seitenaufbau hinterlegt werden. Es kann das Nutzungserlebnis verbessern und vielfältiger gestalten, wenn unterschiedliche Darstellungen z.B. in Höhe, Breite oder Anzahl der Objekte für die Bereiche genutzt werden. Die Hubansicht wird horizontal gescrollt, d.h. weiterer Inhalt befindet sich hinter dem rechten Rand und kann entweder durch das Scrollrad der Maus oder auf einem Tablet durch das Swipen nach links in das Sichtfeld des Users gebracht werden.
 
 Die mittlere Darstellung in Abbildung \ref{fig:navihierarchisch} zeigt die zweite Detailstufe des hierarchischen Systems. Hier werden alle Elemente eines Bereichs dargestellt.
 
@@ -414,9 +414,9 @@ Befinden sich in der Hubansicht, trotz der Zusammenfassung der Bereiche noch zu 
 
 \subsubsection{Menü und Features}
 \label{subsubsec:menuandproperties}
-Da die App einen explorativen Charakter hat, werden die Funktionen und Features auf das Nötigste beschränkt. Es soll eine untere App-Leiste geben, in der, in Abhängigkeit von der gerade gewählten Ansicht verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann durch einen Rechtsklick aufgerufen werden, falls mit der Maus gearbeitet wird. Auf einem Tablet geschieht dies durch Swipen vom oberen oder unteren Bildschirmrand.
+Da die App einen explorativen Charakter hat, werden die Funktionen und Features auf das Nötigste beschränkt. Es soll eine untere App-Leiste geben, in der in Abhängigkeit von der gerade gewählten Ansicht verschiedene Optionen angezeigt werden. Diese Leiste ist nicht dauerhaft zu sehen und kann durch einen Rechtsklick aufgerufen werden, falls mit der Maus gearbeitet wird. Auf einem Tablet geschieht dies durch Swipen vom oberen oder unteren Bildschirmrand.
 
-In der Startansicht sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden um so dem User alternativ ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern oder wieder auf ihren Startwert zu setzen, da die App eventuell auf Monitoren mit verschieden großen Auflösungen ausgeführt wird oder die Sehkraft des Users nicht mehr ausreicht, um eine normal große Schrift zu erkennen und zu lesen. So wird ein gewisses Maß an Barrierefreiheit gewährleistet. 
+In der Startansicht sowie in der Ressortübersicht soll es am unteren Bildrand die Möglichkeit geben, die Titel aller Elemente aus- bzw. auch wieder einzublenden, um so dem User alternativ ein rein visuelles Erleben der Artikelbilder zu ermöglichen. In der Artikelansicht soll der User die Möglichkeit haben, die Schriftgröße des Artikels zu vergrößern, zu verkleinern oder wieder auf ihren Startwert zu setzen, da die App eventuell auf Monitoren mit verschieden großen Auflösungen ausgeführt wird oder die Sehkraft des Users nicht mehr ausreicht, um eine normal große Schrift zu erkennen und zu lesen. So wird ein gewisses Maß an Barrierefreiheit gewährleistet. 
 
 
 \subsection{Umsetzungsmöglichkeiten in Visual Studio}
@@ -425,7 +425,7 @@ Vor dem Entwickeln einer Windows 8 App muss entschieden werden, mit welcher Tech
 
 \subsubsection{Native App}
 \label{subsubsec:nativ}
-Der heutige Begriff \glqq native App\grqq\ unterscheidet sich in einigen Punkten von der früheren oder ursprünglichen Verwendung des Begriffs. Früher sprach man von einer nativen App, wenn direkt auf die Ressourcen der  Maschine zugegriffen wurde, wie z.B. Maschinencode, der direkt von der CPU ausgeführt wird. Heute wird eine App oftmals schon als nativ deklariert, wenn es sich nicht um eine Webapp handelt. Eine sinnvolle Definition liegt zwischen diesen beiden Varianten. Eine App ist dann nativ, wenn sie geräte- , betriebssystem- oder laufzeitumgebungsabhängig ist. Das heißt, sie ist für ein spezielles Gerät entwickelt und kann nur auf diesem ausgeführt werden. Sie kann dabei alle Geräte- oder Betriebssystemspezifischen Funktionen nutzen, es ist jedoch nicht relevant wie nah an der Hardware tatsächlich programmiert wurde \citep{OBrian2013}.
+Der heutige Begriff \glqq native App\grqq\ unterscheidet sich in einigen Punkten von der früheren oder ursprünglichen Verwendung des Begriffs. Früher sprach man von einer nativen App, wenn direkt auf die Ressourcen der  Maschine zugegriffen wurde, wie z.B. Maschinencode, der direkt von der CPU ausgeführt wird. Heute wird eine App oftmals schon als nativ deklariert, wenn es sich nicht um eine Webapp handelt. Eine sinnvolle Definition liegt zwischen diesen beiden Varianten. Eine App ist dann nativ, wenn sie geräte- , betriebssystem- oder laufzeitumgebungsabhängig ist. Sie ist für ein spezielles Gerät entwickelt und kann nur auf diesem ausgeführt werden. Dabei kann sie alle geräte- oder betriebssystemspezifischen Funktionen nutzen, es ist jedoch nicht relevant wie nah an der Hardware tatsächlich programmiert wurde \citep{OBrian2013}.
 
 In Visual Studio können native Windows 8  Apps u.a. mit den Programmiersprachen C++, C\# oder Visual Basic erstellt werden. Für das Design bzw. das Aussehen der App wird die Markupsprache - \ac{xaml} - verwendet. Es gibt zwei Möglichkeiten, wie das \ac{xaml} erstellt werden kann. Es kann entweder von Hand geschrieben oder automatisch generiert werden. Zum automatischen Generieren lassen sich per Drag \& Drop Elemente wie z.B. Buttons und andere Schaltflächen aus einer Werkzeugpalette direkt auf die \glqq App-Leinwand\grqq\ ziehen und dort verschieben oder nach Belieben anordnen.
 
@@ -448,7 +448,15 @@ Nachdem die Konzeption der App abgeschlossen ist, wird in dieser Sektion erläut
 \label{subsec:rastervorlage}
 Beim Erstellen einer Windows 8 Modern UI App mit \ac{html} und Javascript bietet Microsoft von Haus aus verschiedene Vorlagen für Visual Studio, welche schon einige Grundfunktionen besitzen und sich so als guter Startpunkt für eine weiterführende App eignen. Die Vorlage, die für diese App verwendet wird, ist die Raster-App (engl. Grid Application) Vorlage. Sie bietet die Grundarchitektur für ein hierarchisches Navigationssystem wie es in Sektion \ref{subsubsec:hierachischessystem} auf Seite \pageref{subsubsec:hierachischessystem} beschrieben ist.
 
-Es wird von Microsoft empfohlen, dass Windows-Store Apps, die mit \ac{html} und Javascript erstellt werden, das single-page Navigationmodell verwenden. Die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Seite nachgeladen, ähnlich wie ein iframe. Auf diese Weise gibt es keine sichtbare Unterbrechung beim Navigieren, d.h. es ist kein zwischenzeitlich weißer Bildschirm zu sehen. Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}. Abbildung \ref{fig:projektmappe} zeigt die Dateistruktur des Projektes. Anschließend wird erläutert, wofür die einzelnen Dateien verwendet werden.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Bilder/Abbildungen/single_page.png} 
+	\caption[Die Single-Page-Navigation]{Oben: Die herkömmliche Navigation | Unten: die Single-Page-Navigation. \citep{MicrosoftSinglePage2013}}
+	\label{fig:single-page}
+\end{figure}
+
+Es wird von Microsoft empfohlen, dass Windows-Store Apps, die mit \ac{html} und Javascript erstellt werden, das single-page Navigationmodell verwenden. Die Navigation erfolgt nicht über Hyperlinks, sondern die verschiedenen Inhalte werden direkt in die Wrapper-Seite nachgeladen, ähnlich wie ein iframe. Abbildung \ref{fig:single-page} verdeutlicht das Single-Page-Navigation Konzept. Auf diese Weise gibt es keine sichtbare Unterbrechung beim Navigieren, d.h. es ist kein zwischenzeitlich weißer Bildschirm zu sehen. Außerdem erzielt man auf diese Weise eine bessere Performance und die App fühlt sich mehr \glqq app-like\grqq\ an. Die Rastervorlage verwendet das single-page Navigationsmodell \citep{MicrosoftSinglePage2013}. Abbildung \ref{fig:projektmappe} zeigt die Dateistruktur des Projektes. Anschließend wird erläutert, wofür die einzelnen Dateien verwendet werden.
+
 
 \begin{figure}[h]
 	\centering
@@ -461,7 +469,7 @@ Es wird von Microsoft empfohlen, dass Windows-Store Apps, die mit \ac{html} und 
 \label{subsubsec:htmldateien} 
 Folgende \ac{html} Dateien sind bereits in der Raster-App Vorlage enthalten:
 \begin{itemize}
-	\item Die \textit{default.html} Datei wird als erstes geladen und enthält das \ac{html} für den Inhaltshost, dies ist die Seite in welche die anderen Inhalte im Zuge der single-page Navigation herein geladen werden.
+	\item Die \textit{default.html} Datei wird als erstes geladen und enthält das \ac{html} für den Inhaltshost, dies ist die Seite, in welche die anderen Inhalte im Zuge der single-page Navigation herein geladen werden.
 	\item Die \textit{groupedItems.html} Datei ist der Einstiegspunkt in die App (die Hubansicht).
 	\item Die \textit{groupDetail.html} Datei zeigt alle Elemente eines Bereichs.
 	\item Die \textit{itemDetail.html} Datei beinhaltet die Einzelansicht eines Elements.
@@ -471,9 +479,9 @@ Folgende \ac{html} Dateien sind bereits in der Raster-App Vorlage enthalten:
 \label{subsubsec:javascriptdateien} 
 Folgende Javascript Dateien sind bereits in der Raster-App Vorlage enthalten:
 \begin{itemize}
-	\item Die \textit{default.js} Datei legt fest wie sich die App beim Start verhält.
+	\item Die \textit{default.js} Datei legt fest, wie sich die App beim Start verhält.
 	\item Die \textit{groupedItems.js}, \textit{groupDetail.js} und \textit{itemDetail.js} Dateien sind die Javascript Dateien, welche das Verhalten für die gleichnamigen \ac{html} Dateien festlegen.
-	\item Die \textit{navigator.js} Datei implementiert das hierarchische Navigationssystem, sowie das single-page Navigationmodell.
+	\item Die \textit{navigator.js} Datei implementiert das hierarchische Navigationssystem sowie das single-page Navigationmodell.
 	\item Die \textit{data.js} Datei stellt die benötigten Daten für den Rest der App bereit.
 \end{itemize}
 
@@ -481,7 +489,7 @@ Folgende Javascript Dateien sind bereits in der Raster-App Vorlage enthalten:
 \label{subsubsec:cssdateien} 
 Folgende CSS Dateien sind bereits in der Raster-App Vorlage enthalten:
 \begin{itemize}
-	\item Die \textit{default.css} Datei enthält die Styles für Inhaltshostseite, sowie andere globale Styles.
+	\item Die \textit{default.css} Datei enthält die Styles für Inhaltshostseite sowie andere globale Styles.
 	\item Die \textit{groupedItems.css}, \textit{groupDetail.css} und \textit{itemDetail.css} Dateien enthalten die Styles für die gleichnamigen \ac{html} Dateien.
 \end{itemize}
 
@@ -495,7 +503,7 @@ Damit Nachrichten in der App angezeigt werden können, muss eine Datenverbindung
 \label{subsubsec:zondatenbestand}
 Es soll zunächst geklärt werden, wie sich der Inhalt der ZEIT ONLINE Website darstellt und wie er generiert wird. Die redaktionellen Inhalte werden fast ausschließlich über ein hauseigenes \ac{cms} erstellt und gepflegt. Das \ac{cms} generiert aus den Inhalten eine \ac{xml}-Struktur. Aus dem \ac{xml} wiederum wird anschließend mit Hilfe von \ac{xslt} das fertige \ac{html} erstellt.
 
-Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt, um die gewünschten Informationen darzustellen. Zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politik-Ressorts) sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, der kurz erläutert, worum es in dem dahinter liegenden Artikel geht.\\
+Für die Windows 8 App wird direkt das \ac{xml} verwendet, welches vom \ac{cms} generiert wird. Für die App werden zwei verschiedene Seitentypen der Webseite benötigt, um die gewünschten Informationen darzustellen, zum einen die verschiedenen \glqq Centerpages\grqq\ und zum anderen die Artikelansicht. Centerpages sind die Hauptseiten der jeweiligen Ressorts (z.B. die Hauptseite des Politik-Ressorts) sowie die Startseite mit den wichtigsten und aktuellsten Meldungen. Auf den Centerpages befinden sich die Teaserelemente für die verschiedenen Artikel. Die Teaserelemente bestehen meist aus einem Bild und einem kurzen, prägnanten Text, der erläutert, worum es in dem dahinter liegenden Artikel geht.\\
 
 \begin{minipage}{\linewidth}
 \input{Listings/cp_button_digital.xml.tex}
@@ -505,13 +513,13 @@ Das \ac{xml} von einem Teaserelement ist in Listing \ref{lst:knopfxml} dargestel
 
 \subsubsection{Daten verfügbar machen}
 \label{subsubsec:datenverfügbarmachen}
-Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet, werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim Starten der App, und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Einlesen und Verarbeiten der Daten geschieht in der \textit{data.js} Datei. Es werden alle Teaserelemente aller Ressorts letztendlich in einer  \textit{WinJS.Binding.List} gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine Javascript Bibliothek für Windows-Store Apps, die mit Javascript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet, wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit. In Listing \ref{lst:bindinglst} ist die Initialisierung einer \textit{WinJS.Binding.List} dargestellt.
+Die Daten, die in der App dargestellt werden sollen, werden grundsätzlich in zwei Schritten geladen. Wenn die App startet, werden zunächst alle benötigten Daten außer den eigentlichen Artikeln geladen. Der Artikelinhalt wird erst geladen, wenn der User ihn lesen will. Dies spart Zeit beim Starten der App, und der User hat somit ein flüssigeres App-Erlebnis. Der erste Schritt beim Einlesen und Verarbeiten der Daten geschieht in der \textit{data.js} Datei. Es werden alle Teaserelemente aller Ressorts letztendlich in einer  \textit{WinJS.Binding.List} gespeichert und für den weiteren Gebrauch verfügbar gemacht. Die \ac{winjs} ist eine Javascript Bibliothek für Windows-Store Apps, die mit Javascript erstellt werden. Sie enthält nützliche Funktionen z.B. für UI Steuerelemente oder sie hilft beim \ac{xhr}. Die Binding.List ist ebenfalls ein Teil dieser Bibliothek. Sie stellt Logik für die Datengruppierung bereit, genau in der Art und Weise, wie es für diese App sinnvoll ist. Falls mit dynamischen Daten gearbeitet, wird stellt sie z.B. Funktionen für die automatische Aktualisierung der Daten bereit. In Listing \ref{lst:bindinglst} ist die Initialisierung einer \textit{WinJS.Binding.List} dargestellt.
 
 \begin{minipage}{\linewidth}
 \input{Listings/binding_list.js.tex}
 \end{minipage}
 
-Die Grundinformationen zu den einzelnen Ressorts, wie der Name und die URL, werden zunächst als normales Javascript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.
+Die Grundinformationen zu den einzelnen Ressorts wie der Name und die URL werden zunächst als normales Javascript Array festgelegt. Einen Beispieleintrag aus dem Array zeigt Listing \ref{lst:ressortsarray}.
 
 \begin{minipage}{\linewidth}
 \input{Listings/ressorts_array.js.tex}
@@ -543,13 +551,13 @@ Zu der Hubansicht gehören eine \ac{html} Datei, in welcher das Markup festgeleg
 	\label{fig:hubressortübersicht}
 \end{figure}
 
-Um die Daten aus der \textit{WinJS.Binding.List} auf der Hubseite anzeigen zu können, sind einige Schritte notwendig. Zunächst soll der Aufbau der \ac{html} Datei erläutert werden. Listing \ref{lst:hubmarkup} zeigt einen Ausschnitt aus der \textit{groupedItems.html} Datei. Im oberen Teil befindet sich ein Template mit der Klasse \textit{itemtemplate}, welches auf jedes einzelne Element der Hubansicht angewandt wird. Das besondere an diesem Template ist, dass es ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.Binding.Template\grqq\ besitzt. Dies bedeutet, es akzeptiert Daten aus einer \textit{WinJS.Binding.List}, wie sie in der Rohdatenverarbeitung genutzt wurde. Im unteren Teil ab Zeile 10 steht der Container für den eigentlichen Inhalt. Dieses Objekt besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.ListView\grqq\ . Eine \textit{WinJS.ListView} stellt Elemente in anpassbaren Listen oder Rastern dar. 
+Um die Daten aus der \textit{WinJS.Binding.List} auf der Hubseite anzeigen zu können, sind einige Schritte notwendig. Zunächst soll der Aufbau der \ac{html} Datei erläutert werden. Listing \ref{lst:hubmarkup} zeigt einen Ausschnitt aus der \textit{groupedItems.html} Datei. Im oberen Teil befindet sich ein Template mit der Klasse \textit{itemtemplate}, welches auf jedes einzelne Element der Hubansicht angewandt wird. Das besondere an diesem Template ist, dass es ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.Binding.Template\grqq\ besitzt. Es akzeptiert Daten aus einer \textit{WinJS.Binding.List}, wie sie in der Rohdatenverarbeitung genutzt wurde. Im unteren Teil ab Zeile 10 steht der Container für den eigentlichen Inhalt. Dieses Objekt besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.ListView\grqq\ . Eine \textit{WinJS.ListView} stellt Elemente in anpassbaren Listen oder Rastern dar. 
 
 \begin{minipage}{\linewidth}
 \input{Listings/hubmarkup.html.tex}  
 \end{minipage}
 
-Der Rest passiert in der \textit{groupedItems.js} Datei. Die \textit{groupedItems.js} besitzt eine \textit{ready()} Methode. Diese wird jedesmal aufgerufen, wenn der User zur Hubansicht wechselt oder die Hubansicht wiederhergestellt wird. Um die Daten in der \textit{WinJs.ListView} zu hinterlegen wird als erstes die \textit{WinJS.ListView} in einer Variable gespeichert und anschließend das gewünschte Template bei der ListView registriert (siehe Listing \ref{lst:getitemtemplate}). 
+Der Rest passiert in der \textit{groupedItems.js} Datei. Die \textit{groupedItems.js} besitzt eine \textit{ready()} Methode. Diese wird jedesmal aufgerufen, wenn der User zur Hubansicht wechselt oder die Hubansicht wiederhergestellt wird. Um die Daten in der \textit{WinJs.ListView} zu hinterlegen wird, als erstes die \textit{WinJS.ListView} in einer Variable gespeichert und anschließend das gewünschte Template bei der ListView registriert (siehe Listing \ref{lst:getitemtemplate}). 
 
 \begin{minipage}{\linewidth}
 \input{Listings/setitemtemplate.js.tex}  
@@ -563,7 +571,7 @@ Anschließend wird die \textit{initializeLayout} Funktion aufgerufen. Hier wird 
 
 \subsubsection{Die Ressortansicht}
 \label{subsubsec:ressortansicht}
-Die Ressortansicht, die zweite Detailstufe zeigt alle Elemente eines Ressorts (siehe Abbildung \ref{fig:einzelressortübersicht}). Der User gelangt hierhin wenn er in der Hubansicht auf den Ressortnamen im Headerbereich klickt. 
+Die Ressortansicht, die zweite Detailstufe zeigt alle Elemente eines Ressorts (siehe Abbildung \ref{fig:einzelressortübersicht}). Der User gelangt hierhin, wenn er in der Hubansicht auf den Ressortnamen im Headerbereich klickt. 
 
 \begin{figure}[h]
 	\centering
@@ -576,7 +584,7 @@ Die Programmlogik funktioniert analog zur Hubansicht. Es werden die gleichen Mec
 
 \subsubsection{Die Artikelansicht}
 \label{subsubsec:artikelansicht}
-Die Artikelansicht ist die letzte Detailstufe. Sie zeigt den eigentlichen Artikelinhalt (siehe Abbildung \ref{fig:artikelansicht}). Dargestellt wird das Ressort, der Titel, der Teasertext, das Aufmacherbild in groß, die Bildunterschrift, das Copyright für das Bild, der Artikeltext, die Quelle des Artikels (z.B. ZEIT ONLINE oder dpa), der Autor sowie das Erstellungsdatum. Die Artikeldarstellung funktioniert etwas anders als die Hub- und der Ressortdarstellung. Es wird kein Template verwendet, stattdessen wird das \ac{html} mit Hilfe von Javascript befüllt. In der \textit{ready()} Funktion der \textit{itemDetail.js} Datei werden zunächst die bereits vorhandenen Information in das \ac{html} eingefügt.
+Die Artikelansicht ist die letzte Detailstufe. Sie zeigt den eigentlichen Artikelinhalt (siehe Abbildung \ref{fig:artikelansicht}). Dargestellt werden das Ressort, der Titel, der Teasertext, das Aufmacherbild in groß, die Bildunterschrift, das Copyright für das Bild, der Artikeltext, die Quelle des Artikels (z.B. ZEIT ONLINE oder dpa), der Autor sowie das Erstellungsdatum. Die Artikeldarstellung funktioniert etwas anders als die Hub- und der Ressortdarstellung. Es wird kein Template verwendet, stattdessen wird das \ac{html} mit Hilfe von Javascript befüllt. In der \textit{ready()} Funktion der \textit{itemDetail.js} Datei werden zunächst die bereits vorhandenen Informationen in das \ac{html} eingefügt.
 
 \begin{figure}[h]
 	\centering
@@ -585,13 +593,13 @@ Die Artikelansicht ist die letzte Detailstufe. Sie zeigt den eigentlichen Artike
 	\label{fig:artikelansicht}
 \end{figure}
 
-Listing \ref{lst:artikelinfos} zeigt das Einfügen von Titel, Teasertext und  dem Bild. Anschließend fehlt noch der Artikeltext, die Quelle und der Autor. Um diese Daten zu bekommen und zu speichern ist ein weiterer \ac{xhr} nötig. Der \ac{xhr} wird mit der Artikel-URL aufgerufen, die in jedem Teaserelement gespeichert ist. Auf diese Weise bekommt man das \ac{xml} der Artikel, wie es auch von der Webseite verwendet wird. 
+Listing \ref{lst:artikelinfos} zeigt das Einfügen von Titel, Teasertext und  dem Bild. Anschließend fehlt noch der Artikeltext, die Quelle und der Autor. Um diese Daten zu bekommen und zu speichern, ist ein weiterer \ac{xhr} nötig. Der \ac{xhr} wird mit der Artikel-URL aufgerufen, die in jedem Teaserelement gespeichert ist. Auf diese Weise bekommt man das \ac{xml} der Artikel, wie es auch von der Webseite verwendet wird. 
 
 \begin{minipage}{\linewidth}
 \input{Listings/artikelinfos.js.tex}  
 \end{minipage}
 
-Beim Parsen des Artikel-\ac{xml}s müssen folgende drei Sachverhalte besonders beachtet werden. Die Absätze des Artikels liegen in Paragraphen-Tags (<p></p>) vor. Es kann vorkommen, dass außer dem reinen Text, zusätzlich noch Infoboxen im Artikel vorhanden sind. Der zweite Besonderheit ist, dass Nachrichten vom Mikroblogging Dienst Twitter eingebunden werden können. Diese Abschnitte arbeiten ebenfalls mit Paragraphen-Tags. Da Infoboxen und Twitternachrichten sich inhaltlich nicht direkt in den Artikeltext eingliedern, müssen diese Abschnitte vorher herausgefiltert werden. Des weiteren sind in den meisten Artikeln auf der ZEIT ONLINE Webseite Hyperlinks, entweder auf andere Artikel oder andere Webseiten, vorhanden. Diese sind genau wie Infoboxen und Twitternachrichten unerwünscht, da sie, wenn sie vom User aufgerufen werden, außerhalb der aktuellen App im Browser geöffnet würden. Dies unterbricht und stört das App-Erlebnis. Es muss dementsprechend darauf geachtet werden, dass nur der reine Artikeltext als Artikel gespeichert wird. Listing \ref{lst:artikelabsätze} verdeutlicht wie dies umgesetzt wird. In Zeile 3 werden die Infoboxen und die Twitternachrichten herausgefiltert und in den Zeilen 8-13 werden die \textit{<a></a>} Tags mit Hilfe regulärer Ausdrücke gelöscht. Sobald der Artikel komplett geladen ist, wird er analog zu Listing \ref{lst:artikelinfos} in das \ac{html} Markup eingefügt.
+Beim Parsen des Artikel-\ac{xml}s müssen folgende drei Sachverhalte besonders beachtet werden. Die Absätze des Artikels liegen in Paragraphen-Tags (<p></p>) vor. Es kann vorkommen, dass außer dem reinen Text, zusätzlich noch Infoboxen im Artikel vorhanden sind. Der zweite Besonderheit ist die, dass Nachrichten vom Mikroblogging Dienst Twitter eingebunden werden können. Diese Abschnitte arbeiten ebenfalls mit Paragraphen-Tags. Da Infoboxen und Twitternachrichten sich inhaltlich nicht direkt in den Artikeltext eingliedern, müssen diese Abschnitte vorher herausgefiltert werden. Des weiteren sind in den meisten Artikeln auf der ZEIT ONLINE Webseite Hyperlinks auf andere Artikel oder auf andere Webseiten vorhanden. Diese sind genau wie Infoboxen und Twitternachrichten unerwünscht, da sie, wenn sie vom User aufgerufen werden, außerhalb der aktuellen App im Browser geöffnet würden. Dies unterbricht und stört das App-Erlebnis. Es muss dementsprechend darauf geachtet werden, dass nur der reine Artikeltext als Artikel gespeichert wird. Listing \ref{lst:artikelabsätze} verdeutlicht, wie dies umgesetzt wird. In Zeile 3 werden die Infoboxen und die Twitternachrichten herausgefiltert und in den Zeilen 8-13 werden die \textit{<a></a>} Tags mit Hilfe regulärer Ausdrücke gelöscht. Sobald der Artikel komplett geladen ist, wird er analog zu Listing \ref{lst:artikelinfos} in das \ac{html} Markup eingefügt.
 
 \begin{minipage}{\linewidth}
 \input{Listings/artikel_absaetze.js.tex}  
@@ -625,7 +633,7 @@ Die Funktion sammelt dazu alle Elemente mit der Klasse \textit{item-overlay} in 
 
 \subsubsection{Schriftgröße verändern}
 \label{subsubsec:schriftgroesseveraendern}
-In der Artikelansicht hat der User die Möglichkeit, die Schriftgröße anzupassen. Es sind jeweils zwei Stufen größer, als auch zwei Stufen kleiner als die normale Größe möglich. Der  Ansatz ist grundsätzlich genau so wie bei der \glqq Titel-Ausblenden\grqq\ Funktionalität. Zunächst wird ein Button in der unteren Menüleiste angelegt. Es wäre auch möglich zwei Buttons zu erstellen, einen für größer und einen für kleiner. Um weitere  Entwicklungsmöglichkeiten der \ac{winjs}-Bibliothek auszunutzen, gibt es in der App nur einen Button in der Menüleiste. Wird dieser geklickt, erscheint noch ein weiteres Menü, ein sogenanntes \textit{Flyout-Menü}. In diesem sind schließlich die Schaltflächen für \glqq Schrift größer\grqq\ , \glqq Schrift kleiner\grqq\ und für \glqq Schriftgröße zurücksetzen\grqq\ . Ist die Schriftgröße z.B. auf der größten Stufe eingestellt, wird im Menü, der \glqq Größer Button\grqq nicht mehr dargestellt. Abbildung \ref{fig:fontsizemenü} zeigt die verschiedenen Stati, die das Schriftgrößenmenü haben kann.
+In der Artikelansicht hat der User die Möglichkeit, die Schriftgröße anzupassen. Es sind jeweils zwei Stufen größer als auch zwei Stufen kleiner als die normale Größe möglich. Der  Ansatz ist grundsätzlich genau so wie bei der \glqq Titel-Ausblenden\grqq\ Funktionalität. Zunächst wird ein Button in der unteren Menüleiste angelegt. Es wäre auch möglich, zwei Buttons zu erstellen, einen für größer und einen für kleiner. Um weitere  Entwicklungsmöglichkeiten der \ac{winjs}-Bibliothek auszunutzen, gibt es in der App nur einen Button in der Menüleiste. Wird dieser geklickt, erscheint noch ein weiteres Menü, ein sogenanntes \textit{Flyout-Menü}. In diesem sind schließlich die Schaltflächen für \glqq Schrift größer\grqq\ , \glqq Schrift kleiner\grqq\ und für \glqq Schriftgröße zurücksetzen\grqq\ hinterlegt. Ist die Schriftgröße z.B. auf der größten Stufe eingestellt, wird im Menü der \glqq Größer Button\grqq nicht mehr dargestellt. Abbildung \ref{fig:fontsizemenü} zeigt die verschiedenen Stati, die das Schriftgrößenmenü haben kann.
 
 \begin{figure}[h]
 	\centering
@@ -636,7 +644,7 @@ In der Artikelansicht hat der User die Möglichkeit, die Schriftgröße anzupass
 
 \subsubsection{Semantic Zoom}
 \label{subsubsec:semanticzoom}
-Das \glqq Semantic Zoom\grqq\ Feature wird eingesetzt, wenn es in der Hubansicht sehr viele Bereiche gibt. Es soll dem User ermöglichen, ohne langes Scrollen, zu den verschiedenen Bereichen in der Hubansicht zu springen. Beim Aufruf des \glqq Semantic Zooms\grqq\ wird eine weitere Ebene über die Hubansicht gelegt. Typischer Weise werden in dieser Ebene die verschiedenen Bereiche ohne inhaltliche Elemente angezeigt. Bei ZEIGHT werden hier alle Ressorts mit dem jeweiligen Ressortnamen und einem zufälligen Bild aus dem Ressort angezeigt (siehe Abbildung \ref{fig:semanticzoom}). Diese Ansicht ist ebenfalls horizontal scrollbar, im direkten Vergleich zur Hubansicht jedoch viel kompakter und übersichtlicher. Klickt der User z.B. auf das Reisen Ressort, wird wieder zurück zur Hubansicht \glqq gezoomt\grqq. Der User hätte dann die Ansicht wie sie Abbildung \ref{fig:hubressortübersicht} auf Seite \pageref{fig:hubressortübersicht} zeigt. Damit findet in beide Richtungen ein kontextsensitives Zoomen statt. Je nach dem wo sich der User in der Hubansicht befindet bzw. auf welches Ressort der User in der \glqq Semantic Zoom\grqq\ Ebene klickt, wird an die entsprechende Stelle raus- bzw. reingezoomt.  
+Das \glqq Semantic Zoom\grqq\ Feature wird eingesetzt, wenn es in der Hubansicht sehr viele Bereiche gibt. Es soll dem User ermöglichen ohne langes Scrollen, zu den verschiedenen Bereichen in der Hubansicht zu springen. Beim Aufruf des \glqq Semantic Zooms\grqq\ wird eine weitere Ebene über die Hubansicht gelegt. Typischer Weise werden in dieser Ebene die verschiedenen Bereiche ohne inhaltliche Elemente angezeigt. Bei ZEIGHT werden hier alle Ressorts mit dem jeweiligen Ressortnamen und einem zufälligen Bild aus dem Ressort angezeigt (siehe Abbildung \ref{fig:semanticzoom}). Diese Ansicht ist ebenfalls horizontal scrollbar, im direkten Vergleich zur Hubansicht jedoch viel kompakter und übersichtlicher. Klickt der User z.B. auf das Reisen-Ressort, wird wieder zurück zur Hubansicht \glqq gezoomt\grqq. Der User hätte dann die Ansicht, wie sie Abbildung \ref{fig:hubressortübersicht} auf Seite \pageref{fig:hubressortübersicht} zeigt. Damit findet in beide Richtungen ein kontextsensitives Zoomen statt. Je nach dem wo sich der User in der Hubansicht befindet bzw. auf welches Ressort der User in der \glqq Semantic Zoom\grqq\ Ebene klickt, wird an die entsprechende Stelle raus- bzw. reingezoomt.  
 
 \begin{figure}[h]
 	\centering
@@ -645,7 +653,7 @@ Das \glqq Semantic Zoom\grqq\ Feature wird eingesetzt, wenn es in der Hubansicht
 	\label{fig:semanticzoom}
 \end{figure}  
 
-Da der semantic Zoom von der Hubansicht aus aufgerufen wird und mit ihr interagiert, ist er dementsprechend in der \textit{groupedItems.html} und in der\textit{groupedItems.js} implementiert. Genau wie für die Hubansicht gibt es auch für den semantic Zoom ein Template für die einzelnen Elemente. Damit eine Interaktion zwischen der Hubansicht und dem semantic Zoom stattfinden kann, wird ein Wrapper \textit{div} Element um die \textit{WinJS.ListView} der Hubansicht und die \textit{WinJS.ListView} der \glqq Semantic Zoom\grqq\ Ebene gezogen. Listing \ref{lst:semanticzoomwrapper} zeigt wie der Wrapper eingebunden ist. Das \textit{div} Element besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.UI.SemanticZoom\grqq. Des Weiteren kann der \textit{zoomFactor} und der initiale Zoomstatus festgelegt werden. Bei der ZEIGHT App steht dieser Zoomstatus initial auf \glqq false\grqq, da der User die Hubansicht als Einstiegspunkt in die App haben soll und nicht die \glqq Semantic Zoom\grqq\ Ansicht.
+Da der semantic Zoom von der Hubansicht aus aufgerufen wird und mit ihr interagiert, ist er dementsprechend in der \textit{groupedItems.html} und in der\textit{groupedItems.js} implementiert. Genau wie für die Hubansicht gibt es auch für den semantic Zoom ein Template für die einzelnen Elemente. Damit eine Interaktion zwischen der Hubansicht und dem semantic Zoom stattfinden kann, wird ein Wrapper \textit{div} Element um die \textit{WinJS.ListView} der Hubansicht und die \textit{WinJS.ListView} der \glqq Semantic Zoom\grqq\ Ebene gezogen. Listing \ref{lst:semanticzoomwrapper} zeigt, wie der Wrapper eingebunden ist. Das \textit{div} Element besitzt ein \textit{data-win-control} Attribut mit dem Wert \glqq WinJS.UI.SemanticZoom\grqq. Des Weiteren kann der \textit{zoomFactor} und der initiale Zoomstatus festgelegt werden. Bei der ZEIGHT App steht dieser Zoomstatus initial auf \glqq false\grqq, da der User die Hubansicht als Einstiegspunkt in die App haben soll und nicht die \glqq Semantic Zoom\grqq\ Ansicht.
 
 \begin{minipage}{\linewidth}
 \input{Listings/semantic_zoom_wrapper.html.tex}  
@@ -653,9 +661,9 @@ Da der semantic Zoom von der Hubansicht aus aufgerufen wird und mit ihr interagi
 
 \subsection{Entwicklungschronologie}
 \label{subsec:entwicklungschronologie}
-Hier soll beschrieben werden, wie der Entwicklungsprozess von ZEIGHT abgelaufen ist. Nachdem die Idee für die App formuliert war, wurde sich der Verfasser zunächst mit der Windows 8 App Entwicklung im Allgemeinen vertraut gemacht, da bis zu diesem Zeitpunkt keinerlei Windows 8 spezifischen Entwicklungskenntnisse vorhanden waren. Es wurden einige Beispiele ausprobiert, um ein Gefühl für die Entwicklungsumgebung zu bekommen. Der Workflow zwischen Visual Studio und Blend war am Anfang noch etwas gewöhnungsbedürftig. Anschließend wurde ein erster Prototyp erstellt. Hier fanden noch keine Überlegungen zum Navigationssystem oder zur Usability statt. Am Anfang gab es zunächst nur das nur das Ziel, die ZEIT ONLINE Daten in irgendeiner Weise in die App zu übernehmen und sie dort darzustellen. In einer der ersten Versionen der App wurden z.B. nur die Artikeltitel der Homepage angezeigt. Nachdem die Datenanbindung umgesetzt war, konnte mit dem Entwickeln der richtigen App begonnen werden.
+Hier soll beschrieben werden, wie der Entwicklungsprozess von ZEIGHT abgelaufen ist. Nachdem die Idee für die App formuliert war, hat sich der Verfasser zunächst mit der Windows 8 App Entwicklung im Allgemeinen vertraut gemacht, da bis zu diesem Zeitpunkt keinerlei Windows 8 spezifische Entwicklungskenntnisse vorhanden waren. Es wurden einige Beispiele ausprobiert, um ein Gefühl für die Entwicklungsumgebung zu bekommen. Der Workflow zwischen Visual Studio und Blend war am Anfang noch etwas gewöhnungsbedürftig. Anschließend wurde ein erster Prototyp erstellt. Hier fanden noch keine Überlegungen zum Navigationssystem oder zur Usability statt. Am Anfang gab es zunächst nur das nur das Ziel, die ZEIT ONLINE Daten in irgendeiner Weise in die App zu übernehmen und sie dort darzustellen. In einer der ersten Versionen der App wurden z.B. nur die Artikeltitel der Homepage angezeigt. Nachdem die Datenanbindung umgesetzt war, konnte mit dem Entwickeln der richtigen App begonnen werden.
 
-Es wurde zunächst viel recherchiert, zu nennen sind hier insbesondere die Microsoft Richtlinien und Styleguides, um herauszufinden, wie aus Microsoft Sichtweise eine Nachrichten-App auszusehen hat. Dabei war immer wieder die Rede von der Rastervorlage, die sich für solche Zwecke eignen solle. Diese Grundvorlage wurde schließlich für die App ausgewählt. Da die Rastervorlage keine triviale Vorlage ist, musste einige Zeit investiert werden um alle Vorgänge und Dateien der Vorlage richtig ein- und zuordnen zu können. 
+Es wurde zunächst viel recherchiert, zu nennen sind hier insbesondere die Microsoft Richtlinien und Styleguides, um herauszufinden, wie aus Microsoft Sichtweise eine Nachrichten-App auszusehen hat. Dabei war immer wieder die Rede von der Rastervorlage, die sich für solche Zwecke eignen solle. Diese Grundvorlage wurde schließlich für die App ausgewählt. Da die Rastervorlage keine triviale Vorlage ist, musste einige Zeit investiert werden, um alle Vorgänge und Dateien der Vorlage richtig ein- und zuordnen zu können. 
 
 Eines der ersten größeren Probleme war die Dezimierung der Daten für die Hubansicht. Hier musste die Funktion \textit{getClippedList} entwickelt werden (wie in Sektion \ref{subsubsec:hubansicht} beschrieben). Des weiteren wurde in dieser Phase das CSS für Hubansicht und die Ressortübersicht angepasst. Gerade bei der Ressortansicht musste einiges an der Vorlage verändert werden.
 
@@ -665,11 +673,11 @@ Anschließend wurde die Artikelansicht gestaltet und dabei die Bildunterschrifte
 
 Anschließend wurde die Verarbeitung der Artikel vereinfacht. Am Anfang wurden die \textit{<p></p>} Elemente erst \glqq auseinander genommen\grqq\ und anschließend wieder zusammengesetzt. Da das \ac{xml} der Artikel aber schon valides \ac{html} enthält, konnte einfach der ganze Text samt Zwischenüberschriften übernommen werden. Was noch herausgefiltert werden musste, sind Infoboxen und Twitternachrichten, die in den Artikeln eingebaut sein können. Als nächstes wurde das \textit{Semantic Zoom} Feature sowie die Funktionalität zur Veränderung der Schriftgröße implementiert.   
 
-Zu diesem Zeitpunkt hat es eine kleine strukturelle Ergänzung im \ac{xml} von ZEIT ONLINE gegeben. Die Teaserelemente haben nun jeweils ein Attribut \textit{contenttype}. Da in der App nur Artikel dargestellt werden sollen, kann auf diese Weise bequem nach \glqq contenttype = article\grqq gefiltert werden. Dies ist eine große Vereinfachung, denn zuvor wurden nach dem negativ Prinzip recht aufwändig alle anderen Typen wie z.B. Videos, Blogartikel oder Quizze ausgeschlossen.  
+Zu diesem Zeitpunkt hat es eine kleine strukturelle Ergänzung im \ac{xml} von ZEIT ONLINE gegeben. Die Teaserelemente haben nun jeweils ein Attribut \textit{contenttype}. Da in der App nur Artikel dargestellt werden sollen, kann auf diese Weise bequem nach \glqq contenttype = article\grqq gefiltert werden. Dies ist eine große Vereinfachung, denn zuvor wurden nach dem Negativ-Prinzip recht aufwändig alle anderen Typen wie z.B. Videos, Blogartikel oder Quizze ausgeschlossen.  
 
-Gegen Ende der Entwicklung wurde noch der Snapped Modus der App unterbunden. Normalerweise können Windows 8 Apps außer dem Vollbildmodus auch noch im Snapped-Modus ausgeführt werden. Dabei wird der Bildschirm vertikal getrennt und es können zwei Apps im Verhältnis 70:30 nebeneinander dargestellt werden. Da der Snapped-Modus für diese App nicht relevant ist wurde er unterbunden, ein vollständiges Abschalten ist nicht möglich. Zuletzt wurden noch Splashscreen und Logos in verschiedenen Größen hinzugefügt.
+Gegen Ende der Entwicklung wurde noch der Snapped Modus der App unterbunden. Normalerweise können Windows 8 Apps außer dem Vollbildmodus auch noch im Snapped-Modus ausgeführt werden. Dabei wird der Bildschirm vertikal getrennt, und es können zwei Apps im Verhältnis 70:30 nebeneinander dargestellt werden. Da der Snapped-Modus für diese App nicht relevant ist, wurde er unterbunden, ein vollständiges Abschalten ist nicht möglich. Zuletzt wurden noch Splashscreen und Logos in verschiedenen Größen hinzugefügt.
 
-Es sind hier nur die wichtigen Schritte im Entwicklungsprozess beschrieben. Die Dokumentation der kleineren Tweaks und Fixes an der App wurde verzichtet. Des weiteren sind auch nicht alle aufgetretenen Probleme erwähnt. 
+Es sind hier nur die wichtigen Schritte im Entwicklungsprozess beschrieben. Auf die Dokumentation der kleineren Tweaks und Fixes an der App wurde verzichtet. Des Weiteren sind auch nicht alle aufgetretenen Probleme erwähnt. 
 
 \newpage
 \section{Evaluierung} 
